@@ -1,0 +1,30 @@
+.appBar {
+  height: 15vh;
+}
+.logoPart {
+  margin-left: 50px;
+}
+.textPart {
+  height: 100%;
+  margin-left: 30px;
+  font-weight: 900;
+}
+.topBar {
+  flex-grow: 1;
+  display: flex;
+  height: 30%;
+  padding: 10px;
+  background-color: #006931 !important;
+}
+.bottomBar {
+  height: 70%;
+}
+.paragraph {
+  padding-right: 10px;
+  padding-left: 5px;
+  border-right: solid #ffffff83;
+}
+.paragraph:hover {
+  background-color: #0b7a3f;
+  cursor: pointer;
+}

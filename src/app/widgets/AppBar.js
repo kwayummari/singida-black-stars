@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import styles from '../../styles/appBar.scss';
+import styles from '../../styles/appBar.module.scss';
 
 const AppBar = () => (
   <header className={`${styles.appBar} d-flex align-items-center bg-dark`}>
@@ -12,12 +12,15 @@ const AppBar = () => (
         alt="Picture of the author"
       />
     </div>
-    <div className={styles.textPart + "d-flex flex-column flex-grow-1"}>
-      <div className={`${styles.topBar} bg-success text-white`}>
-        <p className="m-0">CLUB SITE</p>
+    <div className={styles.textPart + " d-flex flex-column flex-grow-1"}>
+      <div className={`${styles.topBar} text-white`}>
+        <p className={`${styles.paragraph} m-0`}>CLUB SITE</p>
+        <p className={`${styles.paragraph} m-0`}><i class="bi bi-ticket-perforated"></i> TICKETS</p>
+        <p className={`${styles.paragraph} m-0`}><i className="bi bi-shop"></i> STORE</p>
+        <p className={`${styles.paragraph} m-0`}><i class="bi bi-phone-flip"></i> APP</p>
       </div>
-      <div className={styles.bottomBar + " bg-light"}>
-      <p className="m-0">kwayu</p>
+      <div className={styles.bottomBar + " bg-dark"}>
+        <p className="m-0"></p>
       </div>
     </div>
   </header>
