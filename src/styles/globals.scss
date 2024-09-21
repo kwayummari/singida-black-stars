@@ -1,6 +1,6 @@
 // Define root variables for light mode
 :root {
-    --background: #ffffff;
+    --background: aliceblue;
     --foreground: #171717;
   }
   
@@ -8,7 +8,7 @@
   @media (prefers-color-scheme: dark) {
     :root {
       --background: #0a0a0a;
-      --foreground: #ededed;
+      --foreground: aliceblue;
     }
   }
   
