@@ -12,9 +12,14 @@
 .topBar {
   flex-grow: 1;
   display: flex;
+  justify-content: space-between;
   height: 30%;
   padding: 10px;
   background-color: #006931 !important;
+
+  .topMenus {
+    display: flex;
+  }
 }
 .bottomBar {
   height: 70%;
