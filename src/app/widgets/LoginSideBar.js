@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../../styles/appBar.module.scss';
 
-const LoginSideBar = (toggleSearchSidebar) => (
+const LoginSideBar = ({toggleSearchSidebar}) => (
     <div>
         <div className={styles.headerSearch}>
             <div className={styles.topperSearch}>

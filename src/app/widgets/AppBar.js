@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import styles from '../../styles/appBar.module.scss';
 import SearchSideBar from './SearchSideBar';
+import LoginSideBar from './LoginSideBar';
 
 const AppBar = () => {
   const [isSearchSidebarOpen, setIsSearchSidebarOpen] = useState(false);
@@ -104,13 +105,7 @@ const AppBar = () => {
         tabIndex="-1"
         style={{ width: '400px' }}
       >
-        <div className="offcanvas-header">
-          <h5 className="offcanvas-title">Login</h5>
-          <button type="button" className="btn-close" onClick={toggleLoginSidebar}></button>
-        </div>
-        <div className="offcanvas-body">
-          <p>Login Form</p>
-        </div>
+        <LoginSideBar toggleSearchSidebar={toggleSearchSidebar} />
       </div>
 
       {/* Bottom Sheet */}
