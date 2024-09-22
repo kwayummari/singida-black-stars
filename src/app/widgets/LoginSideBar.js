@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from '../../styles/appBar.module.scss';
 
-const LoginSideBar = ({toggleSearchSidebar}) => (
+const LoginSideBar = ({toggleLoginSidebar}) => (
     <div>
         <div className={styles.headerSearch}>
             <div className={styles.topperSearch}>
                 <h5 className={styles.title}>Search</h5>
-                <button type="button" className="btn-close btn-close-white" onClick={toggleSearchSidebar}></button>
+                <button type="button" className="btn-close btn-close-white" onClick={toggleLoginSidebar}></button>
             </div>
             <div>
                 <form>

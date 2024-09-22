@@ -9,27 +9,20 @@ const AppBar = () => {
   const [isSearchSidebarOpen, setIsSearchSidebarOpen] = useState(false);
   const [isLoginSidebarOpen, setIsLoginSidebarOpen] = useState(false);
   const [isBottomSheetOpen, setIsBottomSheetOpen] = useState(false);
-
-  // Refs for sidebars and bottom sheet
   const searchSidebarRef = useRef(null);
   const loginSidebarRef = useRef(null);
   const bottomSheetRef = useRef(null);
-
   const toggleSearchSidebar = () => {
     setIsSearchSidebarOpen(!isSearchSidebarOpen);
-    setIsLoginSidebarOpen(false); // Close login if search is opened
+    setIsLoginSidebarOpen(false);
   };
-
   const toggleLoginSidebar = () => {
     setIsLoginSidebarOpen(!isLoginSidebarOpen);
-    setIsSearchSidebarOpen(false); // Close search if login is opened
+    setIsSearchSidebarOpen(false);
   };
-
   const toggleBottomSheet = () => {
     setIsBottomSheetOpen(!isBottomSheetOpen);
   };
-
-  // Close when clicking outside
   const handleClickOutside = (event) => {
     if (
       searchSidebarRef.current && !searchSidebarRef.current.contains(event.target) &&
@@ -41,11 +34,8 @@ const AppBar = () => {
       setIsBottomSheetOpen(false);
     }
   };
-
   useEffect(() => {
-    // Add event listener to detect outside clicks
     document.addEventListener('mousedown', handleClickOutside);
-
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
@@ -87,28 +77,22 @@ const AppBar = () => {
           </div>
         </div>
       </div>
-
-      {/* Search Sidebar */}
       <div
         ref={searchSidebarRef}
-        className={`offcanvas offcanvas-end ${isSearchSidebarOpen ? 'show' : ''}`}
+        className={`offcanvas offcanvas-end overlay ${isSearchSidebarOpen ? 'show' : ''}`}
         tabIndex="-1"
         style={{ width: '400px' }}
       >
         <SearchSideBar toggleSearchSidebar={toggleSearchSidebar} />
       </div>
-
-      {/* Login Sidebar */}
       <div
         ref={loginSidebarRef}
-        className={`offcanvas offcanvas-end ${isLoginSidebarOpen ? 'show' : ''}`}
+        className={`offcanvas offcanvas-end overlay ${isLoginSidebarOpen ? 'show' : ''}`}
         tabIndex="-1"
         style={{ width: '400px' }}
       >
-        <LoginSideBar toggleSearchSidebar={toggleSearchSidebar} />
+        <LoginSideBar toggleLoginSidebar={toggleLoginSidebar} />
       </div>
-
-      {/* Bottom Sheet */}
       <div
         ref={bottomSheetRef}
         className={`offcanvas offcanvas-bottom ${isBottomSheetOpen ? 'show' : ''}`}
