@@ -54,24 +54,38 @@
   background-color: #0b7a3f;
   cursor: pointer;
 }
-/* Sidebar styling */
 .sidebar {
   position: fixed;
-  right: -300px; /* Initially hidden */
+  right: -300px;
   top: 0;
-  width: 300px;
+  width: 500px;
   height: 100%;
   background-color: #fff;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
   z-index: 1000;
   padding: 20px;
-  transition: transform 0.3s ease, right 0.3s ease; /* Animation for open/close */
+  transition: transform 0.3s ease, right 0.3s ease;
 }
-
 .sidebar.open {
-  right: 0; /* Sidebar slides in */
+  right: 0;
 }
+.headerSearch {
+  background-color: #006931 !important;
+  height: 200px;
+  padding-top: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
 
+  .title {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 900;
+  }
+}
+.topperSearch {
+  display: flex;
+  justify-content: space-between;
+}
 .closeButton {
   position: absolute;
   top: 10px;
@@ -81,7 +95,6 @@
   font-size: 24px;
   cursor: pointer;
 }
-
 .bottomSheet {
   position: fixed;
   bottom: -100%;
@@ -94,7 +107,6 @@
   padding: 20px;
   transition: transform 0.3s ease, bottom 0.3s ease;
 }
-
 .bottomSheet.open {
   bottom: 0;
 }

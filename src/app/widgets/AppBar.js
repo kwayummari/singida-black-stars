@@ -1,26 +1,54 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import styles from '../../styles/appBar.module.scss';
+import SearchSideBar from './SearchSideBar';
 
 const AppBar = () => {
   const [isSearchSidebarOpen, setIsSearchSidebarOpen] = useState(false);
   const [isLoginSidebarOpen, setIsLoginSidebarOpen] = useState(false);
   const [isBottomSheetOpen, setIsBottomSheetOpen] = useState(false);
 
+  // Refs for sidebars and bottom sheet
+  const searchSidebarRef = useRef(null);
+  const loginSidebarRef = useRef(null);
+  const bottomSheetRef = useRef(null);
+
   const toggleSearchSidebar = () => {
     setIsSearchSidebarOpen(!isSearchSidebarOpen);
-    setIsLoginSidebarOpen(false);
+    setIsLoginSidebarOpen(false); // Close login if search is opened
   };
 
   const toggleLoginSidebar = () => {
     setIsLoginSidebarOpen(!isLoginSidebarOpen);
-    setIsSearchSidebarOpen(false);
+    setIsSearchSidebarOpen(false); // Close search if login is opened
   };
 
   const toggleBottomSheet = () => {
     setIsBottomSheetOpen(!isBottomSheetOpen);
   };
+
+  // Close when clicking outside
+  const handleClickOutside = (event) => {
+    if (
+      searchSidebarRef.current && !searchSidebarRef.current.contains(event.target) &&
+      loginSidebarRef.current && !loginSidebarRef.current.contains(event.target) &&
+      bottomSheetRef.current && !bottomSheetRef.current.contains(event.target)
+    ) {
+      setIsSearchSidebarOpen(false);
+      setIsLoginSidebarOpen(false);
+      setIsBottomSheetOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    // Add event listener to detect outside clicks
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <header className={`${styles.appBar} d-flex align-items-center bg-dark`}>
@@ -60,21 +88,45 @@ const AppBar = () => {
       </div>
 
       {/* Search Sidebar */}
-      <div className={`${styles.sidebar} ${isSearchSidebarOpen ? styles.open : ''}`}>
-        <button className={styles.closeButton} onClick={toggleSearchSidebar}>X</button>
-        <p>Search Content</p>
+      <div
+        ref={searchSidebarRef}
+        className={`offcanvas offcanvas-end ${isSearchSidebarOpen ? 'show' : ''}`}
+        tabIndex="-1"
+        style={{ width: '400px' }}
+      >
+        <SearchSideBar toggleSearchSidebar={toggleSearchSidebar} />
       </div>
 
       {/* Login Sidebar */}
-      <div className={`${styles.sidebar} ${isLoginSidebarOpen ? styles.open : ''}`}>
-        <button className={styles.closeButton} onClick={toggleLoginSidebar}>X</button>
-        <p>Login Form</p>
+      <div
+        ref={loginSidebarRef}
+        className={`offcanvas offcanvas-end ${isLoginSidebarOpen ? 'show' : ''}`}
+        tabIndex="-1"
+        style={{ width: '400px' }}
+      >
+        <div className="offcanvas-header">
+          <h5 className="offcanvas-title">Login</h5>
+          <button type="button" className="btn-close" onClick={toggleLoginSidebar}></button>
+        </div>
+        <div className="offcanvas-body">
+          <p>Login Form</p>
+        </div>
       </div>
 
       {/* Bottom Sheet */}
-      <div className={`${styles.bottomSheet} ${isBottomSheetOpen ? styles.open : ''}`}>
-        <button className={styles.closeButton} onClick={toggleBottomSheet}>X</button>
-        <p>Bottom Sheet Content</p>
+      <div
+        ref={bottomSheetRef}
+        className={`offcanvas offcanvas-bottom ${isBottomSheetOpen ? 'show' : ''}`}
+        tabIndex="-1"
+        style={{ height: '84%', maxHeight: '100%', width: '100%' }}
+      >
+        <div className="offcanvas-header">
+          <h5 className="offcanvas-title">Bottom Sheet</h5>
+          <button type="button" className="btn-close" onClick={toggleBottomSheet}></button>
+        </div>
+        <div className="offcanvas-body">
+          <p>Bottom Sheet Content</p>
+        </div>
       </div>
     </header>
   );
