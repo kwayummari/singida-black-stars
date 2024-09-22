@@ -23,7 +23,29 @@
 }
 .bottomBar {
   height: 70%;
+  .bottomMenus {
+    display: flex;
+    justify-content: space-between;
+  }
+  .bottomParagraph {
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+    font-size: 25px;
+    font-weight: 500;
+  }
+  .responsiveMenu {
+    display: flex;
+  }
+  .supportMenu {
+    font-size: 30px;
+    font-weight: 700;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+  }
 }
+
 .paragraph {
   padding-right: 10px;
   padding-left: 5px;

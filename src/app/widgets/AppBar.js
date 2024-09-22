@@ -22,8 +22,20 @@ const AppBar = () => (
         </div>
         <p className={`${styles.paragraph} m-0`}><i class="bi bi-person-circle"></i> LOG IN</p>
       </div>
-      <div className={styles.bottomBar + " bg-dark"}>
-        <p className="m-0"></p>
+      <div className={styles.bottomBar + " bg-dark text-white"}>
+        <div className={`${styles.bottomMenus} `}>
+          <div></div>
+          <div className={`${styles.responsiveMenu}`}>
+            <p className={`${styles.bottomParagraph} m-0`}>CLUB SITE</p>
+            <p className={`${styles.bottomParagraph} m-0`}> TICKETS</p>
+            <p className={`${styles.bottomParagraph} m-0`}> STORE</p>
+            <p className={`${styles.bottomParagraph} m-0`}> APP</p>
+          </div>
+          <div className={`${styles.supportMenu}`}>
+            <i class="bi bi-search"></i>
+            <i class="bi bi-list"></i>
+          </div>
+        </div>
       </div>
     </div>
   </header>
