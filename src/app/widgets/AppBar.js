@@ -71,8 +71,8 @@ const AppBar = () => {
               <p className={`${styles.bottomParagraph} m-0`}> APP</p>
             </div>
             <div className={`${styles.supportMenu}`}>
-              <i className="bi bi-search" onClick={toggleSearchSidebar}></i>
-              <i className="bi bi-list" onClick={toggleBottomSheet}></i>
+              <i className="bi bi-search p-3" onClick={toggleSearchSidebar}></i>
+              <i className="bi bi-list p-3" onClick={toggleBottomSheet}></i>
             </div>
           </div>
         </div>
