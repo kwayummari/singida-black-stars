@@ -1,8 +1,11 @@
+"use client"
+import { useState, useEffect } from 'react';
 import localFont from "next/font/local";
 import '../styles/globals.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css'; 
 import AppBar from './widgets/AppBar';
+import AppBarMobile from './widgets/AppBarMobile';
 import Footer from './widgets/Footer';
 
 const geistSans = localFont({
@@ -22,10 +25,22 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <AppBar />
+        {isMobile ? <AppBarMobile /> : <AppBar />}
         <main style={{ minHeight: "80vh" }}>
           {children}
         </main>

@@ -21,6 +21,10 @@
     display: flex;
   }
 }
+.logo {
+  height: 150px;
+  width: 150px;
+}
 .bottomBar {
   height: 70%;
   .bottomMenus {
@@ -140,4 +144,14 @@
 }
 .bottomSheet.open {
   bottom: 0;
+}
+
+@media only screen and (max-width: 1024px) {
+  .bottomBar {
+    display: none;
+  }
+  .logo {
+    height: 70px;
+    width: 70px;
+  }
 }

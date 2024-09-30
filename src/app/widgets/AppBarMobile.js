@@ -4,7 +4,7 @@ import styles from '../../styles/appBar.module.scss';
 import SearchSideBar from './SearchSideBar';
 import LoginSideBar from './LoginSideBar';
 
-const AppBar = () => {
+const AppBarMobile = () => {
   const [isSearchSidebarOpen, setIsSearchSidebarOpen] = useState(false);
   const [isLoginSidebarOpen, setIsLoginSidebarOpen] = useState(false);
   const [isBottomSheetOpen, setIsBottomSheetOpen] = useState(false);
@@ -109,4 +109,4 @@ const AppBar = () => {
   );
 };
 
-export default AppBar;
+export default AppBarMobile;
