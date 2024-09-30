@@ -1,0 +1,157 @@
+.appBar {
+  height: 15vh;
+}
+.logoPart {
+  margin-left: 50px;
+}
+.textPart {
+  height: 100%;
+  margin-left: 30px;
+  font-weight: 900;
+}
+.topBar {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  height: 30%;
+  padding: 10px;
+  background-color: #006931 !important;
+
+  .topMenus {
+    display: flex;
+  }
+}
+.logo {
+  height: 150px;
+  width: 150px;
+}
+.bottomBar {
+  height: 70%;
+  .bottomMenus {
+    display: flex;
+    justify-content: space-between;
+  }
+  .bottomParagraph {
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+    font-size: 25px;
+    font-weight: 500;
+  }
+  .responsiveMenu {
+    display: flex;
+  }
+  .supportMenu {
+    font-size: 20px;
+    font-weight: 700;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+    cursor: pointer;
+  }
+}
+.paragraph {
+  padding-right: 10px;
+  padding-left: 5px;
+  border-right: solid #ffffff83;
+}
+.paragraph:hover {
+  background-color: #0b7a3f;
+  cursor: pointer;
+}
+.sidebar {
+  position: fixed;
+  right: -300px;
+  top: 0;
+  width: 500px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  padding: 20px;
+  transition: transform 0.3s ease, right 0.3s ease;
+}
+.sidebar.open {
+  right: 0;
+}
+.headerSearch {
+  background-color: #006931 !important;
+  height: 200px;
+  padding-top: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  .title {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 900;
+  }
+}
+.LoginSearch {
+  background-color: #006931 !important;
+  height: 400px;
+  padding-top: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  .title {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 900;
+  }
+}
+.paragraph {
+  color: #fff !important;
+  font-weight: 900;
+}
+.paragraph2 {
+  color: #000 !important;
+  font-size: 30px;
+  font-weight: 900;
+}
+.paragraph3 {
+  color: black;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+.paragraph3:hover {
+  color: #006931;
+}
+.topperSearch {
+  display: flex;
+  justify-content: space-between;
+}
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+.bottomSheet {
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 100px);
+  background-color: #fff;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  padding: 20px;
+  transition: transform 0.3s ease, bottom 0.3s ease;
+}
+.bottomSheet.open {
+  bottom: 0;
+}
+
+@media only screen and (max-width: 1024px) {
+  .bottomBar {
+    display: none;
+  }
+  .logo {
+    height: 70px;
+    width: 70px;
+  }
+}

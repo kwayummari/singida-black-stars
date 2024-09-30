@@ -1,6 +1,6 @@
 "use client"
 import React, { useState, useEffect, useRef } from 'react';
-import styles from '../../styles/appBar.module.scss';
+import styles from '../../styles/appBarMobile.module.scss';
 import SearchSideBar from './SearchSideBar';
 import LoginSideBar from './LoginSideBar';
 
@@ -42,13 +42,6 @@ const AppBarMobile = () => {
 
   return (
     <header className={`${styles.appBar} d-flex align-items-center bg-dark`}>
-      <div className={styles.logoPart}>
-        <img
-          src="/images/logo.png"
-          className={styles.logo}
-          alt="Picture of the author"
-        />
-      </div>
       <div className={styles.textPart + " d-flex flex-column flex-grow-1"}>
         <div className={`${styles.topBar} text-white`}>
           <div className={`${styles.topMenus}`}>
@@ -75,34 +68,43 @@ const AppBarMobile = () => {
           </div>
         </div>
       </div>
-      <div
-        ref={searchSidebarRef}
-        className={`offcanvas offcanvas-end overlay ${isSearchSidebarOpen ? 'show' : ''}`}
-        tabIndex="-1"
-        style={{ width: '400px' }}
-      >
-        <SearchSideBar toggleSearchSidebar={toggleSearchSidebar} />
-      </div>
-      <div
-        ref={loginSidebarRef}
-        className={`offcanvas offcanvas-end overlay ${isLoginSidebarOpen ? 'show' : ''}`}
-        tabIndex="-1"
-        style={{ width: '400px' }}
-      >
-        <LoginSideBar toggleLoginSidebar={toggleLoginSidebar} />
-      </div>
-      <div
-        ref={bottomSheetRef}
-        className={`offcanvas offcanvas-bottom ${isBottomSheetOpen ? 'show' : ''}`}
-        tabIndex="-1"
-        style={{ height: '84%', maxHeight: '100%', width: '100%' }}
-      >
-        <div className="offcanvas-header">
-          <h5 className="offcanvas-title">Bottom Sheet</h5>
-          <button type="button" className="btn-close" onClick={toggleBottomSheet}></button>
+      <div>
+        <div className={styles.logoPart}>
+          <img
+            src="/images/logo.png"
+            className={styles.logo}
+            alt="Picture of the author"
+          />
         </div>
-        <div className="offcanvas-body">
-          <p>Bottom Sheet Content</p>
+        <div
+          ref={searchSidebarRef}
+          className={`offcanvas offcanvas-end overlay ${isSearchSidebarOpen ? 'show' : ''}`}
+          tabIndex="-1"
+          style={{ width: '400px' }}
+        >
+          <SearchSideBar toggleSearchSidebar={toggleSearchSidebar} />
+        </div>
+        <div
+          ref={loginSidebarRef}
+          className={`offcanvas offcanvas-end overlay ${isLoginSidebarOpen ? 'show' : ''}`}
+          tabIndex="-1"
+          style={{ width: '400px' }}
+        >
+          <LoginSideBar toggleLoginSidebar={toggleLoginSidebar} />
+        </div>
+        <div
+          ref={bottomSheetRef}
+          className={`offcanvas offcanvas-bottom ${isBottomSheetOpen ? 'show' : ''}`}
+          tabIndex="-1"
+          style={{ height: '84%', maxHeight: '100%', width: '100%' }}
+        >
+          <div className="offcanvas-header">
+            <h5 className="offcanvas-title">Bottom Sheet</h5>
+            <button type="button" className="btn-close" onClick={toggleBottomSheet}></button>
+          </div>
+          <div className="offcanvas-body">
+            <p>Bottom Sheet Content</p>
+          </div>
         </div>
       </div>
     </header>
