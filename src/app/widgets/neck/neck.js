@@ -12,10 +12,10 @@ const Neck = () => (
                         className={styles.carouselImage}
                     />
                     <div className={styles.imageText}>
-                        <p>Preview | CCM KIRUMBA</p>
+                        <p>Report | SINGIDA BIG STARS 1-1 JKT</p>
                     </div>
                     <div className={styles.imageTextBelow}>
-                        <p>Club News | 9 hours ago</p>
+                        <p>Match Reports | 2 days ago</p>
                     </div>
                 </div>
             </div>
@@ -27,10 +27,10 @@ const Neck = () => (
                         className={styles.carouselImage}
                     />
                     <div className={styles.imageText}>
-                        <p>Preview | CCM</p>
+                        <p>Preview | MTIBWA SUGAR</p>
                     </div>
                     <div className={styles.imageTextBelow}>
-                        <p>Club Blog | 9 hours ago</p>
+                        <p>Club News | 2 days ago</p>
                     </div>
                 </div>
             </div>
