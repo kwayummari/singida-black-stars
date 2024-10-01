@@ -3,8 +3,8 @@ import styles from '../../../styles/neck.module.scss';
 
 const Neck = () => (
     <div className="container">
-        <div className={`${styles.scrollableRow} row row-cols-1 row-cols-md-4 g-4`}>
-            <div className="col">
+        <div className={`${styles.scrollableRow} row`}>
+            <div className="col-12 col-md-3">
                 <div className={`${styles.imageContainer} card p-2`}>
                     <img
                         src="/images/carousel.png"
@@ -19,7 +19,7 @@ const Neck = () => (
                     </div>
                 </div>
             </div>
-            <div className="col">
+            <div className="col-12 col-md-3">
                 <div className={`${styles.imageContainer} card p-2`}>
                     <img
                         src="/images/carousel.png"
@@ -34,7 +34,7 @@ const Neck = () => (
                     </div>
                 </div>
             </div>
-            <div className="col">
+            <div className="col-12 col-md-3">
                 <div className={`${styles.imageContainer} card p-2`}>
                     <img
                         src="/images/carousel.png"
@@ -49,7 +49,7 @@ const Neck = () => (
                     </div>
                 </div>
             </div>
-            <div className="col">
+            <div className="col-12 col-md-3">
                 <div className={`${styles.imageContainer} card p-2`}>
                     <img
                         src="/images/carousel.png"
