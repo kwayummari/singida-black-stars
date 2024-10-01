@@ -14,10 +14,12 @@
     display: flex;
   }
 }
+
 .logo {
-  height: 150px;
-  width: 150px;
+  height: 70px;
+  width: 70px;
 }
+
 .bottomBar {
   height: 70%;
   .bottomMenus {
@@ -140,11 +142,5 @@
 }
 
 @media only screen and (max-width: 1024px) {
-  .bottomBar {
-    display: none;
-  }
-  .logo {
-    height: 70px;
-    width: 70px;
-  }
+  
 }

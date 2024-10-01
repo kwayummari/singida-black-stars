@@ -52,32 +52,14 @@ const AppBarMobile = () => {
           </div>
           <p className={`${styles.paragraph} m-0`} onClick={toggleLoginSidebar}><i className="bi bi-person-circle"></i> LOG IN</p>
         </div>
-        <div className={styles.bottomBar + " bg-dark text-white"}>
-          <div className={`${styles.bottomMenus}`}>
-            <div></div>
-            <div className={`${styles.responsiveMenu}`}>
-              <p className={`${styles.bottomParagraph} m-0`}>CLUB SITE</p>
-              <p className={`${styles.bottomParagraph} m-0`}> TICKETS</p>
-              <p className={`${styles.bottomParagraph} m-0`}> STORE</p>
-              <p className={`${styles.bottomParagraph} m-0`}> APP</p>
-            </div>
-            <div className={`${styles.supportMenu}`}>
-              <i className="bi bi-search p-3" onClick={toggleSearchSidebar}></i>
-              <i className="bi bi-list p-3" onClick={toggleBottomSheet}></i>
-            </div>
-          </div>
-        </div>
       </div>
-      <div>
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <img
+            src="/images/logo.png"
+            className={styles.logo}
+            alt="Picture of the author"
+          />
         <div>
-          <div className={styles.logoPart}>
-            <img
-              src="/images/logo.png"
-              className={styles.logo}
-              alt="Picture of the author"
-            />
-          </div>
-          <div>
           <div
             ref={searchSidebarRef}
             className={`offcanvas offcanvas-end overlay ${isSearchSidebarOpen ? 'show' : ''}`}
@@ -107,7 +89,6 @@ const AppBarMobile = () => {
             <div className="offcanvas-body">
               <p>Bottom Sheet Content</p>
             </div>
-          </div>
           </div>
         </div>
       </div>
