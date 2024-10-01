@@ -1,5 +1,25 @@
 .carouselImage {
-    object-fit: cover;
-    border-radius: 30px;
-     height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+  height: 100%;
+  width: 100%;
+  padding: 30px;
 }
+
+.imageContainer {
+    height: 700px;
+    border-radius: 30px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .carouselImage {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        padding: 20px;
+      }
+      .imageContainer {
+        height: 500px;
+        border-radius: 30px;
+    }
+  }
