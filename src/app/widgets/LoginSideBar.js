@@ -29,7 +29,7 @@ const LoginSideBar = ({ toggleLoginSidebar }) => (
         <div>
             <form>
                 <div className="mb-3 p-3">
-                <p className={styles.paragraph2}>Login</p>
+                    <p className={styles.paragraph2}>Login</p>
                     <input
                         type="text"
                         className="form-control mb-3"

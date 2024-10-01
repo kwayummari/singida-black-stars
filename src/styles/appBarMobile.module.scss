@@ -95,6 +95,8 @@
 .LoginSearch {
   background-color: #006931 !important;
   height: 400px;
+  scroll-behavior: smooth;
+  overflow: scroll;
   padding-top: 30px;
   padding-left: 20px;
   padding-right: 20px;
@@ -106,6 +108,7 @@
   }
 }
 .paragraph {
+  font-size: 10px;
   color: #fff !important;
   font-weight: 900;
 }
