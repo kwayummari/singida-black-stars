@@ -1,0 +1,53 @@
+.imageContainer {
+  position: relative;
+  overflow: hidden;
+}
+
+.carouselImage {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.imageText {
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.imageTextBelow {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  color: white;
+  font-size: 14px;
+}
+
+// For small screens: a scrollable row
+@media (max-width: 768px) {
+  .scrollableRow {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+
+    .col {
+      flex: 0 0 auto;
+      scroll-snap-align: center;
+    }
+  }
+
+  .imageContainer {
+    min-width: 300px; // Set minimum width for the cards when scrolling
+  }
+}
+
+// For larger screens: grid of 4 columns
+@media (min-width: 768px) {
+  .scrollableRow {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
