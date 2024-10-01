@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Carousel = () => (
+const CarouselWidget = () => (
     <div className="column">
 
     </div>
 );
 
-export default Carousel;
+export default CarouselWidget;
