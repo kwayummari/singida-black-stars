@@ -10,6 +10,12 @@ const CarouselWidget = () => (
                     alt="Picture of the logo"
                     className={styles.carouselImage}
                 />
+                <div className={styles.imageText}>
+                    <p>Preview | CCM KIRUMBA</p>
+                </div>
+                <div className={styles.imageTextBelow}>
+                    <p>Club News | 9 hours ago</p>
+                </div>
             </div>
         </div>
     </div>
