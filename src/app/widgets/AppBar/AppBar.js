@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import styles from '../../../styles/appBar.module.scss';
 import SearchSideBar from './SearchSideBar';
 import LoginSideBar from './LoginSideBar';
+import BottomSheetBar from './BottomSheet';
 
 const AppBar = () => {
   const [isSearchSidebarOpen, setIsSearchSidebarOpen] = useState(false);
@@ -98,12 +99,9 @@ const AppBar = () => {
         style={{ height: '84%', maxHeight: '100%', width: '100%' }}
       >
         <div className="offcanvas-header">
-          <h5 className="offcanvas-title">Bottom Sheet</h5>
           <button type="button" className="btn-close" onClick={toggleBottomSheet}></button>
         </div>
-        <div className="offcanvas-body">
-          <p>Bottom Sheet Content</p>
-        </div>
+        <BottomSheetBar />
       </div>
     </header>
   );
