@@ -9,12 +9,17 @@
   width: 50%;
 }
 .logo {
-  height: 150px;
+  height: 100px;
   width: 150px;
 }
 .paragraph {
+    padding: 0;
     color: #ffffff !important;
     font-weight: 900;
     justify-content: center;
     text-align: center;
 }
+.sponsor {
+    height: 100px;
+    width: 200px;
+  }
