@@ -96,7 +96,7 @@ const AppBar = () => {
         ref={bottomSheetRef}
         className={`offcanvas offcanvas-bottom ${isBottomSheetOpen ? 'show' : ''}`}
         tabIndex="-1"
-        style={{ height: '84%', maxHeight: '100%', width: '100%' }}
+        style={{ height: '84%', maxHeight: '100%', width: '100%', backgroundColor: '#0b7a3f' }}
       >
         <div className="offcanvas-header">
           <button type="button" className="btn-close" onClick={toggleBottomSheet}></button>
