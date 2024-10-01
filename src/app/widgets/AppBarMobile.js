@@ -54,12 +54,17 @@ const AppBarMobile = () => {
         </div>
       </div>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <img
-            src="/images/logo.png"
-            className={styles.logo}
-            alt="Picture of the author"
-          />
-        <div>
+        <img
+          src="/images/logo.png"
+          className={styles.logo}
+          alt="Picture of the author"
+        />
+        <div className={`${styles.supportMenu}`}>
+          <i className="bi bi-search p-3" onClick={toggleSearchSidebar}></i>
+          <i className="bi bi-list p-3" onClick={toggleBottomSheet}></i>
+        </div>
+      </div>
+      <div>
           <div
             ref={searchSidebarRef}
             className={`offcanvas offcanvas-end overlay ${isSearchSidebarOpen ? 'show' : ''}`}
@@ -91,7 +96,6 @@ const AppBarMobile = () => {
             </div>
           </div>
         </div>
-      </div>
     </header>
   );
 };
