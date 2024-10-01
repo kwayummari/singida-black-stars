@@ -99,7 +99,7 @@ const AppBar = () => {
         style={{ height: '84%', maxHeight: '100%', width: '100%', backgroundColor: '#0b7a3f' }}
       >
         <div className="offcanvas-header">
-          <button type="button" className="btn-close" onClick={toggleBottomSheet}></button>
+          <button type="button" className="btn-close btn-close-white" onClick={toggleBottomSheet}></button>
         </div>
         <BottomSheetBar />
       </div>
