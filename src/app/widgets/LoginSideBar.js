@@ -3,7 +3,7 @@ import Image from 'next/image';
 import styles from '../../styles/appBar.module.scss';
 
 const LoginSideBar = ({ toggleLoginSidebar }) => (
-    <div>
+    <div style={{scrollBehavior: 'smooth', overflow: 'scroll'}}>
         <div className={styles.LoginSearch}>
             <div className={styles.topperSearch}>
                 <h5 className={styles.title}>Register</h5>
