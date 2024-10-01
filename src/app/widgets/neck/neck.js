@@ -5,9 +5,9 @@ const Neck = () => (
     <div className="container">
         <div className={`${styles.scrollableRow} row`}>
             <div className="col-12 col-md-3">
-                <div className={`${styles.imageContainer} card p-2`}>
+                <div className={`${styles.imageContainer} card`}>
                     <img
-                        src="/images/carousel.png"
+                        src="/images/jkt.png"
                         alt="Picture of the logo"
                         className={styles.carouselImage}
                     />
@@ -20,7 +20,7 @@ const Neck = () => (
                 </div>
             </div>
             <div className="col-12 col-md-3">
-                <div className={`${styles.imageContainer} card p-2`}>
+                <div className={`${styles.imageContainer} card`}>
                     <img
                         src="/images/carousel.png"
                         alt="Picture of the logo"
@@ -35,7 +35,7 @@ const Neck = () => (
                 </div>
             </div>
             <div className="col-12 col-md-3">
-                <div className={`${styles.imageContainer} card p-2`}>
+                <div className={`${styles.imageContainer} card`}>
                     <img
                         src="/images/carousel.png"
                         alt="Picture of the logo"
@@ -50,7 +50,7 @@ const Neck = () => (
                 </div>
             </div>
             <div className="col-12 col-md-3">
-                <div className={`${styles.imageContainer} card p-2`}>
+                <div className={`${styles.imageContainer} card`}>
                     <img
                         src="/images/carousel.png"
                         alt="Picture of the logo"

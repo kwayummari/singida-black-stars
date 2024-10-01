@@ -1,6 +1,8 @@
 .imageContainer {
   position: relative;
   overflow: hidden;
+  height: 200px;
+  width: 100%;
 }
 
 .carouselImage {
@@ -40,8 +42,38 @@
 
 @media (max-width: 768px) {
   .scrollableRow {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    overflow-x: visible;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+
   }
+  .imageContainer {
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    height: 200px;
+    width: 80%;
+  }
+  .carouselImage {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .imageText {
+    position: absolute;
+    bottom: 30px;
+    left: 20px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .imageTextBelow {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    color: white;
+    font-size: 14px;
+  }
+  
 }

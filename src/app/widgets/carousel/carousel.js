@@ -3,8 +3,8 @@ import styles from '../../../styles/carousel.module.scss';
 
 const CarouselWidget = () => (
     <div className="column">
-        <div className={`row-md-6 row-sm-6`}>
-            <div className={`${styles.imageContainer} p-2`}>
+        <div className={`${styles.row} row-md-6 row-sm-6 `}>
+            <div className={`${styles.imageContainer}`}>
                 <img
                     src="/images/carousel.png"
                     alt="Picture of the logo"

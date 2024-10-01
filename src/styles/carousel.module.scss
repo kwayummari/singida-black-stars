@@ -1,3 +1,7 @@
+.row {
+  padding-left: 50px;
+  padding-right: 50px;
+}
 .carouselImage {
   object-fit: cover;
   border-radius: 30px;
@@ -45,6 +49,9 @@
 }
 
 @media only screen and (max-width: 1024px) {
+  .row {
+    padding: 0;
+  }
   .carouselImage {
     object-fit: cover;
     border-radius: 15px;
