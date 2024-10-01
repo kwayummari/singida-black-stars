@@ -31,7 +31,7 @@ const BottomSheetBar = () => (
             <div className="col-md-3 col-sm-6 col-12 mb-3">
                 <div className="card">
                     <div className="card-body">
-                        <h5 className="card-title">Commercial</h5>
+                        <h5 className={`${styles.headings} card-title`}>Commercial</h5>
                         <p className="card-text">Match Sponsorship</p>
                         <p className="card-text">Commercial Partners</p>
                         <p className="card-text">BlackStars Magazines</p>
@@ -42,7 +42,7 @@ const BottomSheetBar = () => (
             <div className="col-md-3 col-sm-6 col-12 mb-3">
                 <div className="card">
                     <div className="card-body">
-                        <h5 className="card-title">Community</h5>
+                        <h5 className={`${styles.headings} card-title`}>Community</h5>
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@ const BottomSheetBar = () => (
             <div className="col-md-3 col-sm-6 col-12 mb-3">
                 <div className="card">
                     <div className="card-body">
-                        <h5 className="card-title">Tickets</h5>
+                        <h5 className={`${styles.headings} card-title`}>Tickets</h5>
                         <p className="card-text">Home Tickets</p>
                         <p className="card-text">Visitors Guide</p>
                         <p className="card-text">Junior Team Experiences Mascots</p>
