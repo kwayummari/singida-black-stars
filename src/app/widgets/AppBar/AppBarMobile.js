@@ -66,34 +66,34 @@ const AppBarMobile = () => {
         </div>
       </div>
       <div>
-          <div
-            ref={searchSidebarRef}
-            className={`offcanvas offcanvas-end overlay ${isSearchSidebarOpen ? 'show' : ''}`}
-            tabIndex="-1"
-            style={{ width: '400px' }}
-          >
-            <SearchSideBar toggleSearchSidebar={toggleSearchSidebar} />
-          </div>
-          <div
-            ref={loginSidebarRef}
-            className={`offcanvas offcanvas-end overlay ${isLoginSidebarOpen ? 'show' : ''}`}
-            tabIndex="-1"
-            style={{ width: '400px' }}
-          >
-            <LoginSideBar toggleLoginSidebar={toggleLoginSidebar} />
-          </div>
-          <div
-            ref={bottomSheetRef}
-            className={`offcanvas offcanvas-bottom ${isBottomSheetOpen ? 'show' : ''}`}
-            tabIndex="-1"
-            style={{ height: '84%', maxHeight: '100%', width: '100%', backgroundColor: '#0b7a3f' }}
-          >
-            <div className="offcanvas-header">
-              <button type="button" className="btn-close btn-close-white" onClick={toggleBottomSheet}></button>
-            </div>
-            <BottomSheetBar />
-          </div>
+        <div
+          ref={searchSidebarRef}
+          className={`offcanvas offcanvas-end overlay ${isSearchSidebarOpen ? 'show' : ''}`}
+          tabIndex="-1"
+          style={{ width: '400px' }}
+        >
+          <SearchSideBar toggleSearchSidebar={toggleSearchSidebar} />
         </div>
+        <div
+          ref={loginSidebarRef}
+          className={`offcanvas offcanvas-end overlay ${isLoginSidebarOpen ? 'show' : ''}`}
+          tabIndex="-1"
+          style={{ width: '400px' }}
+        >
+          <LoginSideBar toggleLoginSidebar={toggleLoginSidebar} />
+        </div>
+        <div
+          ref={bottomSheetRef}
+          className={`offcanvas offcanvas-bottom ${isBottomSheetOpen ? 'show' : ''}`}
+          tabIndex="-1"
+          style={{ height: '84%', maxHeight: '100%', width: '100%', backgroundColor: '#0b7a3f', scrollBehavior: 'smooth', overflow: 'scroll' }}
+        >
+          <div className="offcanvas-header">
+            <button type="button" className="btn-close btn-close-white" onClick={toggleBottomSheet}></button>
+          </div>
+          <BottomSheetBar />
+        </div>
+      </div>
     </header>
   );
 };

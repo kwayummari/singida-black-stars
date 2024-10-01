@@ -7,8 +7,10 @@ const BottomSheetBar = () => (
             <div className="col-md-3 col-sm-6 col-12 mb-3">
                 <div className="card">
                     <div className="card-body">
-                        <h5 className={`${styles.paragraph} card-title`}>News</h5>
-                        <p className="card-text">This is a description for item 1.</p>
+                        <h5 className={`${styles.headings} card-title`}>News</h5>
+                        <h5 className={`${styles.headings} card-title`}>Matches</h5>
+                        <h5 className={`${styles.headings} card-title`}>Teams</h5>
+                        <h5 className={`${styles.headings} card-title`}>IFollow</h5>
                     </div>
                 </div>
             </div>
@@ -16,8 +18,12 @@ const BottomSheetBar = () => (
             <div className="col-md-3 col-sm-6 col-12 mb-3">
                 <div className="card">
                     <div className="card-body">
-                        <h5 className="card-title">Club</h5>
-                        <p className="card-text">This is a description for item 2.</p>
+                        <h5 className={`${styles.headings} card-title`}>Club</h5>
+                        <p className="card-text">Club Charter</p>
+                        <p className="card-text">Club History</p>
+                        <p className="card-text">Fan Engagement Plan</p>
+                        <p className="card-text">Club Information Contacts</p>
+                        <p className="card-text">Ownership Statement</p>
                     </div>
                 </div>
             </div>
@@ -26,7 +32,9 @@ const BottomSheetBar = () => (
                 <div className="card">
                     <div className="card-body">
                         <h5 className="card-title">Commercial</h5>
-                        <p className="card-text">This is a description for item 3.</p>
+                        <p className="card-text">Match Sponsorship</p>
+                        <p className="card-text">Commercial Partners</p>
+                        <p className="card-text">BlackStars Magazines</p>
                     </div>
                 </div>
             </div>
@@ -35,7 +43,6 @@ const BottomSheetBar = () => (
                 <div className="card">
                     <div className="card-body">
                         <h5 className="card-title">Community</h5>
-                        <p className="card-text">This is a description for item 4.</p>
                     </div>
                 </div>
             </div>
@@ -44,7 +51,14 @@ const BottomSheetBar = () => (
                 <div className="card">
                     <div className="card-body">
                         <h5 className="card-title">Tickets</h5>
-                        <p className="card-text">This is a description for item 4.</p>
+                        <p className="card-text">Home Tickets</p>
+                        <p className="card-text">Visitors Guide</p>
+                        <p className="card-text">Junior Team Experiences Mascots</p>
+                        <p className="card-text">Season Tickets</p>
+                        <p className="card-text">Stadium Map</p>
+                        <p className="card-text">Family Stand</p>
+                        <p className="card-text">Hospitality Tickets</p>
+                        <p className="card-text">Away Tickets</p>
                     </div>
                 </div>
             </div>
