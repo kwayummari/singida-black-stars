@@ -6,7 +6,14 @@ const Footer = () => (
     <div className="column">
       <div className={`${styles.topFooter} row-md-6 row-sm-6`}>
         <div className={`${styles.topFooter} card`}>
-          <div className="card-body">
+          <div className="card-body d-flex">
+              <hr className={styles.lines} />
+              <img
+                src="/images/logo.png"
+                className={styles.logo}
+                alt="Picture of the author"
+              />
+              <hr className={styles.lines} />
           </div>
         </div>
       </div>
