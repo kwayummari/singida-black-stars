@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import styles from '../../styles/appBar.module.scss';
+import styles from '../../../styles/appBar.module.scss';
 
 const LoginSideBar = ({ toggleLoginSidebar }) => (
     <div style={{scrollBehavior: 'smooth', overflow: 'scroll'}}>

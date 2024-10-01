@@ -1,6 +1,6 @@
 "use client"
 import React, { useState, useEffect, useRef } from 'react';
-import styles from '../../styles/appBarMobile.module.scss';
+import styles from '../../../styles/appBarMobile.module.scss';
 import SearchSideBar from './SearchSideBar';
 import LoginSideBar from './LoginSideBar';
 

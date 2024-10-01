@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import AppBar from './widgets/AppBar';
-import AppBarMobile from './widgets/AppBarMobile';
+import AppBar from './widgets/AppBar/AppBar';
+import AppBarMobile from './widgets/AppBar/AppBarMobile';
 
 export default function ClientWrapper({ children }) {
   const [isMobile, setIsMobile] = useState(false);
