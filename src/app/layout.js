@@ -2,7 +2,7 @@ import localFont from "next/font/local";
 import '../styles/globals.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import Footer from './widgets/Footer';
+import Footer from './widgets/Footer/Footer';
 import ClientWrapper from "./ClientWrapper";
 
 // Font imports
