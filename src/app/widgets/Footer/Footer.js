@@ -19,17 +19,39 @@ const Footer = () => (
             <p className={`${styles.paragraph} m-0`}>Principal Partner</p>
             <img
               src="/images/sponsor.png"
-              className={`${styles.sponsor} mx-auto d-block`}
+              className={`${styles.MainSponsor} mx-auto d-block`}
               alt="Picture of the sponsor"
             />
             <p className={`${styles.paragraph} m-0`}>Club Partners</p>
+            <div className={`${styles.sponsors} col-md-2 col-sm-2 mx-auto d-flex`} >
+              <img
+                src="/images/cocacola.png"
+                className={`${styles.sponsorLogo} mx-auto d-block`}
+                alt="Picture of the sponsor"
+              />
+              <img
+                src="/images/vodacom.png"
+                className={`${styles.sponsorLogo} mx-auto d-block`}
+                alt="Picture of the sponsor"
+              />
+              <img
+                src="/images/gsm.png"
+                className={`${styles.sponsorLogo} mx-auto d-block`}
+                alt="Picture of the sponsor"
+              />
+              <img
+                src="/images/sportpesa.png"
+                className={`${styles.sponsorLogo} mx-auto d-block`}
+                alt="Picture of the sponsor"
+              />
+            </div>
           </div>
         </div>
       </div>
       <div className={`${styles.bottomFooter} row-md-6 row-sm-6`}>
         <div className={`${styles.bottomFooter} card`}>
           <div className="card-body">
-          
+
           </div>
         </div>
       </div>

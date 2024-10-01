@@ -13,13 +13,23 @@
   width: 150px;
 }
 .paragraph {
-    padding: 0;
-    color: #ffffff !important;
-    font-weight: 900;
-    justify-content: center;
-    text-align: center;
+  padding: 0;
+  color: #ffffff !important;
+  font-weight: 900;
+  justify-content: center;
+  text-align: center;
 }
-.sponsor {
-    height: 100px;
-    width: 200px;
-  }
+.MainSponsor {
+  height: 100px;
+  width: 200px;
+}
+.sponsorLogo {
+    padding: 10px;
+  height: 50px;
+  width: 100px;
+}
+.sponsors {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
