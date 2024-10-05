@@ -15,7 +15,6 @@ const League = () => {
   const singidaRowRef = useRef(null);
 
   useEffect(() => {
-    // Scroll to Singida Black Stars row when the component mounts
     if (singidaRowRef.current) {
       singidaRowRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
@@ -26,7 +25,7 @@ const League = () => {
       <table className={styles.table}>
         <thead>
           <tr>
-            <th>#</th>
+            <th><img src="/images/nbc.png" alt="NBC Premier League" className={styles.leagueLogo} /></th>
             <th>Teams</th>
             <th>P</th>
             <th>Gd</th>

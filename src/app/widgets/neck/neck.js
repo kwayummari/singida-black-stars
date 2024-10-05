@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from '../../../styles/neck.module.scss';
 import League from '../League/league';
+import NextMatch from '../NextMatch/NextMatch';
 
 const Neck = () => (
     <div className="container">
@@ -43,17 +44,7 @@ const Neck = () => (
             </div>
             <div className="col-12 col-md-3">
                 <div className={`${styles.imageContainer} card`}>
-                    <img
-                        src="/images/carousel.png"
-                        alt="Picture of the logo"
-                        className={styles.carouselImage}
-                    />
-                    <div className={styles.imageText}>
-                        <p>Preview | KIRUMBA</p>
-                    </div>
-                    <div className={styles.imageTextBelow}>
-                        <p>Club News | 9 hours ago</p>
-                    </div>
+                    <NextMatch />
                 </div>
             </div>
         </div>
