@@ -32,6 +32,7 @@
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
+  padding-bottom: 30px;
 
   .col {
     flex: 0 0 auto;

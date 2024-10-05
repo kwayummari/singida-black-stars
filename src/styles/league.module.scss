@@ -13,6 +13,14 @@
       text-align: left;
       border-bottom: 1px solid #ddd;
     }
+
+    thead th {
+      position: sticky;
+      top: 0;
+      background-color: white;
+      border-bottom: solid 0.5px #060606;
+      z-index: 1;
+    }
   }
   
   .teamInfo {

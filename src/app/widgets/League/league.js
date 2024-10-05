@@ -2,13 +2,13 @@ import React, { useEffect, useRef } from 'react';
 import styles from '../../../styles/league.module.scss';
 
 const teamsData = [
-  { logo: '/images/yanga.png', name: 'Team 1', p: 5, gd: 8, pts: 12 },
-  { logo: '/images/simba.png', name: 'Team 2', p: 5, gd: 6, pts: 10 },
-  { logo: '/images/azam.webp', name: 'Team 3', p: 5, gd: 5, pts: 9 },
-  { logo: '/images/coastal.png', name: 'Team 4', p: 5, gd: 4, pts: 8 },
+  { logo: '/images/yanga.png', name: 'Yanga', p: 5, gd: 8, pts: 12 },
+  { logo: '/images/simba.png', name: 'Simba', p: 5, gd: 6, pts: 10 },
+  { logo: '/images/azam.webp', name: 'Azam', p: 5, gd: 5, pts: 9 },
+  { logo: '/images/coastal.png', name: 'Coastal Union', p: 5, gd: 4, pts: 8 },
   { logo: '/images/logo.png', name: 'Singida Black Stars', p: 5, gd: 7, pts: 11 }, // Special row
-  { logo: '/images/fountain.jpg', name: 'Team 5', p: 5, gd: 3, pts: 7 },
-  { logo: '/images/pamba.png', name: 'Team 6', p: 5, gd: 2, pts: 6 }
+  { logo: '/images/fountain.jpg', name: 'Fountain Gates', p: 5, gd: 3, pts: 7 },
+  { logo: '/images/pamba.png', name: 'Pamba Jiji', p: 5, gd: 2, pts: 6 }
 ];
 
 const League = () => {
