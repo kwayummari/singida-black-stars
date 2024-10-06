@@ -3,7 +3,7 @@ import React from 'react';
 import styles from '../../../styles/MainSponsor.module.scss';
 
 const MainSponsor = () => (
-    <div className={`${styles.container} card mb-4 mt-5`}>
+    <div className={`${styles.container} card mb-4 mt-5 rounded-0`}>
         <div className={`${styles.row} row`}>
             <div className="col-6">
                 <div className={`card ${styles.card}`}>
