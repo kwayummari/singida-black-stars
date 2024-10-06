@@ -5,7 +5,7 @@ import styles from '../../../styles/MainSponsor.module.scss';
 const MainSponsorMobile = () => (
     <div className={`${styles.container} card mb-4 mt-5`}>
         <div className={`column`}>
-            <div className="col-6">
+            <div className="row-12">
                 <div className={`card ${styles.card}`}>
                     <div className={styles.logos}>
                         <img
@@ -25,7 +25,7 @@ const MainSponsorMobile = () => (
                     </div>
                 </div>
             </div>
-            <div className="col-6">
+            <div className="row-12">
                 <div className={`card ${styles.card}`}>
                     <img
                         src="/images/jersey.png"
