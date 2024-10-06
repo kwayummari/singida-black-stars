@@ -2,17 +2,30 @@
   padding: 50px;
   background-image: url("../../public/images/background.png");
 }
+.card {
+  height: 400px;
+}
 .logos {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
 }
-
 .vl {
-  border-left: 6px solid green;
-  height: 50px;
+  border-left: 2px solid black;
+  height: 100px;
 }
-
+.sponsorLogo {
+  width: 40%;
+}
 .teamLogo {
   width: 50%;
+}
+.sponsorText {
+  padding-top: 40px;
+  padding-bottom: 30px;
+  padding-left: 20px;
 }
 .jersey {
   width: 50%;

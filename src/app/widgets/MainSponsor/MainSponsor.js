@@ -6,14 +6,14 @@ const MainSponsor = () => (
     <div className={`${styles.container} card mb-4 mt-5`}>
         <div className={`row`}>
             <div className="col-6">
-                <div className={`card`}>
+                <div className={`card ${styles.card}`}>
                     <div className={styles.logos}>
                         <img
-                            src="/images/pmBet.svg"
+                            src="/images/pmBet.jpg"
                             alt="Picture of the logo"
                             className={styles.sponsorLogo}
                         />
-                        {/* <div class="vl"></div> */}
+                        <div class="vl"></div>
                         <img
                             src="/images/logo.png"
                             alt="Picture of the logo"
@@ -21,12 +21,12 @@ const MainSponsor = () => (
                         />
                     </div>
                     <div>
-                        <h5>OFFICIAL TECHNICAL SPONSOR</h5>
+                        <h5 className={styles.sponsorText}>OFFICIAL TECHNICAL SPONSOR</h5>
                     </div>
                 </div>
             </div>
             <div className="col-6">
-                <div className={`card`}>
+                <div className={`card ${styles.card}`}>
                     <img
                         src="/images/jersey.png"
                         alt="Picture of the logo"
