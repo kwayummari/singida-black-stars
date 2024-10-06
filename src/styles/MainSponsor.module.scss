@@ -22,7 +22,7 @@
   width: 40%;
 }
 .teamLogo {
-  width: 50%;
+  width: 40%;
 }
 .sponsorText {
   padding-top: 10px;
@@ -45,7 +45,7 @@
 
 @media only screen and (max-width: 1024px) {
   .container {
-    padding: 50px;
+    padding: 30px;
     background-image: url("../../public/images/background.png");
   }
   .row {
@@ -56,6 +56,8 @@
   .card {
     height: 300px;
     width: 100%;
+    margin-bottom: 20px;
+    padding: 30px;
   }
   .logos {
     display: flex;
@@ -67,11 +69,11 @@
     margin-right: auto;
   }
   .vl {
-    border-left: 8px solid black;
-    height: 200px;
+    border-left: 5px solid black;
+    height: 100px;
   }
   .sponsorLogo {
-    width: 40%;
+    width: 50%;
   }
   .teamLogo {
     width: 50%;
