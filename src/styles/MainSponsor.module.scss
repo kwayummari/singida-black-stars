@@ -1,0 +1,28 @@
+.container {
+  padding: 50px;
+  background-image: url("../../public/images/background.png");
+}
+.logos {
+  display: flex;
+}
+
+.vl {
+  border-left: 6px solid green;
+  height: 50px;
+}
+
+.teamLogo {
+  width: 50%;
+}
+.jersey {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.jerseyText {
+  padding-left: 20px;
+}
+.price {
+  padding-left: 20px;
+  font-weight: bold;
+}

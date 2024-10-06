@@ -1,37 +1,40 @@
 "use client"
 import React from 'react';
-import styles from '../../../styles/homePageNews.module.scss';
+import styles from '../../../styles/MainSponsor.module.scss';
 
 const MainSponsor = () => (
-    <div className="container">
-        <div className={`${styles.scrollableRow} row`}>
-            <div className="col-6 col-md-3">
-                <div className={`${styles.imageContainer} card`}>
-                    <img
-                        src="/images/pmBet.svg"
-                        alt="Picture of the logo"
-                        className={styles.carouselImage}
-                    />
-                    <div className={styles.imageText}>
-                        <p>Report | SINGIDA BIG STARS 1-1 JKT</p>
+    <div className={`${styles.container} card mb-4 mt-5`}>
+        <div className={`row`}>
+            <div className="col-6">
+                <div className={`card`}>
+                    <div className={styles.logos}>
+                        <img
+                            src="/images/pmBet.svg"
+                            alt="Picture of the logo"
+                            className={styles.sponsorLogo}
+                        />
+                        {/* <div class="vl"></div> */}
+                        <img
+                            src="/images/logo.png"
+                            alt="Picture of the logo"
+                            className={styles.teamLogo}
+                        />
                     </div>
-                    <div className={styles.imageTextBelow}>
-                        <p>Match Reports | 2 days ago</p>
+                    <div>
+                        <h5>OFFICIAL TECHNICAL SPONSOR</h5>
                     </div>
                 </div>
             </div>
-            <div className="col-6 col-md-3">
-                <div className={`${styles.imageContainer} card`}>
+            <div className="col-6">
+                <div className={`card`}>
                     <img
                         src="/images/jersey.png"
                         alt="Picture of the logo"
-                        className={styles.carouselImage}
+                        className={styles.jersey}
                     />
-                    <div className={styles.imageText}>
-                        <p>Report | SINGIDA BIG STARS 1-1 JKT</p>
-                    </div>
-                    <div className={styles.imageTextBelow}>
-                        <p>Match Reports | 2 days ago</p>
+                    <div>
+                        <h5 className={styles.jerseyText}>2024/25 Home Shirt (Adult)</h5>
+                        <h5 className={styles.price}>Tsh 50,000</h5>
                     </div>
                 </div>
             </div>
