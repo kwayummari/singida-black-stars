@@ -4,6 +4,7 @@ import styles from '../../../styles/appBarMobile.module.scss';
 import SearchSideBar from './SearchSideBar';
 import LoginSideBar from './LoginSideBar';
 import BottomSheetBar from './BottomSheet';
+import Link from 'next/link';
 
 const AppBarMobile = () => {
   const [isSearchSidebarOpen, setIsSearchSidebarOpen] = useState(false);

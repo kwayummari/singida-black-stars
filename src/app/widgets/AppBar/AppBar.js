@@ -4,6 +4,7 @@ import styles from '../../../styles/appBar.module.scss';
 import SearchSideBar from './SearchSideBar';
 import LoginSideBar from './LoginSideBar';
 import BottomSheetBar from './BottomSheet';
+import Link from 'next/link';
 
 const AppBar = () => {
   const [isSearchSidebarOpen, setIsSearchSidebarOpen] = useState(false);
@@ -64,7 +65,9 @@ const AppBar = () => {
           <div className={`${styles.bottomMenus}`}>
             <div></div>
             <div className={`${styles.responsiveMenu}`}>
-              <p className={`${styles.bottomParagraph} m-0`}>NEWS</p>
+              <Link href="/news" passHref>
+                <p className={`${styles.bottomParagraph} m-0`} style={{ cursor: "pointer" }}>NEWS</p>
+              </Link>
               <p className={`${styles.bottomParagraph} m-0`}> MATCHES</p>
               <p className={`${styles.bottomParagraph} m-0`}> TEAMS</p>
               <p className={`${styles.bottomParagraph} m-0`}> IFOLLOW</p>

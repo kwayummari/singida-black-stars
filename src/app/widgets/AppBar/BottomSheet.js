@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../../../styles/bottomSheet.module.scss';
+import Link from 'next/link';
 
 const BottomSheetBar = () => (
     <div className={`${styles.BottomSheetBar} container mt-4`} >
@@ -7,7 +8,9 @@ const BottomSheetBar = () => (
             <div className="col-md-3 col-sm-6 col-12 mb-3">
                 <div className="card">
                     <div className="card-body">
-                        <h5 className={`${styles.headings} card-title`}>News</h5>
+                        <Link href="/news" passHref>
+                            <h5 className={`${styles.headings} card-title`}>News</h5>
+                        </Link>
                         <h5 className={`${styles.headings} card-title`}>Matches</h5>
                         <h5 className={`${styles.headings} card-title`}>Teams</h5>
                         <h5 className={`${styles.headings} card-title`}>IFollow</h5>
