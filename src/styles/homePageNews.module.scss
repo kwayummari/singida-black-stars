@@ -1,0 +1,36 @@
+.newsTabs {
+    .tabNavigation {
+      display: flex;
+      gap: 20px;
+    }
+  
+    .tabButton {
+      padding: 10px 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+      position: relative;
+      transition: color 0.3s ease;
+  
+      &:hover {
+        color: grey;
+      }
+  
+      &.active::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: black;
+      }
+    }
+  
+    .tabContent {
+      margin-top: 20px;
+    }
+  }
+  
