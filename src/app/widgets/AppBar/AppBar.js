@@ -64,10 +64,10 @@ const AppBar = () => {
           <div className={`${styles.bottomMenus}`}>
             <div></div>
             <div className={`${styles.responsiveMenu}`}>
-              <p className={`${styles.bottomParagraph} m-0`}>CLUB SITE</p>
-              <p className={`${styles.bottomParagraph} m-0`}> TICKETS</p>
-              <p className={`${styles.bottomParagraph} m-0`}> STORE</p>
-              <p className={`${styles.bottomParagraph} m-0`}> APP</p>
+              <p className={`${styles.bottomParagraph} m-0`}>NEWS</p>
+              <p className={`${styles.bottomParagraph} m-0`}> MATCHES</p>
+              <p className={`${styles.bottomParagraph} m-0`}> TEAMS</p>
+              <p className={`${styles.bottomParagraph} m-0`}> IFOLLOW</p>
             </div>
             <div className={`${styles.supportMenu}`}>
               <i className="bi bi-search p-3" onClick={toggleSearchSidebar}></i>
