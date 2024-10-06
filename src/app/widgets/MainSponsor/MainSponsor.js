@@ -13,7 +13,7 @@ const MainSponsor = () => (
                             alt="Picture of the logo"
                             className={styles.sponsorLogo}
                         />
-                        <div class="vl"></div>
+                        <div class={styles.vl}></div>
                         <img
                             src="/images/logo.png"
                             alt="Picture of the logo"
