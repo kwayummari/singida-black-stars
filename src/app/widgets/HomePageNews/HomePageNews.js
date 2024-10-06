@@ -26,19 +26,19 @@ const HomePageNews = () => {
     <div className={styles.newsTabs}>
       <div className={styles.tabNavigation}>
         <button
-          className={`${styles.tabButton} ${activeTab === 'LatestNews' ? 'active' : ''}`}
+          className={`${styles.tabButton} ${activeTab === 'LatestNews' ? styles.active : ''}`}
           onClick={() => setActiveTab('LatestNews')}
         >
           Latest News
         </button>
         <button
-          className={`${styles.tabButton} ${activeTab === 'PlayerNews' ? 'active' : ''}`}
+          className={`${styles.tabButton} ${activeTab === 'PlayerNews' ? styles.active : ''}`}
           onClick={() => setActiveTab('PlayerNews')}
         >
           Player News
         </button>
         <button
-          className={`${styles.tabButton} ${activeTab === 'Commercial' ? 'active' : ''}`}
+          className={`${styles.tabButton} ${activeTab === 'Commercial' ? styles.active : ''}`}
           onClick={() => setActiveTab('Commercial')}
         >
           Commercial
