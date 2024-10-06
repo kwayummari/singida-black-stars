@@ -42,3 +42,56 @@
   padding-left: 20px;
   font-weight: bold;
 }
+
+@media only screen and (max-width: 1024px) {
+  .container {
+    padding: 50px;
+    background-image: url("../../public/images/background.png");
+  }
+  .row {
+    display: block !important;
+    justify-content: center;
+    align-items: center;
+  }
+  .card {
+    // height: 200px;
+    width: 100%;
+  }
+  .logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .vl {
+    border-left: 8px solid black;
+    height: 200px;
+  }
+  .sponsorLogo {
+    width: 40%;
+  }
+  .teamLogo {
+    width: 50%;
+  }
+  .sponsorText {
+    padding-top: 10px;
+    padding-bottom: 30px;
+    padding-left: 20px;
+    font-size: 20px;
+  }
+  .jersey {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .jerseyText {
+    padding-left: 20px;
+  }
+  .price {
+    padding-left: 20px;
+    font-weight: bold;
+  }
+}
