@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-import styles from '../../../styles/LatestNews.module.scss';
+import styles from '../../../styles/homePageNews.module.scss';
 
 const LatestNews = () => (
     <div className="container">

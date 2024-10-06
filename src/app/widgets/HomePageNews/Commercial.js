@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-import styles from '../../../styles/Commercial.module.scss';
+import styles from '../../../styles/homePageNews.module.scss';
 
 const Commercial = () => (
     <div className="container">

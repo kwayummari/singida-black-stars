@@ -10,14 +10,14 @@
       background: none;
       border: none;
       cursor: pointer;
-      color: #8a8a8a;
+      color: #000000;
       font-size: 18px;
       font-weight: bold;
       position: relative;
       transition: color 0.3s ease;
   
       &:hover {
-        color: grey;
+        color: #006931;
       }
   
       &.active::after {
@@ -27,6 +27,7 @@
         left: 0;
         width: 100%;
         height: 2px;
+        color: #006931;
         background-color: black;
       }
     }
@@ -35,4 +36,87 @@
       margin-top: 20px;
     }
   }
+
+  .imageContainer {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+    width: 100%;
+  }
+  
+  .carouselImage {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .imageText {
+    position: absolute;
+    bottom: 30px;
+    left: 20px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .imageTextBelow {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    color: white;
+    font-size: 14px;
+  }
+  
+  .scrollableRow {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 30px;
+  
+    .col {
+      flex: 0 0 auto;
+      scroll-snap-align: center;
+      width: 300px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .scrollableRow {
+      flex-wrap: nowrap;
+      overflow-x: scroll;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+    }
+    .imageContainer {
+      overflow: hidden;
+      position: relative;
+      padding: 0;
+      margin: 0;
+      height: 200px;
+      width: 100%;
+    }
+    .carouselImage {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+    .imageText {
+      position: absolute;
+      bottom: 30px;
+      left: 20px;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .imageTextBelow {
+      position: absolute;
+      bottom: 10px;
+      left: 20px;
+      color: white;
+      font-size: 14px;
+    }
+    
+  }
+  
   
