@@ -24,7 +24,7 @@ export default function Home() {
     <div className={styles.page}>
       <CarouselWidget />
       <Neck />
-      <HomePageNews />
+      <HomePageNews LatestNewsNo='4' PlayerNewsNo='4' CommercialNo='4' />
       {isMobile ? <MainSponsorMobile /> : <MainSponsor />}
     </div>
   );

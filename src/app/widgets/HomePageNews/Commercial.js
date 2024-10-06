@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from '../../../styles/homePageNews.module.scss';
 
-const Commercial = () => (
+const Commercial = ({CommercialNo}) => (
     <div className="container">
         <div className={`${styles.scrollableRow} row`}>
             

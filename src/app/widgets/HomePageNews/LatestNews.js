@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from '../../../styles/homePageNews.module.scss';
 
-const LatestNews = () => (
+const LatestNews = ({LatestNewsNo}) => (
     <div className="container">
         <div className={`${styles.scrollableRow} row`}>
             <div className="col-12 col-md-3">

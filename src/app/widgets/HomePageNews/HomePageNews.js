@@ -6,17 +6,17 @@ import PlayerNews from './PlayersNews';
 import Commercial from './Commercial';
 
 
-const HomePageNews = () => {
+const HomePageNews = ({LatestNewsNo,PlayerNewsNo, CommercialNo}) => {
   const [activeTab, setActiveTab] = useState('LatestNews');
 
   const renderTabContent = () => {
     switch (activeTab) {
       case 'LatestNews':
-        return <LatestNews />;
+            return <LatestNews LatestNewsNo={LatestNewsNo} />;
       case 'PlayerNews':
-        return <PlayerNews />;
+        return <PlayerNews PlayerNewsNo={PlayerNewsNo}/>;
       case 'Commercial':
-        return <Commercial />;
+        return <Commercial CommercialNo={CommercialNo}/>;
       default:
         return <LatestNews />;
     }
