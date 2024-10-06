@@ -2,13 +2,15 @@
     .tabNavigation {
       display: flex;
       gap: 20px;
+      padding-left: 180px;
     }
   
     .tabButton {
-      padding: 10px 20px;
+      padding: 10px 10px;
       background: none;
       border: none;
       cursor: pointer;
+      color: #8a8a8a;
       font-size: 18px;
       font-weight: bold;
       position: relative;
