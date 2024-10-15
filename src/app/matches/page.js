@@ -2,6 +2,7 @@
 import PageNeck from "../widgets/neck/pageNeck";
 import styles from '../../styles/Matches.module.scss';
 import FullLeague from "../widgets/League/FullLeague";
+import AllMatches from "./AllMatches";
 
 export default function News() {
   return (
@@ -17,6 +18,7 @@ export default function News() {
         <p className={styles.tabHeader}>Table</p>
       </div>
       <FullLeague />
+      <AllMatches />
     </div>
   );
 }

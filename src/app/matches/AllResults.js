@@ -1,6 +1,6 @@
 "use client";
 import React from 'react';
-import styles from "../../styles/AllMatches.module.scss";
+import styles from "../../styles/AllResults.module.scss";
 
 const AllMatches = () => {
     return (

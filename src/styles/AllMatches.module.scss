@@ -1,0 +1,30 @@
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+  }
+}
+
+.part1,
+.part2 {
+  padding: 20px;
+}
+
+.part1 {
+  background-color: #f4f4f4;
+  display: flex;
+  
+  .leagueLogo {
+    width: 40px;
+    height: auto;
+  }
+}
+
+.part2 {
+  background-color: #ffffff;
+}
+
+@media (max-width: 768px) {
+}
