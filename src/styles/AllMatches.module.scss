@@ -15,10 +15,10 @@
 .part1 {
   background-color: #f4f4f4;
   display: flex;
-  
+
   .leagueLogo {
-    width: 40px;
-    height: auto;
+    width: auto;
+      height: 40px;
   }
 }
 
@@ -27,4 +27,22 @@
 }
 
 @media (max-width: 768px) {
+  .part1,
+  .part2 {
+    padding: 20px;
+  }
+
+  .part1 {
+    background-color: #f4f4f4;
+    display: flex;
+
+    .leagueLogo {
+      width: auto;
+      height: 40px;
+    }
+  }
+
+  .part2 {
+    background-color: #ffffff;
+  }
 }

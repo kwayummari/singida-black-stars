@@ -7,10 +7,8 @@ import AllMatches from "./AllMatches";
 import AllResults from "./AllResults";
 
 export default function News() {
-  // State to track the active tab
   const [activeTab, setActiveTab] = useState("fixtures");
 
-  // Function to set the active tab when a tab is clicked
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
@@ -23,7 +21,6 @@ export default function News() {
         <p className={styles.season}>Season <strong>2024/25 <i className="bi bi-arrow-down"></i></strong></p>
       </div>
 
-      {/* Tabs */}
       <div className={styles.tabs}>
         <p 
           onClick={() => handleTabClick("fixtures")}
@@ -45,7 +42,7 @@ export default function News() {
         </p>
       </div>
 
-      {/* Conditionally render components based on the active tab */}
+
       {activeTab === "fixtures" && <AllMatches />}
       {activeTab === "results" && <AllResults />}
       {activeTab === "table" && <FullLeague />}
