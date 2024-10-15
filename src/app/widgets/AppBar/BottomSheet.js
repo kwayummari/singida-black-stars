@@ -11,7 +11,9 @@ const BottomSheetBar = () => (
                         <Link href="/news" passHref>
                             <h5 className={`${styles.headings} card-title`}>News</h5>
                         </Link>
-                        <h5 className={`${styles.headings} card-title`}>Matches</h5>
+                        <Link href="/matches" passHref>
+                            <h5 className={`${styles.headings} card-title`}>Matches</h5>
+                        </Link>
                         <h5 className={`${styles.headings} card-title`}>Teams</h5>
                         <h5 className={`${styles.headings} card-title`}>IFollow</h5>
                     </div>
