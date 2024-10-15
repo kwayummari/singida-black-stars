@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from 'react';
 import styles from "../../styles/allNews.module.scss";
 
 const newsData = [
@@ -33,8 +33,8 @@ const newsData = [
     },
 ];
 
-const NewsCard = ({ image, title, description }) => (
-    <div className="col-12 col-md-3 mb-4">
+const NewsCard = ({ image, title, description, onClick }) => (
+    <div className="col-12 col-md-3 mb-4" onClick={onClick}>
         <div className={`${styles.imageContainer} card`}>
             <div className={styles.imageOverlay}></div>
             <img src={image} alt="News logo" className={styles.carouselImage} />
@@ -48,20 +48,62 @@ const NewsCard = ({ image, title, description }) => (
     </div>
 );
 
-const AllNews = () => (
-    <div className="container">
-        <p className={styles.header}>All News</p>
-        <div className="row">
-            {newsData.map((news) => (
-                <NewsCard
-                    key={news.id}
-                    image={news.image}
-                    title={news.title}
-                    description={news.description}
-                />
-            ))}
+const AllNews = () => {
+    const [selectedCard, setSelectedCard] = useState(null);
+    const handleCardClick = (item) => {
+        setSelectedCard(item);
+    };
+
+    const closeModal = () => {
+        setSelectedCard(null);
+    };
+    return (
+        <div className="container">
+            <p className={styles.header}>All News</p>
+            <div className="row">
+                {newsData.map((news) => (
+                    <NewsCard
+                        key={news.id}
+                        image={news.image}
+                        title={news.title}
+                        description={news.description}
+                        onClick={() => handleCardClick(news)}
+                    />
+                ))}
+            </div>
+            {selectedCard && (
+                <div
+                    className="modal fade show d-block"
+                    tabIndex="-1"
+                    role="dialog"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                    style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}
+                >
+                    <div className="modal-dialog modal-dialog-centered" role="document">
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <h5 className="modal-title" id="exampleModalLabel">{selectedCard.title}</h5>
+                                <button type="button" className="btn-close" aria-label="Close" onClick={closeModal}></button>
+                            </div>
+                            <div className="modal-body">
+                                <img
+                                    src={selectedCard.image}
+                                    alt={selectedCard.altText}
+                                    className="img-fluid mb-3"
+                                />
+                                <p>{selectedCard.description}</p>
+                                <p>{selectedCard.reportDate}</p>
+                            </div>
+                            <div className="modal-footer">
+                                <button type="button" className="btn btn-secondary" onClick={closeModal}>Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
-    </div>
-);
+    );
+}
 
 export default AllNews;
