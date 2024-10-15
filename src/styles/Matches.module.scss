@@ -1,0 +1,39 @@
+.subNeck {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 20px;
+  background-color: #000000 !important;
+
+  .title {
+    font-size: 25px;
+    font-weight: 600;
+    color: #ffffff;
+  }
+  .season {
+    font-size: 20px;
+    color: #ffffff;
+  }
+}
+  
+  @media (max-width: 768px) {
+    .subNeck {
+      display: flex;
+      justify-content: space-between;
+      padding-left: 20px;
+      padding-right: 20px;
+      background-color: #000000 !important;
+
+      .title {
+        font-size: 20px;
+        font-weight: 600;
+        color: #ffffff;
+      }
+      .season {
+        font-size: 15px;
+        color: #ffffff;
+      }
+    }
+  }
+  
