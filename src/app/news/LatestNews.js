@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styles from '../../styles/Latest.module.scss';
 import ImageCard from '../widgets/ImageCardContainer/ImageCardContainer';
 
@@ -24,21 +24,40 @@ const data = [
     }
 ];
 
-const Latest = () => (
-    <div className="container">
-        <p className={styles.header}>Latest News</p>
-        <div className={`${styles.scrollableRow} row`}>
-            {data.map((item, index) => (
-                <ImageCard
-                    key={index}
-                    imageSrc={item.imageSrc}
-                    altText={item.altText}
-                    description={item.description}
-                    reportDate={item.reportDate}
-                />
-            ))}
+const Latest = () => {
+    const scrollRef = useRef(null);
+
+    useEffect(() => {
+        const scrollInterval = setInterval(() => {
+            if (scrollRef.current) {
+                const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+                if (scrollLeft + clientWidth >= scrollWidth) {
+                    scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });  // Reset to the start
+                } else {
+                    scrollRef.current.scrollBy({ left: clientWidth, behavior: 'smooth' });
+                }
+            }
+        }, 3000); // Change the interval as needed (3 seconds in this case)
+
+        return () => clearInterval(scrollInterval);  // Cleanup on unmount
+    }, []);
+
+    return (
+        <div className="container">
+            <p className={styles.header}>Latest News</p>
+            <div ref={scrollRef} className={`${styles.scrollableRow} row`}>
+                {data.map((item, index) => (
+                    <ImageCard
+                        key={index}
+                        imageSrc={item.imageSrc}
+                        altText={item.altText}
+                        description={item.description}
+                        reportDate={item.reportDate}
+                    />
+                ))}
+            </div>
         </div>
-    </div>
-);
+    );
+};
 
 export default Latest;

@@ -5,9 +5,9 @@ import styles from "../../../styles/allNews.module.scss";
 const newsData = [
     {
         id: 1,
-        image: "/images/jkt.png",
-        title: "Report | SINGIDA BIG STARS 1-1 JKT",
-        description: "Match Reports | 2 days ago",
+        image: "/images/nyerere.png",
+        title: "Tutakuenzi Daima Baba wa Taifa, Mwl. Julius Kambarage Nyerere 🇹🇿",
+        description: "Kumbukizi ya baba wa taifa",
     },
     {
         id: 2,
