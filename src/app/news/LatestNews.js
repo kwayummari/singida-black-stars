@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from 'react';
 import styles from '../../styles/Latest.module.scss';
 import ImageCard from '../widgets/ImageCardContainer/ImageCardContainer';
