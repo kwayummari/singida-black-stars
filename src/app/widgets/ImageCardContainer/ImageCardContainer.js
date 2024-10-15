@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from '../../../styles/Latest.module.scss';
 
-const ImageCard = ({ imageSrc, altText, description, reportDate }) => (
-    <div className="col-12 col-md-4">
+const ImageCard = ({ imageSrc, altText, description, reportDate, onClick }) => (
+    <div className="col-12 col-md-4" onClick={onClick}>
         <div className={`${styles.imageContainer} card`}>
             <img
                 src={imageSrc}

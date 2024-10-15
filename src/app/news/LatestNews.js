@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styles from '../../styles/Latest.module.scss';
 import ImageCard from '../widgets/ImageCardContainer/ImageCardContainer';
 
@@ -25,27 +25,40 @@ const data = [
 ];
 
 const Latest = () => {
+    const [selectedCard, setSelectedCard] = useState(null);
     const scrollRef = useRef(null);
 
+    // Automated scrolling logic
     useEffect(() => {
+        const scroll = scrollRef.current;
+        let scrollAmount = 0;
+
         const scrollInterval = setInterval(() => {
-            if (scrollRef.current) {
-                const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-                if (scrollLeft + clientWidth >= scrollWidth) {
-                    scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });  // Reset to the start
-                } else {
-                    scrollRef.current.scrollBy({ left: clientWidth, behavior: 'smooth' });
+            if (scroll) {
+                scrollAmount += 1;
+                scroll.scrollLeft = scrollAmount;
+                if (scroll.scrollLeft + scroll.offsetWidth >= scroll.scrollWidth) {
+                    scrollAmount = 0;
                 }
             }
-        }, 3000); // Change the interval as needed (3 seconds in this case)
+        }, 20);
 
-        return () => clearInterval(scrollInterval);  // Cleanup on unmount
+        return () => clearInterval(scrollInterval);
     }, []);
+
+
+    const handleCardClick = (item) => {
+        setSelectedCard(item);
+    };
+
+    const closeModal = () => {
+        setSelectedCard(null);
+    };
 
     return (
         <div className="container">
             <p className={styles.header}>Latest News</p>
-            <div ref={scrollRef} className={`${styles.scrollableRow} row`}>
+            <div className={`${styles.scrollableRow} row`} ref={scrollRef}>
                 {data.map((item, index) => (
                     <ImageCard
                         key={index}
@@ -53,9 +66,42 @@ const Latest = () => {
                         altText={item.altText}
                         description={item.description}
                         reportDate={item.reportDate}
+                        onClick={() => handleCardClick(item)}
                     />
                 ))}
             </div>
+
+            {selectedCard && (
+                <div
+                    className="modal fade show d-block"
+                    tabIndex="-1"
+                    role="dialog"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                    style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}
+                >
+                    <div className="modal-dialog modal-dialog-centered" role="document">
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <h5 className="modal-title" id="exampleModalLabel">{selectedCard.altText}</h5>
+                                <button type="button" className="btn-close" aria-label="Close" onClick={closeModal}></button>
+                            </div>
+                            <div className="modal-body">
+                                <img
+                                    src={selectedCard.imageSrc}
+                                    alt={selectedCard.altText}
+                                    className="img-fluid mb-3"
+                                />
+                                <p>{selectedCard.description}</p>
+                                <p>{selectedCard.reportDate}</p>
+                            </div>
+                            <div className="modal-footer">
+                                <button type="button" className="btn btn-secondary" onClick={closeModal}>Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
