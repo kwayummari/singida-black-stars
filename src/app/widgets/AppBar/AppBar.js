@@ -45,11 +45,13 @@ const AppBar = () => {
   return (
     <header className={`${styles.appBar} d-flex align-items-center bg-dark`}>
       <div className={styles.logoPart}>
-        <img
-          src="/images/logo.png"
-          className={styles.logo}
-          alt="Picture of the author"
-        />
+        <Link href="/" passHref>
+          <img
+            src="/images/logo.png"
+            className={styles.logo}
+            alt="Picture of the author"
+          />
+        </Link>
       </div>
       <div className={styles.textPart + " d-flex flex-column flex-grow-1"}>
         <div className={`${styles.topBar} text-white`}>

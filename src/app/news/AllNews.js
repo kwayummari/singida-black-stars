@@ -31,6 +31,30 @@ const newsData = [
         title: "Report | SINGIDA BIG STARS 1-1 JKT",
         description: "Match Reports | 2 days ago",
     },
+    {
+        id: 4,
+        image: "/images/warmup.png",
+        title: "Timu yetu ina jezi kali za warmup kuliko timu zote msimu huu.",
+        description: "Kazi nzuri ya @wakazitanzania",
+    },
+    {
+        id: 4,
+        image: "/images/liti.png",
+        title: "Unatamani tuboreshe kitu gani unapokuja uwanjani CCM LITI kutazama mechi zetu?",
+        description: "Tunasoma maoni.",
+    },
+    {
+        id: 4,
+        image: "/images/jkt.png",
+        title: "Report | SINGIDA BIG STARS 1-1 JKT",
+        description: "Match Reports | 2 days ago",
+    },
+    {
+        id: 4,
+        image: "/images/jkt.png",
+        title: "Report | SINGIDA BIG STARS 1-1 JKT",
+        description: "Match Reports | 2 days ago",
+    },
 ];
 
 const NewsCard = ({ image, title, description, onClick }) => (
@@ -80,7 +104,7 @@ const AllNews = () => {
                     aria-hidden="true"
                     style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}
                 >
-                    <div className="modal-dialog modal-dialog-centered" role="document">
+                    <div className="modal-dialog modal-lg modal-dialog-centered" role="document">
                         <div className="modal-content">
                             <div className="modal-header">
                                 <h5 className="modal-title" id="exampleModalLabel">{selectedCard.title}</h5>

@@ -56,11 +56,13 @@ const AppBarMobile = () => {
         </div>
       </div>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <img
-          src="/images/logo.png"
-          className={styles.logo}
-          alt="Picture of the author"
-        />
+        <Link href="/" passHref>
+          <img
+            src="/images/logo.png"
+            className={styles.logo}
+            alt="Picture of the author"
+          />
+        </Link>
         <div className={`${styles.supportMenu}`}>
           <i className="bi bi-search p-3" onClick={toggleSearchSidebar}></i>
           <i className="bi bi-list p-3" onClick={toggleBottomSheet}></i>
