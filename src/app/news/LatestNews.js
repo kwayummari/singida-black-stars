@@ -27,8 +27,6 @@ const data = [
 const Latest = () => {
     const [selectedCard, setSelectedCard] = useState(null);
     const scrollRef = useRef(null);
-
-    // Automated scrolling logic
     useEffect(() => {
         const scroll = scrollRef.current;
         let scrollAmount = 0;
