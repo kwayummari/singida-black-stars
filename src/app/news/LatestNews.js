@@ -26,6 +26,7 @@ const data = [
 
 const Latest = () => (
     <div className="container">
+        <p className={styles.header}>Latest News</p>
         <div className={`${styles.scrollableRow} row`}>
             {data.map((item, index) => (
                 <ImageCard
