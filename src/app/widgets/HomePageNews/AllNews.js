@@ -1,70 +1,60 @@
-"use client"
-import React from 'react';
-import styles from '../../../styles/allNews.module.scss';
+"use client";
+import React from "react";
+import styles from "../../../styles/allNews.module.scss";
+
+const newsData = [
+    {
+        id: 1,
+        image: "/images/jkt.png",
+        title: "Report | SINGIDA BIG STARS 1-1 JKT",
+        description: "Match Reports | 2 days ago",
+    },
+    {
+        id: 2,
+        image: "/images/jkt.png",
+        title: "Report | SINGIDA BIG STARS 1-1 JKT",
+        description: "Match Reports | 2 days ago",
+    },
+    {
+        id: 3,
+        image: "/images/jkt.png",
+        title: "Report | SINGIDA BIG STARS 1-1 JKT",
+        description: "Match Reports | 2 days ago",
+    },
+    {
+        id: 4,
+        image: "/images/jkt.png",
+        title: "Report | SINGIDA BIG STARS 1-1 JKT",
+        description: "Match Reports | 2 days ago",
+    },
+];
+
+const NewsCard = ({ image, title, description }) => (
+    <div className="col-12 col-md-4">
+        <div className={`${styles.imageContainer} card`}>
+            <img src={image} alt="News logo" className={styles.carouselImage} />
+            <div className={styles.imageText}>
+                <p>{title}</p>
+            </div>
+            <div className={styles.imageTextBelow}>
+                <p>{description}</p>
+            </div>
+        </div>
+    </div>
+);
 
 const AllNews = () => (
     <div className="container">
+        <p className={styles.header}>All News</p>
         <div className="row">
-            <div className="col-12 col-md-4">
-                <div className={`${styles.imageContainer} card`}>
-                    <img
-                        src="/images/jkt.png"
-                        alt="Picture of the logo"
-                        className={styles.carouselImage}
-                    />
-                    <div className={styles.imageText}>
-                        <p>Report | SINGIDA BIG STARS 1-1 JKT</p>
-                    </div>
-                    <div className={styles.imageTextBelow}>
-                        <p>Match Reports | 2 days ago</p>
-                    </div>
-                </div>
-            </div>
-            <div className="col-12 col-md-4">
-                <div className={`${styles.imageContainer} card`}>
-                    <img
-                        src="/images/jkt.png"
-                        alt="Picture of the logo"
-                        className={styles.carouselImage}
-                    />
-                    <div className={styles.imageText}>
-                        <p>Report | SINGIDA BIG STARS 1-1 JKT</p>
-                    </div>
-                    <div className={styles.imageTextBelow}>
-                        <p>Match Reports | 2 days ago</p>
-                    </div>
-                </div>
-            </div>
-            <div className="col-12 col-md-4">
-                <div className={`${styles.imageContainer} card`}>
-                    <img
-                        src="/images/jkt.png"
-                        alt="Picture of the logo"
-                        className={styles.carouselImage}
-                    />
-                    <div className={styles.imageText}>
-                        <p>Report | SINGIDA BIG STARS 1-1 JKT</p>
-                    </div>
-                    <div className={styles.imageTextBelow}>
-                        <p>Match Reports | 2 days ago</p>
-                    </div>
-                </div>
-            </div>
-            <div className="col-12 col-md-4">
-                <div className={`${styles.imageContainer} card`}>
-                    <img
-                        src="/images/jkt.png"
-                        alt="Picture of the logo"
-                        className={styles.carouselImage}
-                    />
-                    <div className={styles.imageText}>
-                        <p>Report | SINGIDA BIG STARS 1-1 JKT</p>
-                    </div>
-                    <div className={styles.imageTextBelow}>
-                        <p>Match Reports | 2 days ago</p>
-                    </div>
-                </div>
-            </div>
+            {newsData.map((news) => (
+                <NewsCard 
+                    key={news.id}
+                    image={news.image}
+                    title={news.title}
+                    description={news.description}
+                />
+            ))}
         </div>
     </div>
 );

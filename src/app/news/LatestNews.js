@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 import styles from '../../styles/Latest.module.scss';
-import ImageCard from '../widgets/ImaggeCardContainer/ImageCardContainer';
+import ImageCard from '../widgets/ImageCardContainer/ImageCardContainer';
 
 const data = [
     {
@@ -13,7 +13,7 @@ const data = [
     {
         imageSrc: "/images/exclusive2.png",
         altText: "Exclusive Image 2",
-        description: "RASMI: Programu ya mazoezi kwa timu zetu za vijana itaanza Alhamisi tarehe 10/10/2024 katika Uwanja wa Magereza Singida kuanzia saa 10:00 jioni.",
+        description: "RASMI: Programu ya mazoezi kwa timu zetu za vijana itaanza Alhamisi tarehe 10/10/2024.",
         reportDate: "Match Reports | 2 days ago"
     },
     {
