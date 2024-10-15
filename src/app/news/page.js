@@ -3,12 +3,11 @@ import CarouselWidget from "../widgets/carousel/carousel";
 import HomePageNews from "../widgets/HomePageNews/HomePageNews";
 import Latest from "./LatestNews";
 
-export default function News({LatestNewsNo,PlayerNewsNo, CommercialNo}) {
+export default function News() {
   return (
     <div className={styles.page}>
       <CarouselWidget />
       <Latest />
-      <HomePageNews LatestNewsNo={LatestNewsNo} PlayerNewsNo={PlayerNewsNo} CommercialNo={CommercialNo}/>
     </div>
   );
 }
