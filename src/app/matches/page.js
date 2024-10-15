@@ -1,10 +1,20 @@
 "use client"
+import React, { useState } from "react";
 import PageNeck from "../widgets/neck/pageNeck";
 import styles from '../../styles/Matches.module.scss';
 import FullLeague from "../widgets/League/FullLeague";
 import AllMatches from "./AllMatches";
+import AllResults from "./AllResults";
 
 export default function News() {
+  // State to track the active tab
+  const [activeTab, setActiveTab] = useState("fixtures");
+
+  // Function to set the active tab when a tab is clicked
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+  };
+
   return (
     <div>
       <PageNeck title={'Matches'} />
@@ -12,13 +22,33 @@ export default function News() {
         <p className={styles.title}>First Team</p>
         <p className={styles.season}>Season <strong>2024/25 <i className="bi bi-arrow-down"></i></strong></p>
       </div>
+
+      {/* Tabs */}
       <div className={styles.tabs}>
-        <p className={styles.tabHeader}>Fixtures</p>
-        <p className={styles.tabHeader}>Results</p>
-        <p className={styles.tabHeader}>Table</p>
+        <p 
+          onClick={() => handleTabClick("fixtures")}
+          className={`${styles.tabHeader} ${activeTab === "fixtures" ? styles.activeTab : ""}`}
+        >
+          Fixtures
+        </p>
+        <p 
+          onClick={() => handleTabClick("results")}
+          className={`${styles.tabHeader} ${activeTab === "results" ? styles.activeTab : ""}`}
+        >
+          Results
+        </p>
+        <p 
+          onClick={() => handleTabClick("table")}
+          className={`${styles.tabHeader} ${activeTab === "table" ? styles.activeTab : ""}`}
+        >
+          Table
+        </p>
       </div>
-      <FullLeague />
-      <AllMatches />
+
+      {/* Conditionally render components based on the active tab */}
+      {activeTab === "fixtures" && <AllMatches />}
+      {activeTab === "results" && <AllResults />}
+      {activeTab === "table" && <FullLeague />}
     </div>
   );
 }

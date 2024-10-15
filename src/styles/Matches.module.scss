@@ -16,7 +16,8 @@
     color: #ffffff;
   }
 }
-.tabs{
+
+.tabs {
   background-color: #C5C5C5 !important;
   height: 50px;
   width: 100%;
@@ -28,40 +29,54 @@
     color: #000000;
     font-weight: 800;
     padding: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .activeTab {
+    color: #0b7a3f;
+    border-bottom: 1px solid #0b7a3f;
+    padding-bottom: 10px;
   }
 }
-  
-  @media (max-width: 768px) {
-    .subNeck {
-      display: flex;
-      justify-content: space-between;
-      padding-left: 20px;
-      padding-right: 20px;
-      background-color: #000000 !important;
 
-      .title {
-        font-size: 20px;
-        font-weight: 600;
-        color: #ffffff;
-      }
-      .season {
-        font-size: 15px;
-        color: #ffffff;
-      }
+@media (max-width: 768px) {
+  .subNeck {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #000000 !important;
+
+    .title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #ffffff;
     }
-    .tabs{
-      background-color: #C5C5C5 !important;
-      height: 50px;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-    
-      .tabHeader {
-        font-size: 20px;
-        color: #000000;
-        font-weight: 800;
-        padding: 10px;
-      }
+    .season {
+      font-size: 15px;
+      color: #ffffff;
     }
   }
   
+  .tabs {
+    background-color: #C5C5C5 !important;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .tabHeader {
+      font-size: 20px;
+      color: #000000;
+      font-weight: 800;
+      padding: 10px;
+    }
+
+    .activeTab {
+      color: #0b7a3f;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #0b7a3f;
+    }
+  }
+}

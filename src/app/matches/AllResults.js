@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from "../../styles/AllResults.module.scss";
 
-const AllMatches = () => {
+const AllResults = () => {
     return (
         <div className="container">
             <div className={`row ${styles.card}`}>
@@ -17,4 +17,4 @@ const AllMatches = () => {
     );
 }
 
-export default AllMatches;
+export default AllResults;
