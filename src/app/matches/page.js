@@ -1,5 +1,7 @@
+"use client"
 import PageNeck from "../widgets/neck/pageNeck";
 import styles from '../../styles/Matches.module.scss';
+import FullLeague from "../widgets/League/FullLeague";
 
 export default function News() {
   return (
@@ -14,6 +16,7 @@ export default function News() {
         <p className={styles.tabHeader}>Results</p>
         <p className={styles.tabHeader}>Table</p>
       </div>
+      <FullLeague />
     </div>
   );
 }
