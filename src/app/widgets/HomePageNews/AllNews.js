@@ -32,6 +32,7 @@ const newsData = [
 const NewsCard = ({ image, title, description }) => (
     <div className="col-12 col-md-4">
         <div className={`${styles.imageContainer} card`}>
+            <div className={styles.imageOverlay}></div>
             <img src={image} alt="News logo" className={styles.carouselImage} />
             <div className={styles.imageText}>
                 <p>{title}</p>
