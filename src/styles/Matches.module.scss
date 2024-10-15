@@ -16,6 +16,20 @@
     color: #ffffff;
   }
 }
+.tabs{
+  background-color: #C5C5C5 !important;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .tabHeader {
+    font-size: 20px;
+    color: #000000;
+    font-weight: 800;
+    padding: 10px;
+  }
+}
   
   @media (max-width: 768px) {
     .subNeck {
@@ -33,6 +47,20 @@
       .season {
         font-size: 15px;
         color: #ffffff;
+      }
+    }
+    .tabs{
+      background-color: #C5C5C5 !important;
+      height: 50px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    
+      .tabHeader {
+        font-size: 20px;
+        color: #000000;
+        font-weight: 800;
+        padding: 10px;
       }
     }
   }
