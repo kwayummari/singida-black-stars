@@ -10,7 +10,7 @@ export default function Teams() {
             </div>
             <p className={styles.titleHistory}>
                 <strong>
-                CRAWLEY TOWN FOOTBALL AND SOCIAL CLUB LTD.
+                SINGIDA BLACK STARS AND SOCIAL CLUB LTD.
                 </strong>
             </p>
             <p className={styles.fullHistory}>
@@ -35,13 +35,13 @@ export default function Teams() {
                 Sunday: <strong>CLOSED</strong>
             </p>
             <p className={styles.fullHistory}>
-                <strong>By Post:</strong>Broadfield Stadium, Winfield Way, Crawley, West Sussex, RH11 9RX.
+                <strong>By Post:</strong>Broadfield Stadium, Winfield Way, SINGIDA BLACK STARS, West Sussex, RH11 9RX.
             </p>
             <p className={styles.fullHistory}>
-                <strong>General Enquiries:</strong> <a href="mailto: noreply@crawleytownfc.com">noreply@crawleytownfc.com</a>
+                <strong>General Enquiries:</strong> <a href="mailto: noreply@singidablackstars.com">noreply@singidablackstars.com</a>
             </p>
             <p className={styles.fullHistory}>
-                <strong>Ticket Enquiries:</strong> <a href="mailto: tickets@crawleytownfc.com">tickets@crawleytownfc.com</a>
+                <strong>Ticket Enquiries:</strong> <a href="mailto: tickets@singidablackstars.com">tickets@singidablackstars.com</a>
             </p>
             <p className={styles.fullHistory}>
                 <strong>Main Switchboard:</strong>01293 410 000
@@ -60,7 +60,7 @@ export default function Teams() {
                 <strong>Ticket & Scout Enquiries </strong>
             </p>
             <p className={styles.fullHistory}>
-                Please call 01293 410 000 or email <a href="mailto:tickets@crawleytownfc.com">tickets@crawleytownfc.com</a> with your request.
+                Please call 01293 410 000 or email <a href="mailto:tickets@singidablackstars.com">tickets@singidablackstars.com</a> with your request.
             </p>
             <p className={styles.fullHistory}>
                 <strong>Address Change/Data Change</strong>
@@ -68,7 +68,7 @@ export default function Teams() {
             <p className={styles.fullHistory}>
                 If you have changed address recently and would like to inform
                 the club in order to update our data, please e-mail your new
-                and old details to <a href="mailto:noreply@crawleytownfc.com">noreply@crawleytownfc.com</a> with your request.
+                and old details to <a href="mailto:noreply@singidablackstars.com">noreply@singidablackstars.com</a> with your request.
             </p>
             <p className={styles.fullHistory}>
                 <strong>Work Experience/Placements</strong>
@@ -99,7 +99,7 @@ export default function Teams() {
                 to help raise funds for charities and for individual causes.
                 The club only accept requests in writing on headed charity notepaper
                 or, in the case of individuals, with a supporting letter from your chosen charity,
-                attached to an email and sent by email to <a href="mailto:noreply@crawleytownfc.com">noreply@crawleytownfc.com</a> We can only
+                attached to an email and sent by email to <a href="mailto:noreply@singidablackstars.com">noreply@singidablackstars.com</a> We can only
                 consider charity requests from organizations or individuals based within ten miles of the Stadium.
             </p>
             <p className={styles.fullHistory}>
