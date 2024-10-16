@@ -6,11 +6,11 @@ export default function Teams() {
     return (
         <div>
             <div className={styles.subNeck}>
-                <p className={styles.title}><strong>Club Information Contacts</strong></p>
+                <p className={styles.title}><strong>Ownership Statement</strong></p>
             </div>
             <p className={styles.titleHistory}>
                 <strong>
-                    Club Opening Hours:
+                CRAWLEY TOWN FOOTBALL AND SOCIAL CLUB LTD.
                 </strong>
             </p>
             <p className={styles.fullHistory}>
