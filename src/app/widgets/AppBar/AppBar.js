@@ -71,7 +71,7 @@ const AppBar = () => {
                 <p className={`${styles.bottomParagraph} m-0`} style={{ cursor: "pointer" }}>NEWS</p>
               </Link>
               <Link href="/matches" passHref><p className={`${styles.bottomParagraph} m-0`}> MATCHES</p></Link>
-              <p className={`${styles.bottomParagraph} m-0`}> TEAMS</p>
+              <Link href="/teams" passHref><p className={`${styles.bottomParagraph} m-0`}> TEAMS</p></Link>
               <p className={`${styles.bottomParagraph} m-0`}> IFOLLOW</p>
             </div>
             <div className={`${styles.supportMenu}`}>
