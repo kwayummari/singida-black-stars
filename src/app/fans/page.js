@@ -1,6 +1,6 @@
 "use client"
 import React from "react";
-import styles from '../../styles/History.module.scss';
+import styles from '../../styles/Fans.module.scss';
 
 export default function Teams() {
     return (
@@ -9,12 +9,7 @@ export default function Teams() {
                 <p className={styles.title}><strong>Club History</strong></p>
             </div>
             <p className={styles.titleHistory}>
-            <button type="button" class="btn btn-success btn-lg btn-block w-100"><i className="bi bi-person-circle"></i> Login</button>
-                <strong>
-                    Singida Black Stars was formed in 1896 and played their formative
-                    years in the West Sussex and Mid Sussex Leagues at a variety
-                    of grounds in and around the town.
-                </strong>
+            <a href="/pdf/fan.pdf" class="btn btn-success btn-lg btn-block w-100" target="_blank"><strong>CLICK HERE TO DOWNLOAD FAN ENGAGEMENT PLAN</strong></a>
             </p>
         </div>
     );
