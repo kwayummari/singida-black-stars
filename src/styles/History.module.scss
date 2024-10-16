@@ -1,0 +1,59 @@
+.subNeck {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 20px;
+
+  .title {
+    font-size: 30px;
+    font-weight: 900;
+    color: #000000;
+  }
+}
+
+.titleHistory {
+  width: 50%;
+  font-size: 23px;
+  font-weight: 900;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+.fullHistory {
+  width: 50%;
+  font-size: 20px;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .subNeck {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    .title {
+      font-size: 25px;
+      font-weight: 900;
+      color: #000000;
+    }
+  }
+  .titleHistory {
+    width: 80%;
+    font-size: 18px;
+    font-weight: 900;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .fullHistory {
+    width: 80%;
+    font-size: 15px;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

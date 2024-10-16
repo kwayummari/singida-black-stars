@@ -27,7 +27,7 @@ const BottomSheetBar = () => (
                     <div className="card-body">
                         <h5 className={`${styles.headings} card-title`}>Club</h5>
                         <p className="card-text"> <a href="/pdf/data.pdf" target="_blank">Club Charter </a></p>
-                        <p className="card-text">Club History</p>
+                        <p className="card-text"><Link href="/history" passHref>Club History</Link></p>
                         <p className="card-text">Fan Engagement Plan</p>
                         <p className="card-text">Club Information Contacts</p>
                         <p className="card-text">Ownership Statement</p>
