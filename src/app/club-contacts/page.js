@@ -114,6 +114,30 @@ export default function Teams() {
             <p className={styles.fullHistory}>
                 <strong>Ownership :</strong> WAGMI United
             </p>
+            <p className={styles.fullHistory}>
+                <strong>Chairman: </strong>  Preston Johnson
+            </p>
+            <p className={styles.fullHistory}>
+                <strong>Board of Directors: </strong> Ben Levin & Preston Johnson
+            </p>
+            <p className={styles.fullHistory}>
+                <strong>General Manager: </strong> Tom Allman
+            </p>
+            <p className={styles.fullHistory}>
+                <strong>Club Secretary: </strong> Lewis Timms
+            </p>
+            <p className={styles.fullHistory}>
+                <strong>Ticket Office Manager: </strong> Katie Lampey
+            </p>
+            <p className={styles.fullHistory}>
+                <strong>Media Manager: </strong> Sam Gadsdon
+            </p>
+            <p className={styles.fullHistory}>
+                <strong>Redz Bar Manager: </strong> Rhona Kaye
+            </p>
+            <p className={styles.fullHistory}>
+                <strong>Grounds Team: </strong> Complete Turf Care 
+            </p>
         </div>
     );
 }
