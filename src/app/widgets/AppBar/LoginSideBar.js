@@ -12,7 +12,7 @@ const LoginSideBar = ({ toggleLoginSidebar }) => (
             <div>
                 <Image
                     src="/images/logo.png"
-                    width={150}
+                    width={190}
                     height={150}
                     alt="Picture of the author"
                 />

@@ -44,7 +44,35 @@
 
 .part2 {
   background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+
+  .opponent {
+    display: flex;
+    padding-left: 20px;
+  }
+  .opponentLogo {
+    width: auto;
+    height: 60px;
+    padding-right: 20px;
+  }
+  p {
+    color: #000000;
+  }
+  .location {
+    width: 50px;
+    height: 50px;
+    background-color: #0c7a3e;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+  }
 }
+
 
 @media (max-width: 768px) {
   .part1,
@@ -75,6 +103,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      margin-left: auto;
+      margin-right: auto;
       color: white;
       font-size: 15px;
       font-weight: bold;
@@ -83,5 +113,27 @@
 
   .part2 {
     background-color: #ffffff;
+    display: block;
+    justify-content: center;
+    align-items: center;
+  
+    .opponent {
+      display: flex;
+    }
+  
+    .opponentLogo {
+      width: auto;
+      height: 40px;
+    }
+    p {
+      color: #000000;
+      font-size: 15px;
+      padding-left: 10px;
+    }
+    .button {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }

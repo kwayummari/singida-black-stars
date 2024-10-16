@@ -14,6 +14,11 @@ const AllMatches = () => {
                     <p className={styles.location}>H</p>
                 </div>
                 <div className={`col-9 ${styles.part2}`}>
+                    <div className={styles.opponent}>
+                        <img src="/images/yanga.png" alt="Yanga" className={styles.opponentLogo} />
+                        <p><strong>Yanga</strong> <br />Benjamin Mkapa Stadium</p>
+                    </div>
+                    <button type="button" class={`btn btn-success btn-sm btn-block ${styles.button}`}><i className="bi bi-dribbble"></i> <b>Match Center</b></button>
                 </div>
             </div>
         </div>
