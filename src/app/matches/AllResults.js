@@ -1,6 +1,6 @@
 "use client";
 import React from 'react';
-import styles from "../../styles/AllMatches.module.scss";
+import styles from "../../styles/AllResults.module.scss";
 
 const matches = [
     {
@@ -10,6 +10,11 @@ const matches = [
         opponent: "Yanga Sc",
         stadium: "Benjamin Mkapa Stadium",
         opponentLogo: "/images/yanga.png",
+        score: {
+            opponentScore: 3,
+            ourScore: 4,
+            halftime: "0 - 1"
+        }
     },
     {
         date: "Tue 25 Oct",
@@ -18,6 +23,11 @@ const matches = [
         opponent: "Simba Sc",
         stadium: "CCM LITI",
         opponentLogo: "/images/simba.png",
+        score: {
+            opponentScore: 3,
+            ourScore: 4,
+            halftime: "0 - 1"
+        }
     },
     {
         date: "Tue 28 Oct",
@@ -26,6 +36,11 @@ const matches = [
         opponent: "Azam",
         stadium: "Azam Complex",
         opponentLogo: "/images/azam.webp",
+        score: {
+            opponentScore: 3,
+            ourScore: 4,
+            halftime: "0 - 1"
+        }
     },
     {
         date: "Tue 22 Oct",
@@ -34,6 +49,11 @@ const matches = [
         opponent: "Coastal Union",
         stadium: "CCM LITI",
         opponentLogo: "/images/coastal.png",
+        score: {
+            opponentScore: 3,
+            ourScore: 4,
+            halftime: "0 - 1"
+        }
     },
     {
         date: "Tue 22 Oct",
@@ -42,6 +62,11 @@ const matches = [
         opponent: "Fountain Gates",
         stadium: "CCM LITI",
         opponentLogo: "/images/fountain.jpg",
+        score: {
+            opponentScore: 3,
+            ourScore: 4,
+            halftime: "0 - 1"
+        }
     },
     {
         date: "Tue 22 Oct",
@@ -50,6 +75,11 @@ const matches = [
         opponent: "Pamba Jiji",
         stadium: "CCM LITI",
         opponentLogo: "/images/pamba.png",
+        score: {
+            opponentScore: 3,
+            ourScore: 4,
+            halftime: "0 - 1"
+        }
     },
 ];
 
@@ -66,9 +96,21 @@ const AllResults = () => {
                         <p className={match.location === "H" ? styles.locationH : styles.locationA}>{match.location}</p>
                     </div>
                     <div className={`col-9 ${styles.part2}`}>
-                        <div className={styles.opponent}>
-                            <img src={match.opponentLogo} alt={match.opponent} className={styles.opponentLogo} />
-                            <p><strong>{match.opponent}</strong> <br />{match.stadium}</p>
+                        <div></div>
+                        <div className={styles.matchDetails}>
+                            <div className={styles.team}>
+                                <p>Singida Black Stars</p>
+                                <img src='/images/logo.png' alt={match.homeTeam} className={styles.teamLogo} />
+                            </div>
+                            <div className={styles.score}>
+                                <p className={styles.header}>FT</p>
+                                <p className={styles.fulltimeScore}><strong>{match.score.opponentScore} | {match.score.ourScore}</strong></p>
+                                <p className={styles.halftimeScore}>HT {match.score.halftime}</p>
+                            </div>
+                            <div className={styles.team}>
+                                <img src={match.opponentLogo} alt={match.awayTeam} className={styles.teamLogo} />
+                                <p>{match.opponent}</p>
+                            </div>
                         </div>
                         <button type="button" className={`btn btn-success ${styles.button}`}>
                             <i className="bi bi-dribbble"></i> <strong>Match Center</strong>

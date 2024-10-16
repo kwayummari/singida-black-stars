@@ -59,32 +59,62 @@
   display: flex;
   justify-content: space-between;
 
-  .opponent {
+  .matchDetails {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding-left: 20px;
   }
-  .opponentLogo {
+
+  .team {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    p {
+      font-size: 20px;
+      margin-top: 5px;
+      font-weight: bold;
+      color: #000;
+    }
+  }
+
+  .teamLogo {
     width: auto;
     height: 60px;
-    padding-right: 20px;
   }
-  p {
-    color: #000000;
+
+  .score {
+    text-align: center;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    .header {
+      margin: 0;
+      font-size: 15px;
+      font-weight: normal;
+      color: #979797;
+    }
+    .fulltimeScore {
+      background-color: #4b0c10;
+      color: #ffffff;
+      font-weight: 900;
+      padding: 10px;
+      width: 100px;
+      border-radius: 10px;
+    }
+    .halftimeScore {
+      color: #979797;
+      font-size: 15px;
+      font-weight: normal;
+    }
   }
-  .location {
-    width: 50px;
+  .button {
     height: 50px;
-    background-color: #0c7a3e;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
+    margin-top: auto;
+    margin-bottom: auto;
   }
 }
-
 
 @media (max-width: 768px) {
   .part1,
@@ -141,11 +171,11 @@
     display: block;
     justify-content: center;
     align-items: center;
-  
+
     .opponent {
       display: flex;
     }
-  
+
     .opponentLogo {
       width: auto;
       height: 40px;
