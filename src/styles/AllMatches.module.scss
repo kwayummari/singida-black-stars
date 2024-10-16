@@ -28,7 +28,7 @@
   p {
     color: #858585;
   }
-  .location {
+  .locationH {
     width: 50px;
     height: 50px;
     background-color: #0c7a3e;
@@ -37,6 +37,18 @@
     justify-content: center;
     align-items: center;
     color: white;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .locationA {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: #0c7a3e 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0c7a3e;
     font-size: 20px;
     font-weight: bold;
   }
@@ -95,7 +107,7 @@
       color: #858585;
       font-size: 10px;
     }
-    .location {
+    .locationH {
       width: 25px;
       height: 25px;
       background-color: #0c7a3e;
@@ -106,6 +118,19 @@
       margin-left: auto;
       margin-right: auto;
       color: white;
+      font-size: 15px;
+      font-weight: bold;
+    }
+    .locationA {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      border: #0c7a3e 1px solid;
+      justify-content: center;
+      align-items: center;
+      margin-left: auto;
+      margin-right: auto;
+      color: #0c7a3e;
       font-size: 15px;
       font-weight: bold;
     }

@@ -63,7 +63,7 @@ const AllMatches = () => {
                             <img src="/images/nbc2.png" alt="NBC Premier League" className={styles.leagueLogo} />
                             <p>{match.date} <br /><strong>{match.time}</strong></p>
                         </div>
-                        <p className={styles.location}>{match.location}</p>
+                        <p className={match.location === "H" ? styles.locationH : styles.locationA}>{match.location}</p>
                     </div>
                     <div className={`col-9 ${styles.part2}`}>
                         <div className={styles.opponent}>
