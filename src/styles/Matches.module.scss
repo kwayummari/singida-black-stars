@@ -18,7 +18,7 @@
 }
 
 .tabs {
-  background-color: #C5C5C5 !important;
+  background-color: #ededed !important;
   height: 50px;
   width: 100%;
   display: flex;
@@ -39,6 +39,10 @@
     border-bottom: 1px solid #0b7a3f;
     padding-bottom: 10px;
   }
+}
+.FullLeague {
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 @media (max-width: 768px) {
@@ -61,7 +65,7 @@
   }
   
   .tabs {
-    background-color: #C5C5C5 !important;
+    background-color: #ededed !important;
     height: 50px;
     width: 100%;
     display: flex;

@@ -170,25 +170,60 @@
     background-color: #ffffff;
     display: block;
     justify-content: center;
-    align-items: center;
-
-    .opponent {
-      display: flex;
+  
+    .matchDetails {
+      display: block;
+      justify-content: center;
+      align-items: center;
     }
-
-    .opponentLogo {
+  
+    .team {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      p {
+        font-size: 15px;
+        margin-top: 5px;
+        font-weight: bold;
+        color: #000;
+      }
+    }
+  
+    .teamLogo {
       width: auto;
       height: 40px;
     }
-    p {
-      color: #000000;
-      font-size: 15px;
-      padding-left: 10px;
+  
+    .score {
+      text-align: center;
+  
+      .header {
+        margin: 0;
+        font-size: 13px;
+        font-weight: normal;
+        color: #979797;
+      }
+      .fulltimeScore {
+        background-color: #4b0c10;
+        color: #ffffff;
+        font-weight: 900;
+        font-size: 13px;
+        width: 70px;
+        border-radius: 10px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .halftimeScore {
+        color: #979797;
+        font-size: 15px;
+        font-weight: normal;
+      }
     }
     .button {
-      text-align: center;
-      margin-left: auto;
-      margin-right: auto;
+      height: 40px;
+      margin-top: auto;
+      margin-bottom: auto;
     }
   }
 }

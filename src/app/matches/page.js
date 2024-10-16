@@ -45,7 +45,7 @@ export default function News() {
 
       {activeTab === "fixtures" && <AllMatches />}
       {activeTab === "results" && <AllResults />}
-      {activeTab === "table" && <FullLeague />}
+      {activeTab === "table" && <div className={styles.FullLeague}><FullLeague /></div>}
     </div>
   );
 }
