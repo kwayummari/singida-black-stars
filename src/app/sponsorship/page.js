@@ -1,13 +1,18 @@
 "use client"
 import React from "react";
-import styles from '../../styles/contacts.module.scss';
+import styles from '../../styles/sponsorship.module.scss';
 
 export default function Sponsorship() {
     return (
         <div>
             <div className={styles.subNeck}>
-                <p className={styles.title}><strong>Ownership Statement</strong></p>
+                <p className={styles.title}><strong>Match Sponsorship</strong></p>
             </div>
+            <p className={styles.footballTitle}>
+                <strong>
+                Come and watch the Reds in style during our Sky Bet League One campaign.
+                </strong>
+            </p>
             <p className={styles.titleHistory}>
                 <strong>
                 SINGIDA BLACK STARS AND SOCIAL CLUB LTD.
