@@ -29,7 +29,7 @@ const BottomSheetBar = () => (
                         <p className="card-text"> <a href="/pdf/data.pdf" target="_blank">Club Charter </a></p>
                         <p className="card-text"><Link href="/history" passHref>Club History</Link></p>
                         <p className="card-text"><Link href="/fans" passHref>Fan Engagement Plan</Link></p>
-                        <p className="card-text">Club Information Contacts</p>
+                        <p className="card-text"><Link href="/club-contacts" passHref>Club Information Contacts</Link></p>
                         <p className="card-text">Ownership Statement</p>
                     </div>
                 </div>
