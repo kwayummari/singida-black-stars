@@ -138,6 +138,35 @@ export default function Teams() {
             <p className={styles.fullHistory}>
                 <strong>Grounds Team: </strong> Complete Turf Care 
             </p>
+            <p className={styles.footballTitle}>
+                <strong>
+                FOOTBALL MANAGEMENT
+                </strong>
+            </p>
+            <p className={styles.fullHistory}>
+                <strong>First-Team Manager: </strong> Rob Elliot
+            </p>
+            <p className={styles.fullHistory}>
+                <strong>Assistant Manager: </strong> Louis Storey
+            </p>
+            <p className={styles.fullHistory}>
+                <strong>First-Team Coach:  </strong> Antony Sweeney
+            </p>
+            <p className={styles.fullHistory}>
+                <strong>Goalkeeping Coach: </strong> Vacant
+            </p>
+            <p className={styles.fullHistory}>
+                <strong>First Team Analyst: </strong> Jake Fearnley
+            </p>
+            <p className={styles.fullHistory}>
+                <strong>First Team Physio: </strong> Tom Dudeney
+            </p>
+            <p className={styles.fullHistory}>
+                <strong>Head of Performance: </strong> Ricky McFarlane
+            </p>
+            <p className={styles.fullHistory}>
+                <strong>Kit & Equipment: </strong> Peter Reynolds 
+            </p>
         </div>
     );
 }
