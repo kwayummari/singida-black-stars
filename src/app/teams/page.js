@@ -2,8 +2,9 @@
 import React from "react";
 import PageNeck from "../widgets/neck/pageNeck";
 import styles from '../../styles/Matches.module.scss';
+import AllTeam from "./Team";
 
-export default function News() {
+export default function Teams() {
   return (
     <div>
       <PageNeck title={'Teams'} />
@@ -11,7 +12,7 @@ export default function News() {
         <p className={styles.title}>First Team</p>
         <p className={styles.season}>Season <strong>2024/25 <i className="bi bi-arrow-down"></i></strong></p>
       </div>
-
+      <AllTeam />
     </div>
   );
 }
