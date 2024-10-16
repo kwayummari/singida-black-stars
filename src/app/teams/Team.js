@@ -6,18 +6,50 @@ const playerData = [
     {
         category: "GoalKeepers",
         number: "1",
-        FirstName: "Jojo",
-        LastName: "Wollacott",
-        image: "/images/yanga.png",
+        FirstName: "Mohamed",
+        LastName: "Kamara",
+        image: "/images/kamara.png",
     },
     {
-        category: "Mid fielders",
-        number: "1",
+        category: "Defenders",
+        number: "4",
+        FirstName: "Khalid",
+        LastName: "Habibu",
+        image: "/images/khalid.png",
+    },
+    {
+        category: "Midfielders",
+        number: "10",
         FirstName: "Tchakei",
         LastName: "Marouf",
         image: "/images/tchakei.png",
     },
-  ]
+    {
+        category: "Forwards",
+        number: "39",
+        FirstName: "Elvis",
+        LastName: "Rupia",
+        image: "/images/elvis.png",
+    },
+    {
+        category: "Forwards",
+        number: "9",
+        FirstName: "Victorien",
+        LastName: "Adebayor",
+        image: "/images/adebayo.png",
+    },
+];
+
+const groupPlayersByCategory = (players) => {
+    return players.reduce((acc, player) => {
+        const { category } = player;
+        if (!acc[category]) {
+            acc[category] = [];
+        }
+        acc[category].push(player);
+        return acc;
+    }, {});
+};
 
 const PlayerCard = ({ image, number, LastName, FirstName, category }) => (
     <div className="col-12 col-md-3 mb-4">
@@ -38,22 +70,29 @@ const PlayerCard = ({ image, number, LastName, FirstName, category }) => (
 );
 
 const AllTeam = () => {
+    const groupedPlayers = groupPlayersByCategory(playerData);
+
     return (
         <div className="container">
-            <div className="row mt-2">
-                {playerData.map((Player) => (
-                    <PlayerCard
-                        key={Player.id}
-                        image={Player.image}
-                        number={Player.number}
-                        LastName={Player.LastName}
-                        FirstName={Player.FirstName}
-                        category={Player.category}
-                    />
-                ))}
-            </div>
+            {Object.entries(groupedPlayers).map(([category, players]) => (
+                <div key={category} className="mb-5">
+                    <h2 className="text-left mb-3"><strong>{category}</strong></h2>
+                    <div className="row">
+                        {players.map((player) => (
+                            <PlayerCard
+                                key={player.number}
+                                image={player.image}
+                                number={player.number}
+                                LastName={player.LastName}
+                                FirstName={player.FirstName}
+                                category={player.category}
+                            />
+                        ))}
+                    </div>
+                </div>
+            ))}
         </div>
     );
-}
+};
 
 export default AllTeam;
