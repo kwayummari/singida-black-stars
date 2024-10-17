@@ -22,7 +22,7 @@ export default function Home() {
   }, []);
   return (
     <div className={styles.page}>
-      <CarouselWidget />
+      <CarouselWidget openPopup={false} />
       <Neck />
       <HomePageNews LatestNewsNo='4' PlayerNewsNo='4' CommercialNo='4' />
       {isMobile ? <MainSponsorMobile /> : <MainSponsor />}
