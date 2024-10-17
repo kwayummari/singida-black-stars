@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import styles from '../../../styles/appBar.module.scss';
 
 const LoginSideBar = ({ toggleLoginSidebar }) => (
@@ -10,11 +9,10 @@ const LoginSideBar = ({ toggleLoginSidebar }) => (
                 <button type="button" className="btn-close btn-close-white" onClick={toggleLoginSidebar}></button>
             </div>
             <div>
-                <Image
+                <img
                     src="/images/logo.png"
-                    width={190}
-                    height={150}
-                    alt="Picture of the author"
+                    alt="logo"
+                    className={styles.logo}
                 />
                 <p className={styles.paragraph}>Register free today for access to exclusive
                     Singida Black Stars content and benefits.</p>
