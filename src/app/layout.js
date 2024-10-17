@@ -30,7 +30,7 @@ export const metadata = {
   openGraph: {
     title: "Singida Black Stars | Official Team Website",
     description: "Follow the latest news, match results, and updates of Singida Black Stars.",
-    image: "./images/logo.png",
+    image: "/images/logo.png",
     url: "https://singidablackstars.com",
   },
   twitter: {
@@ -39,7 +39,7 @@ export const metadata = {
   robots: "index, follow",
   canonical: "https://singidablackstars.com",
   icons: {
-    icon: "./images/logo.png",
+    icon: "/images/logo.png",
   },
 };
 
