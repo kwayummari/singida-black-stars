@@ -8,6 +8,7 @@ config.autoAddCss = false;
 import './fontawesome';
 import Footer from './widgets/Footer/Footer';
 import ClientWrapper from "./ClientWrapper";
+import Head from "next/head";
 
 // Font imports
 const geistSans = localFont({
@@ -30,6 +31,19 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Head>
+        <title>Singida Black Stars | Official Team Website</title>
+        <meta name="description" content="Welcome to the official website of Singida Black Stars football team. Stay updated on news, match results, and player profiles." />
+        <meta name="keywords" content="Singida Black Stars, football team, Singida, Tanzania, match results, player profiles" />
+        <meta property="og:title" content="Singida Black Stars | Official Team Website" />
+        <meta property="og:description" content="Follow the latest news, match results, and updates of Singida Black Stars." />
+        <meta property="og:image" content="/images/logo.png" />
+        <meta property="og:url" content="https://singidablackstars.com" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://singidablackstars.com" />
+        <link rel="icon" href="/images/logo.png" />
+      </Head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ClientWrapper>
           <main style={{ minHeight: "80vh" }}>
