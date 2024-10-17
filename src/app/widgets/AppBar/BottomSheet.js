@@ -40,7 +40,7 @@ const BottomSheetBar = () => (
                     <div className="card-body">
                         <h5 className={`${styles.headings} card-title`}>Commercial</h5>
                         <p className="card-text"><Link href="/sponsorship" passHref>Match Sponsorship</Link></p>
-                        <p className="card-text">Commercial Partners</p>
+                        <p className="card-text"><Link href="/partnership" passHref>Commercial Partners</Link></p>
                         <p className="card-text">BlackStars Magazines</p>
                     </div>
                 </div>
