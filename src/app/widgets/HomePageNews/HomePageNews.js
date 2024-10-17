@@ -12,11 +12,11 @@ const HomePageNews = ({LatestNewsNo,PlayerNewsNo, CommercialNo}) => {
   const renderTabContent = () => {
     switch (activeTab) {
       case 'LatestNews':
-            return <LatestNews LatestNewsNo={LatestNewsNo} />;
+            return <LatestNews openPopup={true} LatestNewsNo={LatestNewsNo} />;
       case 'PlayerNews':
-        return <PlayerNews PlayerNewsNo={PlayerNewsNo}/>;
+        return <PlayerNews openPopup={true} PlayerNewsNo={PlayerNewsNo}/>;
       case 'Commercial':
-        return <Commercial CommercialNo={CommercialNo}/>;
+        return <Commercial openPopup={true} CommercialNo={CommercialNo}/>;
       default:
         return <LatestNews />;
     }

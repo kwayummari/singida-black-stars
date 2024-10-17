@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from '../../../styles/homePageNews.module.scss';
 
-const Commercial = ({CommercialNo}) => (
+const Commercial = ({openPopup}) => (
     <div className="container">
         <div className={`${styles.scrollableRow} row`}>
             

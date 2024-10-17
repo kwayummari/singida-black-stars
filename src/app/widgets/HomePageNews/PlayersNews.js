@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from '../../../styles/homePageNews.module.scss';
 
-const PlayerNews = ({PlayerNewsNo}) => (
+const PlayerNews = ({openPopup}) => (
     <div className="container">
         <div className={`${styles.scrollableRow} row`}>
             <div className="col-12 col-md-3">
