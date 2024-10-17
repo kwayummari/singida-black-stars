@@ -9,35 +9,33 @@ const Neck = ({ openPopup }) => {
     const [popupTitle, setPopupTitle] = useState('');
     const [popupImage, setPopupImage] = useState('');
 
-    // Handle clicking on image container to open popup
     const handleImageClick = (title, image) => {
         if (openPopup) {
             setPopupTitle(title);
             setPopupImage(image);
-            setIsPopupOpen(true); // Open the popup
+            setIsPopupOpen(true);
         }
     };
 
     return (
         <div className="container">
             <div className={`${styles.scrollableRow} row`}>
-                {/* First Image Container */}
                 <div className="col-12 col-md-3">
                     <div
                         className={`${styles.imageContainer} card`}
-                        onClick={() => handleImageClick('Report | SINGIDA BIG STARS 1-1 JKT', '/images/jkt.png')}
+                        onClick={() => handleImageClick('Kikosi chetu kinachoanza kwenye mchezo wetu wa leo dhidi ya JKT Tanzania', '/images/lineup.png')}
                         style={{ cursor: 'pointer' }}
                     >
                         <img
-                            src="/images/jkt.png"
+                            src="/images/lineup.png"
                             alt="Picture of the logo"
                             className={styles.carouselImage}
                         />
                         <div className={styles.imageText}>
-                            <p>Report | SINGIDA BIG STARS 1-1 JKT</p>
+                            <p>Kikosi chetu kinachoanza kwenye mchezo wetu wa leo dhidi ya JKT Tanzania</p>
                         </div>
                         <div className={styles.imageTextBelow}>
-                            <p>Match Reports | 2 days ago</p>
+                            <p>#Inawezekana 🏆#NBCPremierLeague</p>
                         </div>
                     </div>
                 </div>
@@ -46,19 +44,19 @@ const Neck = ({ openPopup }) => {
                 <div className="col-12 col-md-3">
                     <div
                         className={`${styles.imageContainer} card`}
-                        onClick={() => handleImageClick('Preview | MTIBWA SUGAR', '/images/carousel.png')}
+                        onClick={() => handleImageClick('33_metacha ndiye Golikipa wa kwanza kuokoa mkwaju wa penati kwenye @ligikuu ya @nbc_tanzania msimu wa 2024/2025.', '/images/metacha.png')}
                         style={{ cursor: 'pointer' }}
                     >
                         <img
-                            src="/images/carousel.png"
+                            src="/images/metacha.png"
                             alt="Picture of the logo"
                             className={styles.carouselImage}
                         />
                         <div className={styles.imageText}>
-                            <p>Preview | MTIBWA SUGAR</p>
+                            <p>33_metacha ndiye Golikipa wa kwanza kuokoa mkwaju wa penati kwenye @ligikuu ya @nbc_tanzania msimu wa 2024/2025.</p>
                         </div>
                         <div className={styles.imageTextBelow}>
-                            <p>Club News | 2 days ago</p>
+                            <p>@ligikuu @tanfootball @nbc_tanzania @azamtvsports @tbc_online</p>
                         </div>
                     </div>
                 </div>
