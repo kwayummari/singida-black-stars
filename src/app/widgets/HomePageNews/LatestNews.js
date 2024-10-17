@@ -7,19 +7,17 @@ const LatestNews = ({ openPopup }) => {
     const [popupTitle, setPopupTitle] = useState('');
     const [popupImage, setPopupImage] = useState('');
 
-    // Handle image click to open popup
     const handleImageClick = (title, image) => {
         if (openPopup) {
             setPopupTitle(title);
             setPopupImage(image);
-            setIsPopupOpen(true); // Open the popup
+            setIsPopupOpen(true);
         }
     };
 
     return (
         <div className="container">
             <div className={`${styles.scrollableRow} row`}>
-                {/* First Image Container */}
                 <div className="col-12 col-md-3">
                     <div
                         className={`${styles.imageContainer} card`}
@@ -40,7 +38,6 @@ const LatestNews = ({ openPopup }) => {
                     </div>
                 </div>
 
-                {/* Second Image Container */}
                 <div className="col-12 col-md-3">
                     <div
                         className={`${styles.imageContainer} card`}
@@ -61,7 +58,6 @@ const LatestNews = ({ openPopup }) => {
                     </div>
                 </div>
 
-                {/* Third Image Container */}
                 <div className="col-12 col-md-3">
                     <div
                         className={`${styles.imageContainer} card`}
@@ -82,7 +78,6 @@ const LatestNews = ({ openPopup }) => {
                     </div>
                 </div>
 
-                {/* Fourth Image Container */}
                 <div className="col-12 col-md-3">
                     <div
                         className={`${styles.imageContainer} card`}
@@ -104,7 +99,6 @@ const LatestNews = ({ openPopup }) => {
                 </div>
             </div>
 
-            {/* Popup Section */}
             {isPopupOpen && openPopup && (
                 <div className={styles.popup}>
                     <div className={styles.popupContent}>
