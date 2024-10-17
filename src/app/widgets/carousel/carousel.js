@@ -5,10 +5,9 @@ import styles from '../../../styles/carousel.module.scss';
 const CarouselWidget = ({ openPopup }) => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
 
-    // Function to handle container click
     const handleClick = () => {
         if (openPopup) {
-            setIsPopupOpen(true); // Open popup
+            setIsPopupOpen(true);
         }
     };
 

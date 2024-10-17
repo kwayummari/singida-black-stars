@@ -66,9 +66,12 @@ const Footer = () => (
               <p className={`${styles.termsParagraph} m-2`}>Company Details</p>
               <p className={`${styles.termsParagraph} m-2`}>Contact Us</p>
             </div>
-
-            <div className={`${styles.sponsors} col-md-2 col-sm-2 mx-auto d-flex justify-content-center`}>
-              <p className={`${styles.termsParagraph} m-0`}>© SINGIDA BLACK STARS 2024</p>
+            <hr className={styles.hr}></hr>
+            <div className={`${styles.bottom} col-md-2 col-sm-2 mx-auto justify-content-center`}>
+            <p className={`${styles.termsParagraph} m-0`}>© SINGIDA BLACK STARS 2024</p>
+              <p className={`${styles.termsParagraph} m-0`}>DESIGNED AND MAINTAINED BY
+                <a href='https://www.serengetibytes.com' target="_blank" className={styles.creator}> SERENGETI BYTES</a>
+              </p>
             </div>
           </div>
         </div>

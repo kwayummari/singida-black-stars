@@ -5,6 +5,54 @@
   width: 100%;
 }
 
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+}
+
+.popupContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popupTitle {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.popupImage {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.popupDescription {
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.closePopup {
+  background-color: #f44336;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
 .carouselImage {
   object-fit: cover;
   width: 100%;

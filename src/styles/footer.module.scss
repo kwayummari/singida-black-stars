@@ -44,6 +44,17 @@
     text-align: center;
   }
 
+  .bottom {
+    display: flex;
+    width: 100%;
+  }
+  .creator{
+    color: #0b7a3f;
+  }
+  .hr {
+    color: #c5c5c5;
+  }
+
   @media (max-width: 768px) {
     .sponsors {
       display: flex;
@@ -57,5 +68,21 @@
     }
     .MainSponsor {
       height: 50px;
+    }
+    .hr {
+      color: #c5c5c5;
+    }
+    .termsParagraph {
+      padding: 10px;
+      font-size: 15px;
+      color: #ffffff !important;
+      font-weight: 500;
+      justify-content: center;
+      text-align: center;
+    }
+  
+    .bottom {
+      display: block;
+      width: 100%;
     }
   }
