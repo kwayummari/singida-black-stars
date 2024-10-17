@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <CarouselWidget openPopup={false} />
-      <Neck />
+      <Neck openPopup={true} />
       <HomePageNews LatestNewsNo='4' PlayerNewsNo='4' CommercialNo='4' />
       {isMobile ? <MainSponsorMobile /> : <MainSponsor />}
     </div>
