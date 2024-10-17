@@ -25,12 +25,12 @@ const Footer = () => (
             <p className={`${styles.paragraph} m-0`}>Club Partners</p>
             <div className={`${styles.sponsors} col-md-2 col-sm-2 mx-auto d-flex`} >
               <img
-                src="/images/cocacola.png"
+                src="/images/azam.png"
                 className={`${styles.sponsorLogo} mx-auto d-block`}
                 alt="Picture of the sponsor"
               />
               <img
-                src="/images/vodacom.png"
+                src="/images/airtel.webp"
                 className={`${styles.sponsorLogo} mx-auto d-block`}
                 alt="Picture of the sponsor"
               />
@@ -40,7 +40,7 @@ const Footer = () => (
                 alt="Picture of the sponsor"
               />
               <img
-                src="/images/sportpesa.png"
+                src="/images/pmbet3.png"
                 className={`${styles.sponsorLogo} mx-auto d-block`}
                 alt="Picture of the sponsor"
               />
@@ -52,12 +52,12 @@ const Footer = () => (
         <div className={`${styles.bottomFooter} card`}>
           <div className="card-body">
             <div className={`${styles.sponsors} col-md-2 col-sm-2 mx-auto d-flex justify-content-center`}>
-              <i className="bi bi-facebook p-3 text-white fs-2"></i>
-              <i className="bi bi-twitter p-3 text-white fs-2"></i>
-              <i className="bi bi-youtube p-3 text-white fs-2"></i>
-              <i className="bi bi-instagram p-3 text-white fs-2"></i>
-              <i className="bi bi-linkedin p-3 text-white fs-2"></i>
-              <i className="bi bi-tiktok p-3 text-white fs-2"></i>
+              <a href="https://www.facebook.com/singidablackstarssc" target="_blank"><i className="bi bi-facebook p-3 text-white fs-2"></i></a>
+              <a href="https://www.x.com/singidablackstarssc" target="_blank"><i className="bi bi-twitter p-3 text-white fs-2"></i></a>
+              <a href="https://www.youtube.com/@BLACKSTARSTV24" target="_blank"><i className="bi bi-youtube p-3 text-white fs-2"></i></a>
+              <a href="https://www.x.com/singidablackstarssc" target="_blank"><i className="bi bi-instagram p-3 text-white fs-2"></i></a>
+              <a href="https://www.linkedin.com/singidablackstarssc" target="_blank"><i className="bi bi-linkedin p-3 text-white fs-2"></i></a>
+              <a href="https://www.tiktok.com/singidablackstarssc" target="_blank"><i className="bi bi-tiktok p-3 text-white fs-2"></i></a>
             </div>
             <div className={`${styles.terms} d-flex flex-wrap justify-content-center`}>
               <p className={`${styles.termsParagraph} m-2`}>Terms of Use</p>

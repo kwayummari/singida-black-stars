@@ -7,13 +7,12 @@
 .imageContainer {
   position: relative;
   overflow: hidden;
-  height: 100%;
   width: 100%;
-  margin-bottom: 20px;
+  height: 400px;
 }
 
 .carouselImage {
-  object-fit: cover;
+  object-fit: contain;
   width: 100%;
   height: 100%;
 }

@@ -4,28 +4,28 @@ import styles from "../../styles/Sponsors.module.scss";
 
 const sponsors = [
     {
-        name: "Kamara",
-        image: "/images/kamara.png",
+        name: "NBC",
+        image: "/images/nbc.png",
+    },
+    {
+        name: "Azam Max",
+        image: "/images/azam.png",
     },
     {
         name: "Kamara",
-        image: "/images/kamara.png",
+        image: "/images/gsm.png",
+    },
+    {
+        name: "PM BET",
+        image: "/images/pmbet3.png",
     },
     {
         name: "Kamara",
-        image: "/images/kamara.png",
-    },
-    {
-        name: "Kamara",
-        image: "/images/kamara.png",
-    },
-    {
-        name: "Kamara",
-        image: "/images/kamara.png",
+        image: "/images/airtel.webp",
     },
 ];
 
-const PlayerCard = ({ image, name }) => (
+const PartnersCard = ({ image, name }) => (
     <div className="col-12 col-md-6 mb-4">
         <div className={`${styles.imageContainer} card`}>
             <div className={styles.imageOverlay}></div>
@@ -37,12 +37,12 @@ const PlayerCard = ({ image, name }) => (
     </div>
 );
 
-const AllTeam = () => {
+const Partners = () => {
     return (
-        <div className="container">
+        <div className="container mt-4">
                     <div className="row">
                         {sponsors.map((player) => (
-                            <PlayerCard
+                            <PartnersCard
                                 key={player.number}
                                 image={player.image}
                                 name={player.name}
@@ -53,4 +53,4 @@ const AllTeam = () => {
     );
 };
 
-export default AllTeam;
+export default Partners;
