@@ -25,13 +25,14 @@ const PlayerNews = ({ openPopup }) => {
                         onClick={() => handleImageClick('Mchezaji wetu @gego1561 ameitwa kwenye Kikosi cha Timu ya Taifa @taifastars_ kuelekea michezo miwili ya kuwania tiketi ya kufuzu AFCON 2025 dhidi ya Congo.', '/images/khalid.png')}
                         style={{ cursor: 'pointer' }}
                     >
+                        <div className={styles.imageOverlay}></div>
                         <img
                             src="/images/khalid.png"
                             alt="Picture of the logo"
                             className={styles.carouselImage}
                         />
                         <div className={styles.imageText}>
-                            <p>Mchezaji wetu @gego1561 ameitwa kwenye Kikosi cha Timu ya Taifa @taifastars_ kuelekea michezo miwili ya kuwania tiketi ya kufuzu AFCON 2025 dhidi ya Congo.</p>
+                            <p>Mchezaji wetu @gego1561 ameitwa kwenye Kikosi cha Timu ya Taifa @taifastars_</p>
                         </div>
                         <div className={styles.imageTextBelow}>
                             <p>#nationalteamcallup</p>
@@ -45,6 +46,7 @@ const PlayerNews = ({ openPopup }) => {
                         onClick={() => handleImageClick('Tunamtakia Heri ya Kumbukizi ya Siku ya Kuzaliwa kwa Beki wetu Ibrahim Imoro', '/images/imoro.png')}
                         style={{ cursor: 'pointer' }}
                     >
+                        <div className={styles.imageOverlay}></div>
                         <img
                             src="/images/imoro.png"
                             alt="Picture of the logo"
@@ -65,6 +67,7 @@ const PlayerNews = ({ openPopup }) => {
                         onClick={() => handleImageClick('Report | SINGIDA BIG STARS 1-1 JKT', '/images/jkt.png')}
                         style={{ cursor: 'pointer' }}
                     >
+                        <div className={styles.imageOverlay}></div>
                         <img
                             src="/images/jkt.png"
                             alt="Picture of the logo"

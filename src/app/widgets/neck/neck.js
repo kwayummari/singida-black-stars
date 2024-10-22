@@ -26,13 +26,14 @@ const Neck = ({ openPopup }) => {
                         onClick={() => handleImageClick('Kikosi chetu kinachoanza kwenye mchezo wetu wa leo dhidi ya JKT Tanzania', '/images/lineup.png')}
                         style={{ cursor: 'pointer' }}
                     >
+                        <div className={styles.imageOverlay}></div>
                         <img
                             src="/images/lineup.png"
                             alt="Picture of the logo"
                             className={styles.carouselImage}
                         />
                         <div className={styles.imageText}>
-                            <p>Kikosi chetu kinachoanza kwenye mchezo wetu wa leo dhidi ya JKT Tanzania</p>
+                            <p>Kikosi chetu kinachoanza </p>
                         </div>
                         <div className={styles.imageTextBelow}>
                             <p>#Inawezekana 🏆#NBCPremierLeague</p>
@@ -47,13 +48,14 @@ const Neck = ({ openPopup }) => {
                         onClick={() => handleImageClick('33_metacha ndiye Golikipa wa kwanza kuokoa mkwaju wa penati kwenye @ligikuu ya @nbc_tanzania msimu wa 2024/2025.', '/images/metacha.png')}
                         style={{ cursor: 'pointer' }}
                     >
+                        <div className={styles.imageOverlay}></div>
                         <img
                             src="/images/metacha.png"
                             alt="Picture of the logo"
                             className={styles.carouselImage}
                         />
                         <div className={styles.imageText}>
-                            <p>33_metacha ndiye Golikipa wa kwanza kuokoa mkwaju wa penati kwenye @ligikuu ya @nbc_tanzania msimu wa 2024/2025.</p>
+                            <p>Golikipa wa kwanza kuokoa penati msimu wa 2024/2025.</p>
                         </div>
                         <div className={styles.imageTextBelow}>
                             <p>@ligikuu @tanfootball @nbc_tanzania @azamtvsports @tbc_online</p>

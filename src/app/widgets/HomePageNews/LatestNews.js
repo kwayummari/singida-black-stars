@@ -24,6 +24,7 @@ const LatestNews = ({ openPopup }) => {
                         onClick={() => handleImageClick('Report | SINGIDA BIG STARS 1-1 JKT', '/images/jkt.png')}
                         style={{ cursor: 'pointer' }}
                     >
+                        <div className={styles.imageOverlay}></div>
                         <img
                             src="/images/jkt.png"
                             alt="Picture of the logo"
@@ -44,6 +45,7 @@ const LatestNews = ({ openPopup }) => {
                         onClick={() => handleImageClick('Report | SINGIDA BIG STARS 1-1 JKT', '/images/jkt.png')}
                         style={{ cursor: 'pointer' }}
                     >
+                        <div className={styles.imageOverlay}></div>
                         <img
                             src="/images/jkt.png"
                             alt="Picture of the logo"
@@ -64,6 +66,7 @@ const LatestNews = ({ openPopup }) => {
                         onClick={() => handleImageClick('Report | SINGIDA BIG STARS 1-1 JKT', '/images/jkt.png')}
                         style={{ cursor: 'pointer' }}
                     >
+                        <div className={styles.imageOverlay}></div>
                         <img
                             src="/images/jkt.png"
                             alt="Picture of the logo"
@@ -84,6 +87,7 @@ const LatestNews = ({ openPopup }) => {
                         onClick={() => handleImageClick('Report | SINGIDA BIG STARS 1-1 JKT', '/images/jkt.png')}
                         style={{ cursor: 'pointer' }}
                     >
+                        <div className={styles.imageOverlay}></div>
                         <img
                             src="/images/jkt.png"
                             alt="Picture of the logo"
