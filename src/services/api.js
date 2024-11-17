@@ -32,7 +32,7 @@ export const get = async (endPoint) => {
     if (!(await hasInternetConnection())) {
       throw new Error("No internet connection");
     }
-
+    console.log(baseUrl,endPoint)
     const response = await axios.get(`${baseUrl}${endPoint}`);
     return response.data;
   } catch (error) {
