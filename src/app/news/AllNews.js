@@ -1,61 +1,7 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from "../../styles/allNews.module.scss";
-
-const newsData = [
-    {
-        id: 1,
-        image: "/images/nyerere.png",
-        title: "Tutakuenzi Daima Baba wa Taifa, Mwl. Julius Kambarage Nyerere 🇹🇿",
-        description: "Kumbukizi ya baba wa taifa",
-    },
-    {
-        id: 2,
-        image: "/images/Taifa.png",
-        title: "Tunaitakia Timu ya Taifa @taifastars_🇹🇿 kila la kheri kwenye mchezo wa leo ugenini dhidi ya Congo DR.",
-        description: "@taifastars_🇹🇿",
-    },
-    {
-        id: 3,
-        image: "/images/next.png",
-        title: `Singida Black Stars SC 🆚 Namungo FC
-                🗓️ Oktoba 20, 2024
-                🕓 Saa 10:00 Jioni
-                🏟️ CCM Liti Stadium
-                🏆NBC Premier League`,
-        description: "Match Day | 4 days to go",
-    },
-    {
-        id: 4,
-        image: "/images/jkt.png",
-        title: "Report | SINGIDA BIG STARS 1-1 JKT",
-        description: "Match Reports | 2 days ago",
-    },
-    {
-        id: 4,
-        image: "/images/warmup.png",
-        title: "Timu yetu ina jezi kali za warmup kuliko timu zote msimu huu.",
-        description: "Kazi nzuri ya @wakazitanzania",
-    },
-    {
-        id: 4,
-        image: "/images/liti.png",
-        title: "Unatamani tuboreshe kitu gani unapokuja uwanjani CCM LITI kutazama mechi zetu?",
-        description: "Tunasoma maoni.",
-    },
-    {
-        id: 4,
-        image: "/images/jkt.png",
-        title: "Report | SINGIDA BIG STARS 1-1 JKT",
-        description: "Match Reports | 2 days ago",
-    },
-    {
-        id: 4,
-        image: "/images/jkt.png",
-        title: "Report | SINGIDA BIG STARS 1-1 JKT",
-        description: "Match Reports | 2 days ago",
-    },
-];
+import { get } from "../../utils/api"; // Import your custom 'get' function
 
 const NewsCard = ({ image, title, description, onClick }) => (
     <div className="col-12 col-md-3 mb-4" onClick={onClick}>
@@ -73,7 +19,28 @@ const NewsCard = ({ image, title, description, onClick }) => (
 );
 
 const AllNews = () => {
+    const [newsData, setNewsData] = useState([]);
     const [selectedCard, setSelectedCard] = useState(null);
+    const [loading, setLoading] = useState(true);  // To manage loading state
+    const [error, setError] = useState(null);      // To manage error state
+
+    // Fetch news data from API on component mount
+    useEffect(() => {
+        const fetchNews = async () => {
+            try {
+                setLoading(true); // Start loading before the API call
+                const data = await get('/news/'); // Assuming /news is your endpoint
+                setNewsData(data); // Update state with fetched news data
+            } catch (error) {
+                setError("Failed to load news. Please try again later.");
+            } finally {
+                setLoading(false); // Set loading to false once fetching is done
+            }
+        };
+
+        fetchNews(); // Call the fetch function
+    }, []); // Empty dependency array ensures this runs once on mount
+
     const handleCardClick = (item) => {
         setSelectedCard(item);
     };
@@ -81,6 +48,15 @@ const AllNews = () => {
     const closeModal = () => {
         setSelectedCard(null);
     };
+
+    if (loading) {
+        return <p>Loading...</p>; // Show loading text or spinner while fetching
+    }
+
+    if (error) {
+        return <p>{error}</p>; // Show error message if fetch fails
+    }
+
     return (
         <div className="container">
             <p className={styles.header}>All News</p>
@@ -117,7 +93,6 @@ const AllNews = () => {
                                     className="img-fluid mb-3"
                                 />
                                 <p>{selectedCard.description}</p>
-                                <p>{selectedCard.reportDate}</p>
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" onClick={closeModal}>Close</button>
