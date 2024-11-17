@@ -3,9 +3,34 @@ import React, { useState, useEffect } from 'react';
 import styles from "../../styles/allNews.module.scss";
 import { get } from '@/services/api';
 
+// Function to calculate time difference
+const timeAgo = (timestamp) => {
+    const now = new Date();
+    const postDate = new Date(timestamp);
+    const diffInMs = now - postDate;
+    const diffInSecs = Math.floor(diffInMs / 1000);
+    const diffInMins = Math.floor(diffInSecs / 60);
+    const diffInHours = Math.floor(diffInMins / 60);
+    const diffInDays = Math.floor(diffInHours / 24);
+    const diffInMonths = Math.floor(diffInDays / 30);
 
+    if (diffInDays < 1) {
+        if (diffInHours < 1) {
+            return `${diffInMins} minutes ago`;
+        }
+        return `${diffInHours} hours ago`;
+    }
 
-const NewsCard = ({ image, title, description, caption, reportDate, onClick }) => (
+    if (diffInDays < 30) {
+        return `${diffInDays} days ago`;
+    }
+
+    return diffInMonths === 1
+        ? '1 month ago'
+        : `${diffInMonths} months ago`;
+};
+
+const NewsCard = ({ image, title, description, caption, onClick }) => (
     <div className="col-12 col-md-3 mb-4" onClick={onClick}>
         <div className={`${styles.imageContainer} card`}>
             <div className={styles.imageOverlay}></div>
@@ -15,12 +40,12 @@ const NewsCard = ({ image, title, description, caption, reportDate, onClick }) =
             </div>
             <div className={styles.imageTextBelow}>
                 <p>{caption}</p>
-                <p>{reportDate}</p>
             </div>
         </div>
     </div>
 );
 
+// Shimmer Card for Loading State
 const ShimmerCard = () => (
     <div className="col-12 col-md-3 mb-4">
         <div className={`${styles.imageContainer} card ${styles.shimmerCard}`}>
@@ -41,7 +66,7 @@ const AllNews = () => {
     useEffect(() => {
         const fetchNews = async () => {
             try {
-                setLoading(true); 
+                setLoading(true);
                 const data = await get('/news/getAllNews.php');
                 setNewsData(data);
             } catch (error) {
@@ -61,9 +86,11 @@ const AllNews = () => {
     const closeModal = () => {
         setSelectedCard(null);
     };
+
     return (
         <div className="container">
             <p className={styles.header}>All News</p>
+
             {loading && <p>Loading...</p>}
             {error && <p>{error}</p>}
 
@@ -80,14 +107,14 @@ const AllNews = () => {
                             key={news.id}
                             image={news.image}
                             title={news.title}
-                            description={news.description}
+                            description={news.description} // raw HTML description
                             caption={news.caption}
-                            reportDate={news.reportDate}
                             onClick={() => handleCardClick(news)}
                         />
                     ))
                 )}
             </div>
+
             {selectedCard && (
                 <div
                     className="modal fade show d-block"
@@ -106,11 +133,15 @@ const AllNews = () => {
                             <div className="modal-body">
                                 <img
                                     src={selectedCard.image}
-                                    alt={selectedCard.altText}
+                                    alt={selectedCard.title}
                                     className="img-fluid mb-3"
                                 />
-                                <p>{selectedCard.description}</p>
-                                <p>{selectedCard.reportDate}</p>
+                                <div
+                                    dangerouslySetInnerHTML={{
+                                        __html: selectedCard.description, // Render the CKEditor HTML description
+                                    }}
+                                />
+                                <p>{timeAgo(selectedCard.reportDate)}</p>
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" onClick={closeModal}>Close</button>
