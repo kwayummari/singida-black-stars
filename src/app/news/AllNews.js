@@ -1,9 +1,11 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import styles from "../../styles/allNews.module.scss";
-import { get } from "../../services/api";
+import { get } from '@/services/api';
 
-const NewsCard = ({ image, title, description, onClick }) => (
+
+
+const NewsCard = ({ image, title, description, caption, onClick }) => (
     <div className="col-12 col-md-3 mb-4" onClick={onClick}>
         <div className={`${styles.imageContainer} card`}>
             <div className={styles.imageOverlay}></div>
@@ -12,17 +14,28 @@ const NewsCard = ({ image, title, description, onClick }) => (
                 <p>{title}</p>
             </div>
             <div className={styles.imageTextBelow}>
-                <p>{description}</p>
+                <p>{caption}</p>
             </div>
         </div>
     </div>
 );
 
+const ShimmerCard = () => (
+    <div className="col-12 col-md-3 mb-4">
+        <div className={`${styles.imageContainer} card ${styles.shimmerCard}`}>
+            <div className={styles.imageOverlay}></div>
+            <div className={styles.shimmerImage}></div>
+            <div className={styles.shimmerText}></div>
+            <div className={styles.shimmerTextBelow}></div>
+        </div>
+    </div>
+);
+
 const AllNews = () => {
-    const [newsData, setNewsData] = useState([]);
     const [selectedCard, setSelectedCard] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null); 
+    const [newsData, setNewsData] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const fetchNews = async () => {
@@ -36,7 +49,7 @@ const AllNews = () => {
                 setLoading(false);
             }
         };
-
+    
         fetchNews();
     }, []);
 
@@ -47,28 +60,31 @@ const AllNews = () => {
     const closeModal = () => {
         setSelectedCard(null);
     };
-
-    if (loading) {
-        return <p>Loading...</p>;
-    }
-
-    if (error) {
-        return <p>{error}</p>;
-    }
-
     return (
         <div className="container">
             <p className={styles.header}>All News</p>
+            {loading && <p>Loading...</p>}
+            {error && <p>{error}</p>}
+
             <div className="row">
-                {newsData.map((news) => (
-                    <NewsCard
-                        key={news.id}
-                        image={news.image}
-                        title={news.title}
-                        description={news.description}
-                        onClick={() => handleCardClick(news)}
-                    />
-                ))}
+                {loading ? (
+                    [1, 2, 3, 4].map((_, index) => (
+                        <ShimmerCard key={index} />
+                    ))
+                ) : newsData.length === 0 ? (
+                    <p>No news available</p>
+                ) : (
+                    newsData.map((news) => (
+                        <NewsCard
+                            key={news.id}
+                            image={news.image}
+                            title={news.title}
+                            description={news.description}
+                            caption={news.caption}
+                            onClick={() => handleCardClick(news)}
+                        />
+                    ))
+                )}
             </div>
             {selectedCard && (
                 <div
@@ -92,6 +108,7 @@ const AllNews = () => {
                                     className="img-fluid mb-3"
                                 />
                                 <p>{selectedCard.description}</p>
+                                <p>{selectedCard.reportDate}</p>
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" onClick={closeModal}>Close</button>
