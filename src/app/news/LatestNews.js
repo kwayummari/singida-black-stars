@@ -62,7 +62,7 @@ const Latest = () => {
         const fetchNews = async () => {
             try {
                 setLoading(true);
-                const data = await get('/news/getAllNews.php');
+                const data = await get('/news/latestNews.php');
                 setNewsData(data);
             } catch (error) {
                 setError("Failed to load news. Please try again later.");
@@ -101,7 +101,7 @@ const Latest = () => {
                         key={index}
                         imageSrc={item.imageSrc}
                         altText= 'Exclusive News Image'
-                        description={item.description}
+                        description={item.caption}
                         reportDate={item.reportDate}
                         onClick={() => handleCardClick(item)}
                     />
