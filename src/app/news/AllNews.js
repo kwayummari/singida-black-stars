@@ -5,7 +5,7 @@ import { get } from '@/services/api';
 
 
 
-const NewsCard = ({ image, title, description, caption, onClick }) => (
+const NewsCard = ({ image, title, description, caption, reportDate, onClick }) => (
     <div className="col-12 col-md-3 mb-4" onClick={onClick}>
         <div className={`${styles.imageContainer} card`}>
             <div className={styles.imageOverlay}></div>
@@ -15,6 +15,7 @@ const NewsCard = ({ image, title, description, caption, onClick }) => (
             </div>
             <div className={styles.imageTextBelow}>
                 <p>{caption}</p>
+                <p>{reportDate}</p>
             </div>
         </div>
     </div>
@@ -81,6 +82,7 @@ const AllNews = () => {
                             title={news.title}
                             description={news.description}
                             caption={news.caption}
+                            reportDate={news.reportDate}
                             onClick={() => handleCardClick(news)}
                         />
                     ))
