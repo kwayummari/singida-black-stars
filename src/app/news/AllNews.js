@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import styles from "../../styles/allNews.module.scss";
-import { get } from "../../services/api"; // Import your custom 'get' function
+import { get } from "../../services/api";
 
 const NewsCard = ({ image, title, description, onClick }) => (
     <div className="col-12 col-md-3 mb-4" onClick={onClick}>
