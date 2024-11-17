@@ -21,25 +21,24 @@ const NewsCard = ({ image, title, description, onClick }) => (
 const AllNews = () => {
     const [newsData, setNewsData] = useState([]);
     const [selectedCard, setSelectedCard] = useState(null);
-    const [loading, setLoading] = useState(true);  // To manage loading state
-    const [error, setError] = useState(null);      // To manage error state
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null); 
 
-    // Fetch news data from API on component mount
     useEffect(() => {
         const fetchNews = async () => {
             try {
-                setLoading(true); // Start loading before the API call
-                const data = await get('/news/getAllNews.php'); // Assuming /news is your endpoint
-                setNewsData(data); // Update state with fetched news data
+                setLoading(true); 
+                const data = await get('/news/getAllNews.php');
+                setNewsData(data);
             } catch (error) {
                 setError("Failed to load news. Please try again later.");
             } finally {
-                setLoading(false); // Set loading to false once fetching is done
+                setLoading(false);
             }
         };
 
-        fetchNews(); // Call the fetch function
-    }, []); // Empty dependency array ensures this runs once on mount
+        fetchNews();
+    }, []);
 
     const handleCardClick = (item) => {
         setSelectedCard(item);
@@ -50,11 +49,11 @@ const AllNews = () => {
     };
 
     if (loading) {
-        return <p>Loading...</p>; // Show loading text or spinner while fetching
+        return <p>Loading...</p>;
     }
 
     if (error) {
-        return <p>{error}</p>; // Show error message if fetch fails
+        return <p>{error}</p>;
     }
 
     return (
