@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = process.env.API_SERVER || 'http://noapi';
+const baseUrl = process.env.NEXT_PUBLIC_API_SERVER || 'http://noapi';
 
 // Check for internet connection
 const hasInternetConnection = async () => {
