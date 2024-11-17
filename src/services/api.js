@@ -26,13 +26,7 @@ export const get = async (endPoint) => {
     if (!(await hasInternetConnection())) {
       throw new Error("No internet connection");
     }
-
-    const response = await axios.get(`${baseUrl}${endPoint}`, {
-      headers: {
-        "Content-Type": "application/json"
-      },
-    });
-
+    const response = await axios.get(`${baseUrl}${endPoint}`);
     return response.data;
   } catch (error) {
     handleError(error);
