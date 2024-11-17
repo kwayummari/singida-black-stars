@@ -2,7 +2,6 @@ import axios from 'axios';
 
 const baseUrl = process.env.NEXT_PUBLIC_API_SERVER || 'http://noapi';
 
-// Check for internet connection
 const hasInternetConnection = async () => {
   try {
     const response = await axios.head(baseUrl);
@@ -14,24 +13,19 @@ const hasInternetConnection = async () => {
 
 const handleError = (error) => {
   if (error.response) {
-    // Server responded with a status code outside the 2xx range
     throw new Error('Failed to fetch data');
   } else if (error.request) {
-    // Request was made, but no response was received
     throw new Error('No response from the server');
   } else {
-    // Something else happened in setting up the request
     throw new Error('Request failed');
   }
 };
 
-// GET Request
 export const get = async (endPoint) => {
   try {
     if (!(await hasInternetConnection())) {
       throw new Error("No internet connection");
     }
-    console.log(baseUrl,endPoint)
     const response = await axios.get(`${baseUrl}${endPoint}`);
     return response.data;
   } catch (error) {
@@ -40,7 +34,6 @@ export const get = async (endPoint) => {
   }
 };
 
-// POST Request
 export const post = async (endPoint, data) => {
   try {
     if (!(await hasInternetConnection())) {
@@ -55,7 +48,6 @@ export const post = async (endPoint, data) => {
   }
 };
 
-// PUT Request
 export const put = async (endPoint, data) => {
   try {
     if (!(await hasInternetConnection())) {
@@ -70,7 +62,6 @@ export const put = async (endPoint, data) => {
   }
 };
 
-// DELETE Request
 export const deleteRequest = async (endPoint) => {
   try {
     if (!(await hasInternetConnection())) {
