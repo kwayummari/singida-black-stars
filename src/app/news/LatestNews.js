@@ -4,26 +4,31 @@ import styles from '../../styles/Latest.module.scss';
 import ImageCard from '../widgets/ImageCardContainer/ImageCardContainer';
 import { get } from '@/services/api';
 
-const data = [
-    {
-        imageSrc: "/images/exclusive1.png",
-        altText: "Exclusive Image 1",
-        description: "Baada ya kazi nzuri ya kuongoza Ligi bila kupoteza mchezo wowote tunaenda mapumziko mafupi mpaka tarehe 10/10/2024 🐆🐆T",
-        reportDate: "Match Reports | 2 days ago"
-    },
-    {
-        imageSrc: "/images/exclusive2.png",
-        altText: "Exclusive Image 2",
-        description: "RASMI: Programu ya mazoezi kwa timu zetu za vijana itaanza Alhamisi tarehe 10/10/2024.",
-        reportDate: "Match Reports | 2 days ago"
-    },
-    {
-        imageSrc: "/images/jkt.png",
-        altText: "JKT Match",
-        description: "Report | SINGIDA BIG STARS 1-1 JKT",
-        reportDate: "Match Reports | 2 days ago"
+const timeAgo = (timestamp) => {
+    const now = new Date();
+    const postDate = new Date(timestamp);
+    const diffInMs = now - postDate;
+    const diffInSecs = Math.floor(diffInMs / 1000);
+    const diffInMins = Math.floor(diffInSecs / 60);
+    const diffInHours = Math.floor(diffInMins / 60);
+    const diffInDays = Math.floor(diffInHours / 24);
+    const diffInMonths = Math.floor(diffInDays / 30);
+
+    if (diffInDays < 1) {
+        if (diffInHours < 1) {
+            return `${diffInMins} minutes ago`;
+        }
+        return `${diffInHours} hours ago`;
     }
-];
+
+    if (diffInDays < 30) {
+        return `${diffInDays} days ago`;
+    }
+
+    return diffInMonths === 1
+        ? '1 month ago'
+        : `${diffInMonths} months ago`;
+};
 const ShimmerCard = () => (
     <div className="col-12 col-md-3 mb-4">
         <div className={`${styles.imageContainer} card ${styles.shimmerCard}`}>
@@ -132,6 +137,12 @@ const Latest = () => {
                                 />
                                 <p>{selectedCard.description}</p>
                                 <p>{selectedCard.reportDate}</p>
+                                <div
+                                    dangerouslySetInnerHTML={{
+                                        __html: selectedCard.description, // Render the CKEditor HTML description
+                                    }}
+                                />
+                                <p>{timeAgo(selectedCard.reportDate)}</p>
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" onClick={closeModal}>Close</button>
