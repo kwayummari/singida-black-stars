@@ -134,6 +134,7 @@ const AllNews = () => {
                                     src={selectedCard.image}
                                     alt={selectedCard.title}
                                     className="img-fluid mb-3"
+                                    style={{height: '500px', width: '100%', objectFit: 'cover',}}
                                 />
                                 <div
                                     dangerouslySetInnerHTML={{

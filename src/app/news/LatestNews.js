@@ -134,7 +134,7 @@ const Latest = () => {
                                     src={selectedCard.imageSrc}
                                     alt={selectedCard.altText}
                                     className="img-fluid mb-3"
-                                    style={{height: '400px', width: '100%', objectFit: 'cover',}}
+                                    style={{height: '500px', width: '100%', objectFit: 'cover',}}
                                 />
                                 <div
                                     dangerouslySetInnerHTML={{
