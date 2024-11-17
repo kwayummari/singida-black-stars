@@ -134,9 +134,8 @@ const Latest = () => {
                                     src={selectedCard.imageSrc}
                                     alt={selectedCard.altText}
                                     className="img-fluid mb-3"
+                                    style={{height: '400px', width: '100%', objectFit: 'cover',}}
                                 />
-                                <p>{selectedCard.description}</p>
-                                <p>{selectedCard.reportDate}</p>
                                 <div
                                     dangerouslySetInnerHTML={{
                                         __html: selectedCard.description, // Render the CKEditor HTML description
