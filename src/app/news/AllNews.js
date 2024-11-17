@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import styles from "../../styles/allNews.module.scss";
 import { get } from '@/services/api';
 
-// Function to calculate time difference
 const timeAgo = (timestamp) => {
     const now = new Date();
     const postDate = new Date(timestamp);

@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from '../../styles/Latest.module.scss';
 import ImageCard from '../widgets/ImageCardContainer/ImageCardContainer';
+import { get } from '@/services/api';
 
 const data = [
     {
@@ -23,10 +24,23 @@ const data = [
         reportDate: "Match Reports | 2 days ago"
     }
 ];
+const ShimmerCard = () => (
+    <div className="col-12 col-md-3 mb-4">
+        <div className={`${styles.imageContainer} card ${styles.shimmerCard}`}>
+            <div className={styles.imageOverlay}></div>
+            <div className={styles.shimmerImage}></div>
+            <div className={styles.shimmerText}></div>
+            <div className={styles.shimmerTextBelow}></div>
+        </div>
+    </div>
+);
 
 const Latest = () => {
     const [selectedCard, setSelectedCard] = useState(null);
     const scrollRef = useRef(null);
+    const [newsData, setNewsData] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
     useEffect(() => {
         const scroll = scrollRef.current;
         let scrollAmount = 0;
@@ -44,6 +58,22 @@ const Latest = () => {
         return () => clearInterval(scrollInterval);
     }, []);
 
+    useEffect(() => {
+        const fetchNews = async () => {
+            try {
+                setLoading(true);
+                const data = await get('/news/getAllNews.php');
+                setNewsData(data);
+            } catch (error) {
+                setError("Failed to load news. Please try again later.");
+            } finally {
+                setLoading(false);
+            }
+        };
+    
+        fetchNews();
+    }, []);
+
 
     const handleCardClick = (item) => {
         setSelectedCard(item);
@@ -56,17 +86,27 @@ const Latest = () => {
     return (
         <div className="container">
             <p className={styles.header}>Latest News</p>
+            {loading && <p>Loading...</p>}
+            {error && <p>{error}</p>}
             <div className={`${styles.scrollableRow} row`} ref={scrollRef}>
-                {data.map((item, index) => (
+            {loading ? (
+                    [1, 2, 3, 4].map((_, index) => (
+                        <ShimmerCard key={index} />
+                    ))
+                ) : newsData.length === 0 ? (
+                    <p>No news available</p>
+                ) : (
+                newsData.map((item, index) => (
                     <ImageCard
                         key={index}
                         imageSrc={item.imageSrc}
-                        altText={item.altText}
+                        altText= 'Exclusive News Image'
                         description={item.description}
                         reportDate={item.reportDate}
                         onClick={() => handleCardClick(item)}
                     />
-                ))}
+                ))
+                )}
             </div>
 
             {selectedCard && (
