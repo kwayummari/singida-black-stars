@@ -29,7 +29,7 @@ const AllNews = () => {
         const fetchNews = async () => {
             try {
                 setLoading(true); // Start loading before the API call
-                const data = await get('/news/'); // Assuming /news is your endpoint
+                const data = await get('/news/getAllNews.php'); // Assuming /news is your endpoint
                 setNewsData(data); // Update state with fetched news data
             } catch (error) {
                 setError("Failed to load news. Please try again later.");
