@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { toast } from 'react-toastify'; // For showing alerts like AppSnackbar in Flutter
 
 const baseUrl = process.env.API_SERVER || 'http://noapi';
 
