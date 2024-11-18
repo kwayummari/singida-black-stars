@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import styles from '../../../styles/homePageNews.module.scss';
-import { get } from '@/services/api';
+import { get, post } from '@/services/api';
 
 const timeAgo = (timestamp) => {
     const now = new Date();
@@ -62,7 +62,7 @@ const LatestNews = ({ openPopup }) => {
         const fetchNews = async () => {
             try {
                 setLoading(true);
-                const data = await get('/news/getAllNews.php');
+                const data = await post('/news/newsByCategory.php', { id: 1 });
                 setNewsData(data);
             } catch (error) {
                 setError("Failed to load news. Please try again later.");
@@ -76,6 +76,8 @@ const LatestNews = ({ openPopup }) => {
 
     return (
         <div className="container">
+            {loading && <p>Loading...</p>}
+            {error && <p>{error}</p>}
             <div className={`${styles.scrollableRow} row`}>
                 {loading ? (
                     [1, 2, 3, 4].map((_, index) => (
