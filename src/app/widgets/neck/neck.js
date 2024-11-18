@@ -99,10 +99,10 @@ const Neck = ({ openPopup }) => {
                                 className={styles.carouselImage}
                             />
                             <div className={styles.imageText}>
-                                <p>Kikosi chetu kinachoanza </p>
+                                <p>{news.caption}</p>
                             </div>
                             <div className={styles.imageTextBelow}>
-                                <p>#Inawezekana 🏆#NBCPremierLeague</p>
+                            <p style={{ color: '#fff' }}> Reports | {timeAgo(news.reportDate)}</p>
                             </div>
                         </div>
                     </div>))
