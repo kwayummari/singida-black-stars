@@ -62,7 +62,8 @@ const LatestNews = ({ openPopup }) => {
         const fetchNews = async () => {
             try {
                 setLoading(true);
-                const data = await post('/news/newsByCategory.php', { id: 1 });
+                const data = await post('/news/newsByCategory.php', { id: '1' });
+                console.log(data)
                 setNewsData(data);
             } catch (error) {
                 setError("Failed to load news. Please try again later.");
@@ -103,7 +104,7 @@ const LatestNews = ({ openPopup }) => {
                                     <p>{news.caption}</p>
                                 </div>
                                 <div className={styles.imageTextBelow}>
-                                    <p> Reports | {timeAgo(news.reportDate)}</p>
+                                    <p style={{color: '#fff'}}> Reports | {timeAgo(news.reportDate)}</p>
                                 </div>
                             </div>
                         </div>))
