@@ -25,10 +25,10 @@ const HomePageNews = ({ LatestNewsNo, PlayerNewsNo, CommercialNo }) => {
   }, []);
 
   // Dynamic tab rendering
-  const renderTabContent = () => {
+  const renderTabContent = (categoryId) => {
     switch (activeTab) {
       case "LatestNews":
-        return <LatestNews openPopup={true} LatestNewsNo={LatestNewsNo} />;
+        return <LatestNews openPopup={true} LatestNewsNo={LatestNewsNo} categoryId={categoryId} />;
       case "PlayerNews":
         return <PlayerNews openPopup={true} PlayerNewsNo={PlayerNewsNo} />;
       case "Commercial":
