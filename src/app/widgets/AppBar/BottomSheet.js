@@ -2,7 +2,7 @@ import React from 'react';
 import styles from '../../../styles/bottomSheet.module.scss';
 import Link from 'next/link';
 
-const BottomSheetBar = () => (
+const BottomSheetBar = ({toggleBottomSheet}) => (
     <div className={`${styles.BottomSheetBar} container mt-4`} >
         <div className="row">
             <div className="col-md-3 col-sm-6 col-12 mb-3">

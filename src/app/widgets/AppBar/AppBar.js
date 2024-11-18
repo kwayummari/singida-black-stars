@@ -106,7 +106,7 @@ const AppBar = () => {
         <div className="offcanvas-header">
           <button type="button" className="btn-close btn-close-white" onClick={toggleBottomSheet}></button>
         </div>
-        <BottomSheetBar />
+        <BottomSheetBar toggleBottomSheet={toggleBottomSheet} />
       </div>
     </header>
   );
