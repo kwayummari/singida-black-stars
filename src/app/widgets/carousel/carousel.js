@@ -44,7 +44,7 @@ const CarouselWidget = ({ openPopup }) => {
         const fetchNews = async () => {
             try {
                 setLoading(true);
-                const data = await post('/news/newsByCategory.php', { id: categoryId });
+                const data = await post('/news/banner.php', { id: categoryId });
                 setNewsData(data);
             } catch (error) {
                 setError("Failed to load news. Please try again later.");
