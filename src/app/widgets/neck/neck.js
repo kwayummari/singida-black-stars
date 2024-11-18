@@ -91,7 +91,7 @@ const Neck = ({ openPopup }) => {
                     <div className="col-12 col-md-3">
                         <div
                             className={`${styles.imageContainer} card`}
-                            onClick={() => handleImageClick('Kikosi chetu kinachoanza kwenye mchezo wetu wa leo dhidi ya JKT Tanzania', '/images/lineup.png')}
+                            onClick={() => handleImageClick(news.title, news.imageSrc, news.description)}
                             style={{ cursor: 'pointer' }}
                         >
                             <div className={styles.imageOverlay}></div>
