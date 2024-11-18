@@ -40,7 +40,17 @@ const Footer = () => (
                 alt="Picture of the sponsor"
               />
               <img
-                src="/images/pmbet3.png"
+                src="/images/sponsors/lodhia.png"
+                className={`${styles.sponsorLogo} mx-auto d-block`}
+                alt="Picture of the sponsor"
+              />
+              <img
+                src="/images/sponsors/pmbet.png"
+                className={`${styles.sponsorLogo} mx-auto d-block`}
+                alt="Picture of the sponsor"
+              />
+              <img
+                src="/images/sponsors/wakazi.png"
                 className={`${styles.sponsorLogo} mx-auto d-block`}
                 alt="Picture of the sponsor"
               />

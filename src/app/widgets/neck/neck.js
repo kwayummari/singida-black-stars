@@ -81,7 +81,7 @@ const Neck = ({ openPopup }) => {
             {error && <p>{error}</p>}
             <div className={`${styles.scrollableRow} row`}>
                 {loading ? (
-                    [1, 2, 3, 4].map((_, index) => (
+                    [1, 2].map((_, index) => (
                         <ShimmerCard key={index} />
                     ))
                 ) : newsData.length === 0 ? (
