@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from "../../styles/AllMatches.module.scss";
 
 const matches = [
@@ -54,6 +54,9 @@ const matches = [
 ];
 
 const AllMatches = () => {
+    const [newsData, setNewsData] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
     return (
         <div className="container">
             {matches.map((match, index) => (
