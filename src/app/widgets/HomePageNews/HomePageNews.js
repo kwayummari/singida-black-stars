@@ -2,19 +2,20 @@
 import React, { useState, useEffect } from "react";
 import styles from "../../../styles/homePageNews.module.scss";
 import LatestNews from "./LatestNews";
-import PlayerNews from "./PlayersNews";
-import Commercial from "./Commercial";
-import axios from "axios";
+import { get } from "@/services/api";
 
-const HomePageNews = ({ LatestNewsNo, PlayerNewsNo, CommercialNo }) => {
-  const [activeTab, setActiveTab] = useState("LatestNews");
+const HomePageNews = ({ LatestNewsNo }) => {
+  const [activeTab, setActiveTab] = useState(null);
   const [tabs, setTabs] = useState([]);
 
   useEffect(() => {
     const fetchTabs = async () => {
       try {
-        const response = await axios.get("/categories/getAllCategories.php");
-        setTabs(response.data); 
+        const response = await get("/categories/getAllCategories.php");
+        if (response && response.length > 0) {
+          setTabs(response);
+          setActiveTab(response[0].id);
+        }
       } catch (error) {
         console.error("Error fetching tabs:", error);
       }
@@ -23,41 +24,30 @@ const HomePageNews = ({ LatestNewsNo, PlayerNewsNo, CommercialNo }) => {
     fetchTabs();
   }, []);
 
-  // Dynamic tab rendering
   const renderTabContent = (categoryId) => {
-    switch (activeTab) {
-      case "LatestNews":
-        return <LatestNews openPopup={true} LatestNewsNo={LatestNewsNo} categoryId={categoryId} />;
-      case "PlayerNews":
-        return <PlayerNews openPopup={true} PlayerNewsNo={PlayerNewsNo} />;
-      case "Commercial":
-        return <Commercial openPopup={true} CommercialNo={CommercialNo} />;
-      default:
-        return <LatestNews />;
-    }
+    return <LatestNews openPopup={true} LatestNewsNo={LatestNewsNo} categoryId={categoryId} />;
   };
 
   return (
     <div className={styles.newsTabs}>
       <div className={styles.tabNavigation}>
-        {tabs.length > 0 ? (
+        {tabs && tabs.length > 0 ? (
           tabs.map((tab) => (
             <button
               key={tab.id}
-              className={`${styles.tabButton} ${
-                activeTab === tab.name ? styles.active : ""
-              }`}
-              onClick={() => setActiveTab(tab.name)}
+              className={`${styles.tabButton} ${activeTab === tab.id ? styles.active : ""}`}
+              onClick={() => setActiveTab(tab.id)} // Set the clicked tab as active
             >
               {tab.name}
             </button>
           ))
         ) : (
-          // Show a loading or placeholder if tabs are not yet loaded
           <div>Loading tabs...</div>
         )}
       </div>
-      <div className={styles.tabContent}>{renderTabContent()}</div>
+      <div className={styles.tabContent}>
+        {activeTab && renderTabContent(activeTab)} {/* Pass the activeTab's id as categoryId */}
+      </div>
     </div>
   );
 };
