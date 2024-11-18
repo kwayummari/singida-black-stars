@@ -40,7 +40,7 @@ const ShimmerCard = () => (
     </div>
 );
 
-const LatestNews = ({ openPopup }, categoryId) => {
+const LatestNews = ({ openPopup, categoryId }) => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [popupTitle, setPopupTitle] = useState('');
     const [popupDescription, setPopupDescription] = useState('');

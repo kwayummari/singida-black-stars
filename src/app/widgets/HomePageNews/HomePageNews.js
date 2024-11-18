@@ -13,8 +13,8 @@ const HomePageNews = ({ LatestNewsNo }) => {
       try {
         const response = await get("/categories/getAllCategories.php");
         if (response && response.length > 0) {
-          setTabs(response);
           setActiveTab(response[0].id);
+          setTabs(response);
         }
       } catch (error) {
         console.error("Error fetching tabs:", error);
@@ -24,8 +24,8 @@ const HomePageNews = ({ LatestNewsNo }) => {
     fetchTabs();
   }, []);
 
-  const renderTabContent = (categoryId) => {
-    return <LatestNews openPopup={true} LatestNewsNo={LatestNewsNo} categoryId={categoryId} />;
+  const renderTabContent = () => {
+    return <LatestNews openPopup={true} LatestNewsNo={LatestNewsNo} categoryId={'1'} />;
   };
 
   return (
@@ -36,7 +36,7 @@ const HomePageNews = ({ LatestNewsNo }) => {
             <button
               key={tab.id}
               className={`${styles.tabButton} ${activeTab === tab.id ? styles.active : ""}`}
-              onClick={() => setActiveTab(tab.id)} // Set the clicked tab as active
+              onClick={() => setActiveTab(tab.id)}
             >
               {tab.name}
             </button>
@@ -46,7 +46,7 @@ const HomePageNews = ({ LatestNewsNo }) => {
         )}
       </div>
       <div className={styles.tabContent}>
-        {activeTab && renderTabContent(activeTab)} {/* Pass the activeTab's id as categoryId */}
+        {activeTab && renderTabContent()}
       </div>
     </div>
   );
