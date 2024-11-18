@@ -36,7 +36,7 @@ const HomePageNews = ({ LatestNewsNo }) => {
             <button
               key={tab.id}
               className={`${styles.tabButton} ${activeTab === tab.id ? styles.active : ""}`}
-              onClick={() => setActiveTab(tab.id)}
+              onClick={() => { setTabs([]), setActiveTab(tab.id)}}
             >
               {tab.name}
             </button>
