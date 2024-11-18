@@ -105,7 +105,7 @@ const LatestNews = ({ openPopup, categoryId }) => {
                                     <p>{news.caption}</p>
                                 </div>
                                 <div className={styles.imageTextBelow}>
-                                    <p style={{color: '#fff'}}> Reports | {timeAgo(news.reportDate)}</p>
+                                    <p style={{ color: '#fff' }}> Reports | {timeAgo(news.reportDate)}</p>
                                 </div>
                             </div>
                         </div>))
@@ -121,11 +121,12 @@ const LatestNews = ({ openPopup, categoryId }) => {
                             alt="Popup image"
                             className={styles.popupImage}
                         />
-                        <p className={styles.popupDescription}>
+                        <div
                             dangerouslySetInnerHTML={{
-                                        __html: popupDescription, 
-                                    }}
-                        </p>
+                                __html: selectedCard.description,
+                            }}
+                            className={styles.popupDescription}
+                        />
                         <button
                             onClick={() => setIsPopupOpen(false)}
                             className={styles.closePopup}
