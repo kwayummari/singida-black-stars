@@ -68,41 +68,42 @@ const LatestNews = ({ openPopup }) => {
                 setLoading(false);
             }
         };
-    
+
         fetchNews();
     }, []);
 
     return (
         <div className="container">
             <div className={`${styles.scrollableRow} row`}>
-            {loading ? (
+                {loading ? (
                     [1, 2, 3, 4].map((_, index) => (
                         <ShimmerCard key={index} />
                     ))
                 ) : newsData.length === 0 ? (
                     <p>No news available</p>
                 ) : (
-                <div className="col-12 col-md-3">
-                    <div
-                        className={`${styles.imageContainer} card`}
-                        onClick={() => handleImageClick('Report | SINGIDA BIG STARS 1-1 JKT', '/images/jkt.png')}
-                        style={{ cursor: 'pointer' }}
-                    >
-                        <div className={styles.imageOverlay}></div>
-                        <img
-                            src="/images/jkt.png"
-                            alt="Picture of the logo"
-                            className={styles.carouselImage}
-                        />
-                        <div className={styles.imageText}>
-                            <p>Report | SINGIDA BIG STARS 1-1 JKT</p>
-                        </div>
-                        <div className={styles.imageTextBelow}>
-                            <p>Match Reports | 2 days ago</p>
-                        </div>
-                    </div>
+                    newsData.map((news) => (
+                        <div className="col-12 col-md-3">
+                            <div
+                                className={`${styles.imageContainer} card`}
+                                onClick={() => handleImageClick('Report | SINGIDA BIG STARS 1-1 JKT', '/images/jkt.png')}
+                                style={{ cursor: 'pointer' }}
+                            >
+                                <div className={styles.imageOverlay}></div>
+                                <img
+                                    src="/images/jkt.png"
+                                    alt="Picture of the logo"
+                                    className={styles.carouselImage}
+                                />
+                                <div className={styles.imageText}>
+                                    <p>Report | SINGIDA BIG STARS 1-1 JKT</p>
+                                </div>
+                                <div className={styles.imageTextBelow}>
+                                    <p>Match Reports | 2 days ago</p>
+                                </div>
                             </div>
-                            )}
+                        </div>))
+                )}
             </div>
 
             {isPopupOpen && openPopup && (
