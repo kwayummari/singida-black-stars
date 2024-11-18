@@ -25,17 +25,17 @@ const Footer = () => (
             <p className={`${styles.paragraph} m-0`}>Club Partners</p>
             <div className={`${styles.sponsors} col-md-2 col-sm-2 mx-auto d-flex`} >
               <img
-                src="/images/azam.png"
+                src="/images/sponsors/azam.png"
                 className={`${styles.sponsorLogo} mx-auto d-block`}
                 alt="Picture of the sponsor"
               />
               <img
-                src="/images/airtel.webp"
+                src="/images/sponsors/gsm.png"
                 className={`${styles.sponsorLogo} mx-auto d-block`}
                 alt="Picture of the sponsor"
               />
               <img
-                src="/images/gsm.png"
+                src="/images/sponsors/nbc.png"
                 className={`${styles.sponsorLogo} mx-auto d-block`}
                 alt="Picture of the sponsor"
               />
