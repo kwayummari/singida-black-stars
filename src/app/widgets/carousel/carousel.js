@@ -4,6 +4,9 @@ import styles from '../../../styles/carousel.module.scss';
 
 const CarouselWidget = ({ openPopup }) => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
+    const [newsData, setNewsData] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
 
     const handleClick = () => {
         if (openPopup) {
@@ -57,12 +60,12 @@ const CarouselWidget = ({ openPopup }) => {
                     >
                         <div className={styles.imageContainer}>
                             <img
-                                src="/images/carousel.png"
+                                src={newsData[0].imageSrc}
                                 alt="Picture of the logo"
                                 className={styles.carouselImage}
                             />
                             <div className={styles.imageText}>
-                                <p>Preview | CCM KIRUMBA</p>
+                                <p>Preview | {newsData[0].caption}</p>
                             </div>
                             <div className={styles.imageTextBelow}>
                                 <p>Club News | 9 hours ago</p>
