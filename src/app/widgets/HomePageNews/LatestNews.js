@@ -40,7 +40,7 @@ const ShimmerCard = () => (
     </div>
 );
 
-const LatestNews = ({ openPopup }) => {
+const LatestNews = ({ openPopup }, categoryId) => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [popupTitle, setPopupTitle] = useState('');
     const [popupDescription, setPopupDescription] = useState('');
@@ -62,7 +62,7 @@ const LatestNews = ({ openPopup }) => {
         const fetchNews = async () => {
             try {
                 setLoading(true);
-                const data = await post('/news/newsByCategory.php', { id: 1 });
+                const data = await post('/news/newsByCategory.php', { id: categoryId });
                 setNewsData(data);
             } catch (error) {
                 setError("Failed to load news. Please try again later.");
@@ -90,12 +90,12 @@ const LatestNews = ({ openPopup }) => {
                         <div className="col-12 col-md-3">
                             <div
                                 className={`${styles.imageContainer} card`}
-                                onClick={() => handleImageClick(news.title, news.image, news.description)}
+                                onClick={() => handleImageClick(news.title, news.imageSrc, news.description)}
                                 style={{ cursor: 'pointer' }}
                             >
                                 <div className={styles.imageOverlay}></div>
                                 <img
-                                    src={news.image}
+                                    src={news.imageSrc}
                                     alt="Picture of the News"
                                     className={styles.carouselImage}
                                 />
