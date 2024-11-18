@@ -110,9 +110,12 @@ const CarouselWidget = ({ openPopup }) => {
                             alt="News Image"
                             className={styles.popupImage}
                         />
-                        <p className={styles.popupDescription}>
-                        {newsData[0].description}
-                        </p>
+                        <div
+                            dangerouslySetInnerHTML={{
+                                __html: newsData[0].description,
+                            }}
+                            className={styles.popupDescription}
+                        />
                         <button onClick={() => setIsPopupOpen(false)} className={styles.closePopup}>
                             Close
                         </button>
