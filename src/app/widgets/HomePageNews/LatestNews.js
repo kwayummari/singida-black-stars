@@ -122,7 +122,9 @@ const LatestNews = ({ openPopup, categoryId }) => {
                             className={styles.popupImage}
                         />
                         <p className={styles.popupDescription}>
-                            {popupDescription}
+                            dangerouslySetInnerHTML={{
+                                        __html: popupDescription, 
+                                    }}
                         </p>
                         <button
                             onClick={() => setIsPopupOpen(false)}
