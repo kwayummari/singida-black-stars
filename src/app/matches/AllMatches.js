@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import styles from "../../styles/AllMatches.module.scss";
+import { get } from '@/services/api';
 
 const matches = [
     {
@@ -104,7 +105,7 @@ const AllMatches = () => {
                         <ShimmerCard key={index} />
                     ))
                 ) : matchesData.length === 0 ? (
-                    <p>No news available</p>
+                    <p>No matches available</p>
                 ) : (
             matchesData.map((match, index) => (
                 <div key={index} className={`row mb-2 ${styles.card}`}>
