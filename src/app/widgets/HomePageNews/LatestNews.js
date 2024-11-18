@@ -123,7 +123,7 @@ const LatestNews = ({ openPopup, categoryId }) => {
                         />
                         <div
                             dangerouslySetInnerHTML={{
-                                __html: selectedCard.description,
+                                __html: popupDescription,
                             }}
                             className={styles.popupDescription}
                         />
