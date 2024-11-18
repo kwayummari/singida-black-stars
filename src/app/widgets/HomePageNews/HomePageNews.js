@@ -25,7 +25,7 @@ const HomePageNews = ({ LatestNewsNo }) => {
   }, []);
 
   const renderTabContent = () => {
-    return <LatestNews openPopup={true} LatestNewsNo={LatestNewsNo} categoryId={'1'} />;
+    return <LatestNews openPopup={true} categoryId={activeTab} />;
   };
 
   return (
@@ -36,7 +36,7 @@ const HomePageNews = ({ LatestNewsNo }) => {
             <button
               key={tab.id}
               className={`${styles.tabButton} ${activeTab === tab.id ? styles.active : ""}`}
-              onClick={() => { setTabs([]), setActiveTab(tab.id)}}
+              onClick={() => {  setActiveTab(tab.id) }}
             >
               {tab.name}
             </button>
