@@ -111,18 +111,7 @@ const CarouselWidget = ({ openPopup }) => {
                             className={styles.popupImage}
                         />
                         <p className={styles.popupDescription}>
-                            Nunua tiketi yako kwa shilingi 1,000/= tu uje kufurahi na timu yako pendwa kwenye
-                            mchezo wetu dhidi ya JKT Tanzania Jumapili Septemba 29, 2024. <br /><br />
-
-                            Vituo zinapopatikana tiketi<br /><br />
-
-                            1. Justine Gomwa - Utemini<br />
-                            2. James Masegese - Mandewa<br />
-                            3. Dofa Phone Accessories - Ipembe<br />
-                            4. Hamis Senzota - Majengo<br />
-                            5. Hamis Kitila - Ipembe<br /><br />
-
-                            Pia unaweza kununua tiketi yako mapema kwa @ncard_tanzania kupitia simu yako ya mkononi.
+                        {newsData[0].description}
                         </p>
                         <button onClick={() => setIsPopupOpen(false)} className={styles.closePopup}>
                             Close
