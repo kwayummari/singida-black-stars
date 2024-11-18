@@ -9,15 +9,15 @@ const BottomSheetBar = ({toggleBottomSheet}) => (
                 <div className="card">
                     <div className="card-body">
                         <Link href="/news" passHref>
-                            <h5 className={`${styles.headings} card-title`}>News</h5>
+                            <h5 onClick={toggleBottomSheet} className={`${styles.headings} card-title`}>News</h5>
                         </Link>
                         <Link href="/matches" passHref>
-                            <h5 className={`${styles.headings} card-title`}>Matches</h5>
+                            <h5 onClick={toggleBottomSheet} className={`${styles.headings} card-title`}>Matches</h5>
                         </Link>
                         <Link href="/teams" passHref>
-                            <h5 className={`${styles.headings} card-title`}>Teams</h5>
+                            <h5 onClick={toggleBottomSheet} className={`${styles.headings} card-title`}>Teams</h5>
                         </Link>
-                        <h5 className={`${styles.headings} card-title`}>IFollow</h5>
+                        <h5 onClick={toggleBottomSheet} className={`${styles.headings} card-title`}>IFollow</h5>
                     </div>
                 </div>
             </div>
@@ -26,11 +26,11 @@ const BottomSheetBar = ({toggleBottomSheet}) => (
                 <div className="card">
                     <div className="card-body">
                         <h5 className={`${styles.headings} card-title`}>Club</h5>
-                        <p className="card-text"> <a href="/pdf/data.pdf" target="_blank">Club Charter </a></p>
-                        <p className="card-text"><Link href="/history" passHref>Club History</Link></p>
-                        <p className="card-text"><Link href="/fans" passHref>Fan Engagement Plan</Link></p>
-                        <p className="card-text"><Link href="/club-contacts" passHref>Club Information Contacts</Link></p>
-                        <p className="card-text"><Link href="/ownership" passHref>Ownership Statement</Link></p>
+                        <p className="card-text"> <a href="/pdf/data.pdf" onClick={toggleBottomSheet} target="_blank">Club Charter </a></p>
+                        <p className="card-text"><Link href="/history" onClick={toggleBottomSheet} passHref>Club History</Link></p>
+                        <p className="card-text"><Link href="/fans" onClick={toggleBottomSheet} passHref>Fan Engagement Plan</Link></p>
+                        <p className="card-text"><Link href="/club-contacts" onClick={toggleBottomSheet} passHref>Club Information Contacts</Link></p>
+                        <p className="card-text"><Link href="/ownership" onClick={toggleBottomSheet} passHref>Ownership Statement</Link></p>
                     </div>
                 </div>
             </div>
@@ -39,9 +39,9 @@ const BottomSheetBar = ({toggleBottomSheet}) => (
                 <div className="card">
                     <div className="card-body">
                         <h5 className={`${styles.headings} card-title`}>Commercial</h5>
-                        <p className="card-text"><Link href="/sponsorship" passHref>Match Sponsorship</Link></p>
-                        <p className="card-text"><Link href="/partnership" passHref>Commercial Partners</Link></p>
-                        <p className="card-text"><Link href="/magazine" passHref>BlackStars Magazines</Link></p>
+                        <p className="card-text"><Link href="/sponsorship" onClick={toggleBottomSheet} passHref>Match Sponsorship</Link></p>
+                        <p className="card-text"><Link href="/partnership" onClick={toggleBottomSheet} passHref>Commercial Partners</Link></p>
+                        <p className="card-text"><Link href="/magazine" onClick={toggleBottomSheet} passHref>BlackStars Magazines</Link></p>
                     </div>
                 </div>
             </div>
@@ -58,14 +58,14 @@ const BottomSheetBar = ({toggleBottomSheet}) => (
                 <div className="card">
                     <div className="card-body">
                         <h5 className={`${styles.headings} card-title`}>Tickets</h5>
-                        <p className="card-text">Home Tickets</p>
-                        <p className="card-text">Visitors Guide</p>
-                        <p className="card-text">Junior Team Experiences Mascots</p>
-                        <p className="card-text">Season Tickets</p>
-                        <p className="card-text">Stadium Map</p>
-                        <p className="card-text">Family Stand</p>
-                        <p className="card-text">Hospitality Tickets</p>
-                        <p className="card-text">Away Tickets</p>
+                        <p onClick={toggleBottomSheet} className="card-text">Home Tickets</p>
+                        <p onClick={toggleBottomSheet} className="card-text">Visitors Guide</p>
+                        <p onClick={toggleBottomSheet} className="card-text">Junior Team Experiences Mascots</p>
+                        <p onClick={toggleBottomSheet} className="card-text">Season Tickets</p>
+                        <p onClick={toggleBottomSheet} className="card-text">Stadium Map</p>
+                        <p onClick={toggleBottomSheet} className="card-text">Family Stand</p>
+                        <p onClick={toggleBottomSheet} className="card-text">Hospitality Tickets</p>
+                        <p onClick={toggleBottomSheet} className="card-text">Away Tickets</p>
                     </div>
                 </div>
             </div>
