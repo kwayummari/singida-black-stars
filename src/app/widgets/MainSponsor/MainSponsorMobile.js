@@ -9,7 +9,7 @@ const MainSponsorMobile = () => (
                 <div className={`card ${styles.card}`}>
                     <div className={styles.logos}>
                         <img
-                            src="/images/pmBet.jpg"
+                            src="/images/sponsors/wakazi.png"
                             alt="Picture of the logo"
                             className={styles.sponsorLogo}
                         />
