@@ -52,9 +52,30 @@ const matches = [
         opponentLogo: "/images/pamba.png",
     },
 ];
-
+const ShimmerCard = () => (
+    <div className="col-12 col-md-3 mb-4">
+        <div className={`row mb-2 ${styles.card}`}>
+                    <div className={`col-3 ${styles.part1}`}>
+                        <div className={styles.paragraphs}>
+                            {/* <img src="/images/nbc2.png" alt="NBC Premier League" className={styles.leagueLogo} /> */}
+                            <p> <br /><strong></strong></p>
+                        </div>
+                        {/* <p className={match.isHome === "1" ? styles.locationH : styles.locationA}>{match.isHome === "1" ? 'H' : 'A'}</p> */}
+                    </div>
+                    <div className={`col-9 ${styles.part2}`}>
+                        <div className={styles.opponent}>
+                            {/* <img src={match.opponentLogo} alt={match.opponent} className={styles.opponentLogo} /> */}
+                            {/* <p><strong>{match.opponent}</strong> <br />{match.stadium}</p> */}
+                        </div>
+                        {/* <button type="button" className={`btn btn-success ${styles.button}`}>
+                            <i className="bi bi-dribbble"></i> <strong>Match Center</strong>
+                        </button> */}
+                    </div>
+                </div>
+    </div>
+);
 const AllMatches = () => {
-    const [newsData, setNewsData] = useState([]);
+    const [matchesData, setMatchesData] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
@@ -63,7 +84,7 @@ const AllMatches = () => {
             try {
                 setLoading(true);
                 const data = await get('/matches/getAllMatches.php');
-                setNewsData(data);
+                setMatchesData(data);
             } catch (error) {
                 setError("Failed to load matches. Please try again later.");
             } finally {
@@ -76,14 +97,23 @@ const AllMatches = () => {
 
     return (
         <div className="container">
-            {matches.map((match, index) => (
+            {loading && <p>Loading...</p>}
+            {error && <p>{error}</p>}
+            {loading ? (
+                    [1, 2, 3, 4].map((_, index) => (
+                        <ShimmerCard key={index} />
+                    ))
+                ) : matchesData.length === 0 ? (
+                    <p>No news available</p>
+                ) : (
+            matchesData.map((match, index) => (
                 <div key={index} className={`row mb-2 ${styles.card}`}>
                     <div className={`col-3 ${styles.part1}`}>
                         <div className={styles.paragraphs}>
                             <img src="/images/nbc2.png" alt="NBC Premier League" className={styles.leagueLogo} />
                             <p>{match.date} <br /><strong>{match.time}</strong></p>
                         </div>
-                        <p className={match.location === "H" ? styles.locationH : styles.locationA}>{match.location}</p>
+                        <p className={match.isHome === "1" ? styles.locationH : styles.locationA}>{match.isHome === "1" ? 'H' : 'A'}</p>
                     </div>
                     <div className={`col-9 ${styles.part2}`}>
                         <div className={styles.opponent}>
@@ -95,7 +125,8 @@ const AllMatches = () => {
                         </button>
                     </div>
                 </div>
-            ))}
+            ))
+        )}
         </div>
     );
 };
