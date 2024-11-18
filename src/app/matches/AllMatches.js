@@ -57,6 +57,23 @@ const AllMatches = () => {
     const [newsData, setNewsData] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const fetchNews = async () => {
+            try {
+                setLoading(true);
+                const data = await get('/matches/getAllMatches.php');
+                setNewsData(data);
+            } catch (error) {
+                setError("Failed to load matches. Please try again later.");
+            } finally {
+                setLoading(false);
+            }
+        };
+    
+        fetchNews();
+    }, []);
+
     return (
         <div className="container">
             {matches.map((match, index) => (
