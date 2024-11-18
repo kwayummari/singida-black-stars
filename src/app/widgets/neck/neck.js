@@ -94,8 +94,8 @@ const Neck = ({ openPopup }) => {
                         >
                             <div className={styles.imageOverlay}></div>
                             <img
-                                src="/images/lineup.png"
-                                alt="Picture of the logo"
+                                src={news.imageSrc}
+                                alt="News Image"
                                 className={styles.carouselImage}
                             />
                             <div className={styles.imageText}>
