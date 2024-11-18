@@ -35,7 +35,6 @@ export const get = async (endPoint) => {
 };
 
 export const post = async (endPoint, data) => {
-  console.log('data sent',data)
   try {
     if (!(await hasInternetConnection())) {
       throw new Error("No internet connection");
