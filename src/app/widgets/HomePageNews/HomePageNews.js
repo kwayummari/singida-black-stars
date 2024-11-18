@@ -8,13 +8,12 @@ import axios from "axios";
 
 const HomePageNews = ({ LatestNewsNo, PlayerNewsNo, CommercialNo }) => {
   const [activeTab, setActiveTab] = useState("LatestNews");
-  const [tabs, setTabs] = useState([]); // Store the tabs from the API
+  const [tabs, setTabs] = useState([]);
 
   useEffect(() => {
     const fetchTabs = async () => {
       try {
-        const response = await axios.post("/your-api-endpoint", { id: 1 });
-        // Assuming the response data has an array of tabs
+        const response = await axios.get("/categories/getAllCategories.php");
         setTabs(response.data); 
       } catch (error) {
         console.error("Error fetching tabs:", error);
