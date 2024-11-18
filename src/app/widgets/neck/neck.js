@@ -75,28 +75,38 @@ const Neck = ({ openPopup }) => {
 
     return (
         <div className="container">
+            {loading && <p>Loading...</p>}
+            {error && <p>{error}</p>}
             <div className={`${styles.scrollableRow} row`}>
-                <div className="col-12 col-md-3">
-                    <div
-                        className={`${styles.imageContainer} card`}
-                        onClick={() => handleImageClick('Kikosi chetu kinachoanza kwenye mchezo wetu wa leo dhidi ya JKT Tanzania', '/images/lineup.png')}
-                        style={{ cursor: 'pointer' }}
-                    >
-                        <div className={styles.imageOverlay}></div>
-                        <img
-                            src="/images/lineup.png"
-                            alt="Picture of the logo"
-                            className={styles.carouselImage}
-                        />
-                        <div className={styles.imageText}>
-                            <p>Kikosi chetu kinachoanza </p>
+                {loading ? (
+                    [1, 2, 3, 4].map((_, index) => (
+                        <ShimmerCard key={index} />
+                    ))
+                ) : newsData.length === 0 ? (
+                    <p>No news available</p>
+                    ) : (
+                        newsData.map((news) => (
+                    <div className="col-12 col-md-3">
+                        <div
+                            className={`${styles.imageContainer} card`}
+                            onClick={() => handleImageClick('Kikosi chetu kinachoanza kwenye mchezo wetu wa leo dhidi ya JKT Tanzania', '/images/lineup.png')}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            <div className={styles.imageOverlay}></div>
+                            <img
+                                src="/images/lineup.png"
+                                alt="Picture of the logo"
+                                className={styles.carouselImage}
+                            />
+                            <div className={styles.imageText}>
+                                <p>Kikosi chetu kinachoanza </p>
+                            </div>
+                            <div className={styles.imageTextBelow}>
+                                <p>#Inawezekana 🏆#NBCPremierLeague</p>
+                            </div>
                         </div>
-                        <div className={styles.imageTextBelow}>
-                            <p>#Inawezekana 🏆#NBCPremierLeague</p>
-                        </div>
-                    </div>
-                </div>
-
+                    </div>))
+                )}
                 {/* Other components */}
                 <div className="col-12 col-md-3">
                     <div className={`${styles.imageContainer} card`}>
