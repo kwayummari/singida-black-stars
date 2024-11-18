@@ -2,6 +2,32 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from '../../../styles/carousel.module.scss';
 
+const timeAgo = (timestamp) => {
+    const now = new Date();
+    const postDate = new Date(timestamp);
+    const diffInMs = now - postDate;
+    const diffInSecs = Math.floor(diffInMs / 1000);
+    const diffInMins = Math.floor(diffInSecs / 60);
+    const diffInHours = Math.floor(diffInMins / 60);
+    const diffInDays = Math.floor(diffInHours / 24);
+    const diffInMonths = Math.floor(diffInDays / 30);
+
+    if (diffInDays < 1) {
+        if (diffInHours < 1) {
+            return `${diffInMins} minutes ago`;
+        }
+        return `${diffInHours} hours ago`;
+    }
+
+    if (diffInDays < 30) {
+        return `${diffInDays} days ago`;
+    }
+
+    return diffInMonths === 1
+        ? '1 month ago'
+        : `${diffInMonths} months ago`;
+};
+
 const CarouselWidget = ({ openPopup }) => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [newsData, setNewsData] = useState([]);
@@ -78,9 +104,9 @@ const CarouselWidget = ({ openPopup }) => {
             {isPopupOpen && openPopup && (
                 <div className={styles.popup}>
                     <div className={styles.popupContent}>
-                        <h2 className={styles.popupTitle}><strong>CCM KIRUMBA</strong></h2>
+                        <h2 className={styles.popupTitle}><strong>{newsData[0].title}</strong></h2>
                         <img
-                            src="/images/carousel.png"
+                            src={newsData[0].imageSrc}
                             alt="News Image"
                             className={styles.popupImage}
                         />
