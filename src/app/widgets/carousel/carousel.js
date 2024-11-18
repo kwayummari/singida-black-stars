@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from '../../../styles/carousel.module.scss';
+import { get } from '@/services/api';
 
 const timeAgo = (timestamp) => {
     const now = new Date();
@@ -41,8 +42,9 @@ const CarouselWidget = ({ openPopup }) => {
     useEffect(() => {
         const fetchNews = async () => {
             try {
-                setLoading(true);
+                // setLoading(true);
                 const data = await get('/news/banner.php');
+                console.log(data)
                 setNewsData(data);
             } catch (error) {
                 console.log("Failed to load news. Please try again later.");
@@ -55,11 +57,9 @@ const CarouselWidget = ({ openPopup }) => {
     }, []);
 
     if (newsData.length === 0) {
-        return <div className="col-12 col-md-3 mb-4">
+        return <div className="col-12 col-md-12 mb-4">
         <div className={`${styles.imageContainer} card ${styles.shimmerCard}`}>
-            <div className={styles.imageOverlay}></div>
-            <div className={styles.shimmerImage}></div>
-            <div className={styles.shimmerText}></div>
+            <div className={styles.imageContainer}></div>
             <div className={styles.shimmerTextBelow}></div>
         </div>
     </div>;
