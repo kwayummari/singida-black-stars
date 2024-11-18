@@ -4,7 +4,7 @@ import styles from "../../../styles/homePageNews.module.scss";
 import LatestNews from "./LatestNews";
 import { get } from "@/services/api";
 
-const HomePageNews = ({ LatestNewsNo }) => {
+const HomePageNews = () => {
   const [activeTab, setActiveTab] = useState(null);
   const [tabs, setTabs] = useState([]);
 
