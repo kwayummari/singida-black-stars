@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import styles from '../../../styles/homePageNews.module.scss';
-import { get, post } from '@/services/api';
+import { post } from '@/services/api';
 
 const timeAgo = (timestamp) => {
     const now = new Date();

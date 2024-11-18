@@ -1,8 +1,45 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from '../../../styles/neck.module.scss';
 import League from '../League/league';
 import NextMatch from '../NextMatch/NextMatch';
+
+const timeAgo = (timestamp) => {
+    const now = new Date();
+    const postDate = new Date(timestamp);
+    const diffInMs = now - postDate;
+    const diffInSecs = Math.floor(diffInMs / 1000);
+    const diffInMins = Math.floor(diffInSecs / 60);
+    const diffInHours = Math.floor(diffInMins / 60);
+    const diffInDays = Math.floor(diffInHours / 24);
+    const diffInMonths = Math.floor(diffInDays / 30);
+
+    if (diffInDays < 1) {
+        if (diffInHours < 1) {
+            return `${diffInMins} minutes ago`;
+        }
+        return `${diffInHours} hours ago`;
+    }
+
+    if (diffInDays < 30) {
+        return `${diffInDays} days ago`;
+    }
+
+    return diffInMonths === 1
+        ? '1 month ago'
+        : `${diffInMonths} months ago`;
+};
+
+const ShimmerCard = () => (
+    <div className="col-12 col-md-3 mb-4">
+        <div className={`${styles.imageContainer} card ${styles.shimmerCard}`}>
+            <div className={styles.imageOverlay}></div>
+            <div className={styles.shimmerImage}></div>
+            <div className={styles.shimmerText}></div>
+            <div className={styles.shimmerTextBelow}></div>
+        </div>
+    </div>
+);
 
 const Neck = ({ openPopup }) => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
