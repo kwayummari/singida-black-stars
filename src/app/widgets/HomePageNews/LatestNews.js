@@ -90,7 +90,7 @@ const LatestNews = ({ openPopup }) => {
                         <div className="col-12 col-md-3">
                             <div
                                 className={`${styles.imageContainer} card`}
-                                onClick={() => handleImageClick(news.title, news.image)}
+                                onClick={() => handleImageClick(news.title, news.image, news.description)}
                                 style={{ cursor: 'pointer' }}
                             >
                                 <div className={styles.imageOverlay}></div>
