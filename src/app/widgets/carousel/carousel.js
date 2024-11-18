@@ -42,14 +42,12 @@ const CarouselWidget = ({ openPopup }) => {
     useEffect(() => {
         const fetchNews = async () => {
             try {
-                // setLoading(true);
                 const data = await get('/news/banner.php');
                 console.log(data)
                 setNewsData(data);
             } catch (error) {
                 console.log("Failed to load news. Please try again later.");
             } finally {
-                // setLoading(false);
             }
         };
 
@@ -135,5 +133,4 @@ const CarouselWidget = ({ openPopup }) => {
         </div>
     );
 };
-
 export default CarouselWidget;
