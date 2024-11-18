@@ -133,7 +133,7 @@ const Neck = ({ openPopup }) => {
                             className={styles.popupImage}
                         />
                         <p className={styles.popupDescription}>
-                            Detailed news description or content goes here.
+                            {popupDescription}
                         </p>
                         <button
                             onClick={() => setIsPopupOpen(false)}
