@@ -50,10 +50,11 @@ const Neck = ({ openPopup }) => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    const handleImageClick = (title, image) => {
+    const handleImageClick = (title, image, description) => {
         if (openPopup) {
             setPopupTitle(title);
             setPopupImage(image);
+            setPopupDescription(description)
             setIsPopupOpen(true);
         }
     };
