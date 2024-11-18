@@ -18,7 +18,7 @@ const Footer = () => (
           <div className="card-body">
             <p className={`${styles.paragraph} m-0`}>Principal Partner</p>
             <img
-              src="/images/sponsor.png"
+              src="/images/sponsors/airtel.png"
               className={`${styles.MainSponsor} mx-auto d-block`}
               alt="Picture of the sponsor"
             />
