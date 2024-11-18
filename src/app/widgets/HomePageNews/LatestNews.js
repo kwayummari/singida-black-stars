@@ -62,8 +62,7 @@ const LatestNews = ({ openPopup }) => {
         const fetchNews = async () => {
             try {
                 setLoading(true);
-                const data = await post('/news/newsByCategory.php', { id: '1' });
-                console.log(data)
+                const data = await post('/news/newsByCategory.php', { id: 1 });
                 setNewsData(data);
             } catch (error) {
                 setError("Failed to load news. Please try again later.");
