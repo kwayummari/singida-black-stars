@@ -43,15 +43,17 @@ const ShimmerCard = () => (
 const LatestNews = ({ openPopup }) => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [popupTitle, setPopupTitle] = useState('');
+    const [popupDescription, setPopupDescription] = useState('');
     const [popupImage, setPopupImage] = useState('');
     const [newsData, setNewsData] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    const handleImageClick = (title, image) => {
+    const handleImageClick = (title, image, description) => {
         if (openPopup) {
             setPopupTitle(title);
             setPopupImage(image);
+            setPopupDescription(description)
             setIsPopupOpen(true);
         }
     };
@@ -86,20 +88,20 @@ const LatestNews = ({ openPopup }) => {
                         <div className="col-12 col-md-3">
                             <div
                                 className={`${styles.imageContainer} card`}
-                                onClick={() => handleImageClick('Report | SINGIDA BIG STARS 1-1 JKT', '/images/jkt.png')}
+                                onClick={() => handleImageClick(news.title, news.image)}
                                 style={{ cursor: 'pointer' }}
                             >
                                 <div className={styles.imageOverlay}></div>
                                 <img
-                                    src="/images/jkt.png"
-                                    alt="Picture of the logo"
+                                    src={news.image}
+                                    alt="Picture of the News"
                                     className={styles.carouselImage}
                                 />
                                 <div className={styles.imageText}>
-                                    <p>Report | SINGIDA BIG STARS 1-1 JKT</p>
+                                    <p>{news.caption}</p>
                                 </div>
                                 <div className={styles.imageTextBelow}>
-                                    <p>Match Reports | 2 days ago</p>
+                                    <p> Reports | {timeAgo(news.reportDate)}</p>
                                 </div>
                             </div>
                         </div>))
@@ -116,7 +118,7 @@ const LatestNews = ({ openPopup }) => {
                             className={styles.popupImage}
                         />
                         <p className={styles.popupDescription}>
-                            Detailed news description or content goes here.
+                            {popupDescription}
                         </p>
                         <button
                             onClick={() => setIsPopupOpen(false)}
