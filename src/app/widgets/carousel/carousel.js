@@ -55,7 +55,14 @@ const CarouselWidget = ({ openPopup }) => {
     }, []);
 
     if (newsData.length === 0) {
-        return <p>Loading...</p>;
+        return <div className="col-12 col-md-3 mb-4">
+        <div className={`${styles.imageContainer} card ${styles.shimmerCard}`}>
+            <div className={styles.imageOverlay}></div>
+            <div className={styles.shimmerImage}></div>
+            <div className={styles.shimmerText}></div>
+            <div className={styles.shimmerTextBelow}></div>
+        </div>
+    </div>;
     }
 
     return (
