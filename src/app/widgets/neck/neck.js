@@ -41,28 +41,6 @@ const Neck = ({ openPopup }) => {
                     </div>
                 </div>
 
-                {/* Second Image Container */}
-                <div className="col-12 col-md-3">
-                    <div
-                        className={`${styles.imageContainer} card`}
-                        onClick={() => handleImageClick('33_metacha ndiye Golikipa wa kwanza kuokoa mkwaju wa penati kwenye @ligikuu ya @nbc_tanzania msimu wa 2024/2025.', '/images/metacha.png')}
-                        style={{ cursor: 'pointer' }}
-                    >
-                        <div className={styles.imageOverlay}></div>
-                        <img
-                            src="/images/metacha.png"
-                            alt="Picture of the logo"
-                            className={styles.carouselImage}
-                        />
-                        <div className={styles.imageText}>
-                            <p>Golikipa wa kwanza kuokoa penati msimu wa 2024/2025.</p>
-                        </div>
-                        <div className={styles.imageTextBelow}>
-                            <p>@ligikuu @tanfootball @nbc_tanzania @azamtvsports @tbc_online</p>
-                        </div>
-                    </div>
-                </div>
-
                 {/* Other components */}
                 <div className="col-12 col-md-3">
                     <div className={`${styles.imageContainer} card`}>
