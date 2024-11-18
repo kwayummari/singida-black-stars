@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import styles from '../../../styles/neck.module.scss';
 import League from '../League/league';
 import NextMatch from '../NextMatch/NextMatch';
+import { get } from '@/services/api';
 
 const timeAgo = (timestamp) => {
     const now = new Date();
@@ -45,6 +46,9 @@ const Neck = ({ openPopup }) => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [popupTitle, setPopupTitle] = useState('');
     const [popupImage, setPopupImage] = useState('');
+    const [newsData, setNewsData] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
 
     const handleImageClick = (title, image) => {
         if (openPopup) {
@@ -53,6 +57,21 @@ const Neck = ({ openPopup }) => {
             setIsPopupOpen(true);
         }
     };
+
+    useEffect(() => {
+        const fetchNews = async () => {
+            try {
+                setLoading(true);
+                const data = await get('/news/newsByCategory.php');
+                setNewsData(data);
+            } catch (error) {
+                setError("Failed to load news. Please try again later.");
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchNews();
+    }, []);
 
     return (
         <div className="container">
