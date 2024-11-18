@@ -45,6 +45,7 @@ const ShimmerCard = () => (
 const Neck = ({ openPopup }) => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [popupTitle, setPopupTitle] = useState('');
+    const [popupDescription, setPopupDescription] = useState('');
     const [popupImage, setPopupImage] = useState('');
     const [newsData, setNewsData] = useState([]);
     const [loading, setLoading] = useState(false);
