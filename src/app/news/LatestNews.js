@@ -138,7 +138,7 @@ const Latest = () => {
                                 />
                                 <div
                                     dangerouslySetInnerHTML={{
-                                        __html: selectedCard.description, // Render the CKEditor HTML description
+                                        __html: selectedCard.description,
                                     }}
                                 />
                                 <p>{timeAgo(selectedCard.reportDate)}</p>
