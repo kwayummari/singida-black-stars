@@ -68,7 +68,7 @@ const CarouselWidget = ({ openPopup }) => {
                                 <p>Preview | {newsData[0].caption}</p>
                             </div>
                             <div className={styles.imageTextBelow}>
-                                <p>Club News | 9 hours ago</p>
+                                <p>Club News | {timeAgo(newsData[0].reportDate)}</p>
                             </div>
                         </div>
                     </div>
