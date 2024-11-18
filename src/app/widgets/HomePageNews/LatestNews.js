@@ -71,8 +71,10 @@ const LatestNews = ({ openPopup, categoryId }) => {
             }
         };
 
-        fetchNews();
-    }, []);
+        if (categoryId) {
+            fetchNews();
+        }
+    }, [categoryId]);
 
     return (
         <div className="container">
