@@ -132,9 +132,12 @@ const Neck = ({ openPopup }) => {
                             alt="Popup image"
                             className={styles.popupImage}
                         />
-                        <p className={styles.popupDescription}>
-                            {popupDescription}
-                        </p>
+                        <div
+                            dangerouslySetInnerHTML={{
+                                __html: popupDescription,
+                            }}
+                            className={styles.popupDescription}
+                        />
                         <button
                             onClick={() => setIsPopupOpen(false)}
                             className={styles.closePopup}
