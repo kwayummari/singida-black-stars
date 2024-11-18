@@ -31,8 +31,6 @@ const timeAgo = (timestamp) => {
 const CarouselWidget = ({ openPopup }) => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [newsData, setNewsData] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
 
     const handleClick = () => {
         if (openPopup) {
@@ -47,9 +45,9 @@ const CarouselWidget = ({ openPopup }) => {
                 const data = await post('/news/banner.php', { id: categoryId });
                 setNewsData(data);
             } catch (error) {
-                setError("Failed to load news. Please try again later.");
+                console.log("Failed to load news. Please try again later.");
             } finally {
-                setLoading(false);
+                // setLoading(false);
             }
         };
 
