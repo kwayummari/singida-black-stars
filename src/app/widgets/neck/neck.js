@@ -62,7 +62,7 @@ const Neck = ({ openPopup }) => {
         const fetchNews = async () => {
             try {
                 setLoading(true);
-                const data = await get('/news/newsByCategory.php');
+                const data = await get('/news/last2News.php');
                 setNewsData(data);
             } catch (error) {
                 setError("Failed to load news. Please try again later.");
