@@ -157,11 +157,11 @@ const AllResults = () => {
                                 </div>
                                 <div className={styles.score}>
                                     <p className={styles.header}>FT</p>
-                                    <p className={styles.fulltimeScore}><strong>{match.score.opponentScore} | {match.score.ourScore}</strong></p>
-                                    <p className={styles.halftimeScore}>HT {match.score.halftime}</p>
+                                    <p className={styles.fulltimeScore}><strong>{match.homeTeamScoreFt} | {match.awayTeamScoreFt}</strong></p>
+                                    <p className={styles.halftimeScore}>HT {match.homeTeamScoreHt} - {match.awayTeamScoreHt}</p>
                                 </div>
                                 <div className={styles.team}>
-                                    <img src={match.awayTeamLogo} alt={match.awayTeam} className={styles.teamLogo} />
+                                    <img src={match.awayTeamLogo} alt={match.awayTeamName} className={styles.teamLogo} />
                                     <p>{match.awayTeamName}</p>
                                 </div>
                             </div>
