@@ -145,7 +145,8 @@ const AllResults = () => {
                                 <img src={match.competitionImage} alt="NBC Premier League" className={styles.leagueLogo} />
                                 <p>{match.date} <br /><strong>{match.time}</strong></p>
                             </div>
-                            <p className={match.location === "H" ? styles.locationH : styles.locationA}>{match.location}</p>
+                            {/* <p className={match.location === "H" ? styles.locationH : styles.locationA}>{match.location}</p> */}
+                            <p className={match.isHome === "1" ? styles.locationH : styles.locationA}>{match.isHome === "1" ? 'H' : 'A'}</p>
                         </div>
                         <div className={`col-9 ${styles.part2}`}>
                             <div></div>
