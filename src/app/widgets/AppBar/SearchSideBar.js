@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../../../styles/appBar.module.scss';
+import NewsDetailsModal from './NewsDetailsModal'; // Import the modal component
 
 const SearchSideBar = ({ toggleSearchSidebar }) => {
     const [query, setQuery] = useState('');
     const [results, setResults] = useState([]);
+    const [selectedNews, setSelectedNews] = useState(null);
 
-    // Fetch search results after 3+ characters
     useEffect(() => {
         if (query.length >= 3) {
             fetch(`https://singidablackstars.co.tz/admin/news/search.php?query=${query}`)
@@ -13,7 +14,7 @@ const SearchSideBar = ({ toggleSearchSidebar }) => {
                 .then((data) => setResults(data))
                 .catch((error) => console.error('Error:', error));
         } else {
-            setResults([]); // Clear results for less than 3 characters
+            setResults([]);
         }
     }, [query]);
 
@@ -22,11 +23,7 @@ const SearchSideBar = ({ toggleSearchSidebar }) => {
     };
 
     const handleResultClick = (newsItem) => {
-        alert(`
-            Title: ${newsItem.title}
-            Category: ${newsItem.categoryName}
-            Description: ${newsItem.description}
-        `);
+        setSelectedNews(newsItem); // Open modal with news details
     };
 
     return (
@@ -67,6 +64,9 @@ const SearchSideBar = ({ toggleSearchSidebar }) => {
                     <p>No results found</p>
                 )}
             </div>
+            {selectedNews && (
+                <NewsDetailsModal newsItem={selectedNews} onClose={() => setSelectedNews(null)} />
+            )}
         </div>
     );
 };
