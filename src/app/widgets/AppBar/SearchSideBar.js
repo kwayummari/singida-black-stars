@@ -57,7 +57,10 @@ const SearchSideBar = ({ toggleSearchSidebar }) => {
                             onClick={() => handleResultClick(news)}
                             style={{ cursor: 'pointer' }}
                         >
-                            <img src={news.image} alt="News logo" className={styles.carouselImage} />
+                            <img src={news.image} alt="News logo" style={{
+                                width: '100px',
+                                objectFit: 'cover'
+                            }} />
                             <h6>{news.title}</h6>
                             <p>{news.caption}</p>
                         </div>
