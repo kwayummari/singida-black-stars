@@ -161,8 +161,8 @@ const AllResults = () => {
                                     <p className={styles.halftimeScore}>HT {match.score.halftime}</p>
                                 </div>
                                 <div className={styles.team}>
-                                    <img src={match.opponentLogo} alt={match.awayTeam} className={styles.teamLogo} />
-                                    <p>{match.opponent}</p>
+                                    <img src={match.awayTeamLogo} alt={match.awayTeam} className={styles.teamLogo} />
+                                    <p>{match.awayTeamName}</p>
                                 </div>
                             </div>
                             <button type="button" className={`btn btn-success ${styles.button}`}>
