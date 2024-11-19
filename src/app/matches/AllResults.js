@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from "../../styles/AllResults.module.scss";
 
 const matches = [
@@ -82,6 +82,29 @@ const matches = [
         }
     },
 ];
+
+const ShimmerCard = () => (
+    <div className="col-12 col-md-3 mb-4">
+        <div className={`row mb-2 ${styles.card}`}>
+                    <div className={`col-3 ${styles.part1}`}>
+                        <div className={styles.paragraphs}>
+                            {/* <img src="/images/nbc2.png" alt="NBC Premier League" className={styles.leagueLogo} /> */}
+                            <p> <br /><strong></strong></p>
+                        </div>
+                        {/* <p className={match.isHome === "1" ? styles.locationH : styles.locationA}>{match.isHome === "1" ? 'H' : 'A'}</p> */}
+                    </div>
+                    <div className={`col-9 ${styles.part2}`}>
+                        <div className={styles.opponent}>
+                            {/* <img src={match.opponentLogo} alt={match.opponent} className={styles.opponentLogo} /> */}
+                            {/* <p><strong>{match.opponent}</strong> <br />{match.stadium}</p> */}
+                        </div>
+                        {/* <button type="button" className={`btn btn-success ${styles.button}`}>
+                            <i className="bi bi-dribbble"></i> <strong>Match Center</strong>
+                        </button> */}
+                    </div>
+                </div>
+    </div>
+);
 
 const AllResults = () => {
     return (
