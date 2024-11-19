@@ -3,56 +3,6 @@ import React, { useState, useEffect } from 'react';
 import styles from "../../styles/AllMatches.module.scss";
 import { get } from '@/services/api';
 
-const matches = [
-    {
-        date: "Tue 22 Oct",
-        time: "9:45 PM",
-        location: "A",
-        opponent: "Yanga Sc",
-        stadium: "Benjamin Mkapa Stadium",
-        opponentLogo: "/images/yanga.png",
-    },
-    {
-        date: "Tue 25 Oct",
-        time: "9:45 PM",
-        location: "H",
-        opponent: "Simba Sc",
-        stadium: "CCM LITI",
-        opponentLogo: "/images/simba.png",
-    },
-    {
-        date: "Tue 28 Oct",
-        time: "9:45 PM",
-        location: "A",
-        opponent: "Azam",
-        stadium: "Azam Complex",
-        opponentLogo: "/images/azam.webp",
-    },
-    {
-        date: "Tue 22 Oct",
-        time: "9:45 PM",
-        location: "H",
-        opponent: "Coastal Union",
-        stadium: "CCM LITI",
-        opponentLogo: "/images/coastal.png",
-    },
-    {
-        date: "Tue 22 Oct",
-        time: "9:45 PM",
-        location: "H",
-        opponent: "Fountain Gates",
-        stadium: "CCM LITI",
-        opponentLogo: "/images/fountain.jpg",
-    },
-    {
-        date: "Tue 22 Oct",
-        time: "9:45 PM",
-        location: "H",
-        opponent: "Pamba Jiji",
-        stadium: "CCM LITI",
-        opponentLogo: "/images/pamba.png",
-    },
-];
 const ShimmerCard = () => (
     <div className="col-12 col-md-3 mb-4">
         <div className={`row mb-2 ${styles.card}`}>
@@ -111,7 +61,7 @@ const AllMatches = () => {
                 <div key={index} className={`row mb-2 ${styles.card}`}>
                     <div className={`col-3 ${styles.part1}`}>
                         <div className={styles.paragraphs}>
-                            <img src="/images/nbc2.png" alt="NBC Premier League" className={styles.leagueLogo} />
+                            <img src={match.competitionImage} alt="NBC Premier League" className={styles.leagueLogo} />
                             <p>{match.date} <br /><strong>{match.time}</strong></p>
                         </div>
                         <p className={match.isHome === "1" ? styles.locationH : styles.locationA}>{match.isHome === "1" ? 'H' : 'A'}</p>
