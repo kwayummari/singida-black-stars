@@ -107,6 +107,26 @@ const ShimmerCard = () => (
 );
 
 const AllResults = () => {
+    const [matchesData, setMatchesData] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const fetchNews = async () => {
+            try {
+                setLoading(true);
+                const data = await get('/matches/getAllResults.php');
+                setMatchesData(data);
+            } catch (error) {
+                setError("Failed to load results. Please try again later.");
+            } finally {
+                setLoading(false);
+            }
+        };
+    
+        fetchNews();
+    }, []);
+    
     return (
         <div className="container">
             {matches.map((match, index) => (
