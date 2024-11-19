@@ -152,8 +152,8 @@ const AllResults = () => {
                             <div></div>
                             <div className={styles.matchDetails}>
                                 <div className={styles.team}>
-                                    <p>Singida Black Stars</p>
-                                    <img src='/images/logo.png' alt={match.homeTeam} className={styles.teamLogo} />
+                                    <p>{match.homeTeamName}</p>
+                                    <img src={match.homeTeamLogo} alt={match.homeTeam} className={styles.teamLogo} />
                                 </div>
                                 <div className={styles.score}>
                                     <p className={styles.header}>FT</p>
