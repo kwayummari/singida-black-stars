@@ -86,23 +86,23 @@ const matches = [
 const ShimmerCard = () => (
     <div className="col-12 col-md-3 mb-4">
         <div className={`row mb-2 ${styles.card}`}>
-                    <div className={`col-3 ${styles.part1}`}>
-                        <div className={styles.paragraphs}>
-                            {/* <img src="/images/nbc2.png" alt="NBC Premier League" className={styles.leagueLogo} /> */}
-                            <p> <br /><strong></strong></p>
-                        </div>
-                        {/* <p className={match.isHome === "1" ? styles.locationH : styles.locationA}>{match.isHome === "1" ? 'H' : 'A'}</p> */}
-                    </div>
-                    <div className={`col-9 ${styles.part2}`}>
-                        <div className={styles.opponent}>
-                            {/* <img src={match.opponentLogo} alt={match.opponent} className={styles.opponentLogo} /> */}
-                            {/* <p><strong>{match.opponent}</strong> <br />{match.stadium}</p> */}
-                        </div>
-                        {/* <button type="button" className={`btn btn-success ${styles.button}`}>
+            <div className={`col-3 ${styles.part1}`}>
+                <div className={styles.paragraphs}>
+                    {/* <img src="/images/nbc2.png" alt="NBC Premier League" className={styles.leagueLogo} /> */}
+                    <p> <br /><strong></strong></p>
+                </div>
+                {/* <p className={match.isHome === "1" ? styles.locationH : styles.locationA}>{match.isHome === "1" ? 'H' : 'A'}</p> */}
+            </div>
+            <div className={`col-9 ${styles.part2}`}>
+                <div className={styles.opponent}>
+                    {/* <img src={match.opponentLogo} alt={match.opponent} className={styles.opponentLogo} /> */}
+                    {/* <p><strong>{match.opponent}</strong> <br />{match.stadium}</p> */}
+                </div>
+                {/* <button type="button" className={`btn btn-success ${styles.button}`}>
                             <i className="bi bi-dribbble"></i> <strong>Match Center</strong>
                         </button> */}
-                    </div>
-                </div>
+            </div>
+        </div>
     </div>
 );
 
@@ -123,44 +123,54 @@ const AllResults = () => {
                 setLoading(false);
             }
         };
-    
+
         fetchNews();
     }, []);
-    
+
     return (
         <div className="container">
-            {matches.map((match, index) => (
-                <div key={index} className={`row mb-2 ${styles.card}`}>
-                    <div className={`col-3 ${styles.part1}`}>
-                        <div className={styles.paragraphs}>
-                            <img src="/images/nbc2.png" alt="NBC Premier League" className={styles.leagueLogo} />
-                            <p>{match.date} <br /><strong>{match.time}</strong></p>
+            {loading && <p>Loading...</p>}
+            {error && <p>{error}</p>}
+            {loading ? (
+                [1, 2, 3, 4].map((_, index) => (
+                    <ShimmerCard key={index} />
+                ))
+            ) : matchesData.length === 0 ? (
+                <p>No matches available</p>
+            ) : (
+                matchesData.map((match, index) => (
+                    <div key={index} className={`row mb-2 ${styles.card}`}>
+                        <div className={`col-3 ${styles.part1}`}>
+                            <div className={styles.paragraphs}>
+                                <img src="/images/nbc2.png" alt="NBC Premier League" className={styles.leagueLogo} />
+                                <p>{match.date} <br /><strong>{match.time}</strong></p>
+                            </div>
+                            <p className={match.location === "H" ? styles.locationH : styles.locationA}>{match.location}</p>
                         </div>
-                        <p className={match.location === "H" ? styles.locationH : styles.locationA}>{match.location}</p>
-                    </div>
-                    <div className={`col-9 ${styles.part2}`}>
-                        <div></div>
-                        <div className={styles.matchDetails}>
-                            <div className={styles.team}>
-                                <p>Singida Black Stars</p>
-                                <img src='/images/logo.png' alt={match.homeTeam} className={styles.teamLogo} />
+                        <div className={`col-9 ${styles.part2}`}>
+                            <div></div>
+                            <div className={styles.matchDetails}>
+                                <div className={styles.team}>
+                                    <p>Singida Black Stars</p>
+                                    <img src='/images/logo.png' alt={match.homeTeam} className={styles.teamLogo} />
+                                </div>
+                                <div className={styles.score}>
+                                    <p className={styles.header}>FT</p>
+                                    <p className={styles.fulltimeScore}><strong>{match.score.opponentScore} | {match.score.ourScore}</strong></p>
+                                    <p className={styles.halftimeScore}>HT {match.score.halftime}</p>
+                                </div>
+                                <div className={styles.team}>
+                                    <img src={match.opponentLogo} alt={match.awayTeam} className={styles.teamLogo} />
+                                    <p>{match.opponent}</p>
+                                </div>
                             </div>
-                            <div className={styles.score}>
-                                <p className={styles.header}>FT</p>
-                                <p className={styles.fulltimeScore}><strong>{match.score.opponentScore} | {match.score.ourScore}</strong></p>
-                                <p className={styles.halftimeScore}>HT {match.score.halftime}</p>
-                            </div>
-                            <div className={styles.team}>
-                                <img src={match.opponentLogo} alt={match.awayTeam} className={styles.teamLogo} />
-                                <p>{match.opponent}</p>
-                            </div>
+                            <button type="button" className={`btn btn-success ${styles.button}`}>
+                                <i className="bi bi-dribbble"></i> <strong>Match Center</strong>
+                            </button>
                         </div>
-                        <button type="button" className={`btn btn-success ${styles.button}`}>
-                            <i className="bi bi-dribbble"></i> <strong>Match Center</strong>
-                        </button>
                     </div>
-                </div>
-            ))}
+                ))
+            )}
         </div>
     );
 };
