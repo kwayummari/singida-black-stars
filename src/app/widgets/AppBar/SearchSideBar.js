@@ -13,6 +13,7 @@ const SearchSideBar = ({ toggleSearchSidebar }) => {
                 .then((response) => response.json())
                 .then((data) => setResults(data))
                 .catch((error) => console.error('Error:', error));
+            console.log(results)
         } else {
             setResults([]);
         }
