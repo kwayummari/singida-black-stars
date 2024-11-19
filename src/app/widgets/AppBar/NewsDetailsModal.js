@@ -17,7 +17,7 @@ const NewsDetailsModal = ({ newsItem, onClose }) => (
                     <p><strong>Category:</strong> {newsItem.categoryName}</p>
                     <div
                         dangerouslySetInnerHTML={{
-                            __html: newsItem.description, // Render the CKEditor HTML description
+                            __html: newsItem.description,
                         }}
                     />
                 </div>
