@@ -142,7 +142,7 @@ const AllResults = () => {
                     <div key={index} className={`row mb-2 ${styles.card}`}>
                         <div className={`col-3 ${styles.part1}`}>
                             <div className={styles.paragraphs}>
-                                <img src="/images/nbc2.png" alt="NBC Premier League" className={styles.leagueLogo} />
+                                <img src={match.competitionImage} alt="NBC Premier League" className={styles.leagueLogo} />
                                 <p>{match.date} <br /><strong>{match.time}</strong></p>
                             </div>
                             <p className={match.location === "H" ? styles.locationH : styles.locationA}>{match.location}</p>
