@@ -15,7 +15,11 @@ const NewsDetailsModal = ({ newsItem, onClose }) => (
                         style={{ width: '100%', marginBottom: '1rem' }}
                     />
                     <p><strong>Category:</strong> {newsItem.categoryName}</p>
-                    <p>{newsItem.description}</p>
+                    <div
+                        dangerouslySetInnerHTML={{
+                            __html: newsItem.description, // Render the CKEditor HTML description
+                        }}
+                    />
                 </div>
             </div>
         </div>
