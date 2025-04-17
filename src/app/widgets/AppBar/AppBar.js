@@ -137,7 +137,7 @@ const AppBar = () => {
                   <motion.p 
                     className={`${styles.bottomParagraph} m-0 ${pathname === item.path ? styles.active : ''}`}
                     whileHover={{ color: '#0b7a3f' }}
-                    style={{ cursor: "pointer" }}
+                    style={{ cursor: "pointer", color: pathname === item.path ? '#0b7a3f' : 'white', textDecoration: 'none' }}
                     initial={pathname === item.path ? { color: '#0b7a3f' } : {}}
                   >
                     {item.label}
