@@ -8,13 +8,13 @@ const BottomSheetBar = ({toggleBottomSheet}) => (
             <div className="col-md-3 col-sm-6 col-12 mb-3">
                 <div className="card">
                     <div className="card-body">
-                        <Link href="/news" passHref>
+                        <Link href="/news" passHref style={{ cursor: "pointer", color:  'black', textDecoration: 'none' }}>
                             <h5 onClick={toggleBottomSheet} className={`${styles.headings} card-title`}>News</h5>
                         </Link>
-                        <Link href="/matches" passHref>
+                        <Link href="/matches" passHref style={{ cursor: "pointer", color:  'black', textDecoration: 'none' }}>
                             <h5 onClick={toggleBottomSheet} className={`${styles.headings} card-title`}>Matches</h5>
                         </Link>
-                        <Link href="/teams" passHref>
+                        <Link href="/teams" passHref style={{ cursor: "pointer", color:  'black', textDecoration: 'none' }}>
                             <h5 onClick={toggleBottomSheet} className={`${styles.headings} card-title`}>Teams</h5>
                         </Link>
                         <h5 onClick={toggleBottomSheet} className={`${styles.headings} card-title`}>IFollow</h5>

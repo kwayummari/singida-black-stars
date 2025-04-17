@@ -133,7 +133,7 @@ const AppBar = () => {
             <div></div>
             <div className={`${styles.responsiveMenu}`}>
               {menuItems.map((item) => (
-                <Link href={item.path} passHref key={item.label}>
+                <Link href={item.path} passHref key={item.label} style={{ cursor: "pointer", color:  'black', textDecoration: 'none' }}>
                   <motion.p 
                     className={`${styles.bottomParagraph} m-0 ${pathname === item.path ? styles.active : ''}`}
                     whileHover={{ color: '#0b7a3f' }}
