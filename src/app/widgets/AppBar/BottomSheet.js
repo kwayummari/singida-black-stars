@@ -26,11 +26,11 @@ const BottomSheetBar = ({toggleBottomSheet}) => (
                 <div className="card">
                     <div className="card-body">
                         <h5 className={`${styles.headings} card-title`}>Club</h5>
-                        <p className="card-text"> <a href="/pdf/data.pdf" onClick={toggleBottomSheet} target="_blank">Club Charter </a></p>
-                        <p className="card-text"><Link href="/history" onClick={toggleBottomSheet} passHref>Club History</Link></p>
-                        <p className="card-text"><Link href="/fans" onClick={toggleBottomSheet} passHref>Fan Engagement Plan</Link></p>
-                        <p className="card-text"><Link href="/club-contacts" onClick={toggleBottomSheet} passHref>Club Information Contacts</Link></p>
-                        <p className="card-text"><Link href="/ownership" onClick={toggleBottomSheet} passHref>Ownership Statement</Link></p>
+                        <p className="card-text"> <a href="/pdf/data.pdf" onClick={toggleBottomSheet} target="_blank" style={{ cursor: "pointer", color:  'black', textDecoration: 'none' }}>Club Charter </a></p>
+                        <p className="card-text"><Link href="/history" onClick={toggleBottomSheet} passHref style={{ cursor: "pointer", color:  'black', textDecoration: 'none' }}>Club History</Link></p>
+                        <p className="card-text"><Link href="/fans" onClick={toggleBottomSheet} passHref style={{ cursor: "pointer", color:  'black', textDecoration: 'none' }}>Fan Engagement Plan</Link></p>
+                        <p className="card-text"><Link href="/club-contacts" onClick={toggleBottomSheet} passHref style={{ cursor: "pointer", color:  'black', textDecoration: 'none' }}>Club Information Contacts</Link></p>
+                        <p className="card-text"><Link href="/ownership" onClick={toggleBottomSheet} passHref style={{ cursor: "pointer", color:  'black', textDecoration: 'none' }}>Ownership Statement</Link></p>
                     </div>
                 </div>
             </div>
@@ -39,9 +39,9 @@ const BottomSheetBar = ({toggleBottomSheet}) => (
                 <div className="card">
                     <div className="card-body">
                         <h5 className={`${styles.headings} card-title`}>Commercial</h5>
-                        <p className="card-text"><Link href="/sponsorship" onClick={toggleBottomSheet} passHref>Match Sponsorship</Link></p>
-                        <p className="card-text"><Link href="/partnership" onClick={toggleBottomSheet} passHref>Commercial Partners</Link></p>
-                        <p className="card-text"><Link href="/magazine" onClick={toggleBottomSheet} passHref>BlackStars Magazines</Link></p>
+                        <p className="card-text"><Link href="/sponsorship" onClick={toggleBottomSheet} passHref style={{ cursor: "pointer", color:  'black', textDecoration: 'none' }}>Match Sponsorship</Link></p>
+                        <p className="card-text"><Link href="/partnership" onClick={toggleBottomSheet} passHref style={{ cursor: "pointer", color:  'black', textDecoration: 'none' }}>Commercial Partners</Link></p>
+                        <p className="card-text"><Link href="/magazine" onClick={toggleBottomSheet} passHref style={{ cursor: "pointer", color:  'black', textDecoration: 'none' }}>BlackStars Magazines</Link></p>
                     </div>
                 </div>
             </div>
