@@ -1,97 +1,269 @@
-.header {
-  font-size: 40px;
-  color: #000000;
-  font-weight: 900;
+// Teams list page styles
+.pageHeader {
+  margin-bottom: 3rem;
+  text-align: center;
 }
 
-.imageContainer {
+.pageTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #222;
+  margin-bottom: 1rem;
   position: relative;
+  display: inline-block;
+  padding-bottom: 1rem;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #0b7a3f;
+    border-radius: 2px;
+  }
+}
+
+.pageSubtitle {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+// Team card styling
+.teamCard {
+  background-color: #fff;
+  border-radius: 12px;
   overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
   height: 100%;
-  width: 100%;
-  margin-bottom: 20px;
+  
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    
+    .teamLogo img {
+      transform: scale(1.05);
+    }
+    
+    .viewTeam {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
-.carouselImage {
-  object-fit: cover;
-  width: 100%;
+.teamLink {
+  display: block;
+  text-decoration: none;
+  color: inherit;
   height: 100%;
 }
 
-.imageOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+.teamLogo {
+  background-color: #f8f9fa;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  overflow: hidden;
+  
+  img {
+    max-width: 100%;
+    max-height: 150px;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+  }
+}
+
+.teamName {
+  padding: 1.5rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.shortName {
+  display: block;
+  font-size: 0.9rem;
+  color: #0b7a3f;
+  font-weight: 600;
+  margin-top: 0.3rem;
+}
+
+.viewTeam {
+  text-align: center;
+  padding: 1rem;
+  color: #0b7a3f;
+  font-weight: 600;
+  opacity: 0.7;
+  transform: translateY(5px);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  
+  i {
+    font-size: 1.1rem;
+  }
+}
+
+// Loading state shimmer effects
+.titleShimmer {
+  height: 40px;
+  width: 200px;
+  margin: 0 auto 1rem;
+  background: linear-gradient(
+    to right,
+    #f0f0f0 8%,
+    #f8f8f8 18%,
+    #f0f0f0 33%
+  );
+  background-size: 800px 100%;
+  animation: shimmer 2s infinite linear;
+  border-radius: 4px;
+}
+
+.subtitleShimmer {
+  height: 20px;
+  width: 500px;
+  max-width: 80%;
+  margin: 0 auto 3rem;
+  background: linear-gradient(
+    to right,
+    #f0f0f0 8%,
+    #f8f8f8 18%,
+    #f0f0f0 33%
+  );
+  background-size: 800px 100%;
+  animation: shimmer 2s infinite linear;
+  border-radius: 4px;
+}
+
+.teamCardShimmer {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
+  min-height: 300px;
+  
+  .logoShimmer {
+    height: 200px;
+    background: linear-gradient(
+      to right,
+      #f0f0f0 8%,
+      #f8f8f8 18%,
+      #f0f0f0 33%
+    );
+    background-size: 800px 100%;
+    animation: shimmer 2s infinite linear;
+  }
+  
+  .nameShimmer {
+    height: 80px;
+    margin: 15px 15px 0;
+    background: linear-gradient(
+      to right,
+      #f0f0f0 8%,
+      #f8f8f8 18%,
+      #f0f0f0 33%
+    );
+    background-size: 800px 100%;
+    animation: shimmer 2s infinite linear;
+    border-radius: 4px;
+  }
 }
 
-.imageText {
-  position: absolute;
-  top: 30px;
-  left: 20px;
-  color: #ffffff;
-  font-size: 40px;
-  font-weight: bold;
-  z-index: 2;
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
 }
 
-.imageTextBelow {
-  position: absolute;
-  bottom: 40px;
-  left: 20px;
-  color: #ffffff;
-  font-size: 20px;
-  line-height: 20px;
-  z-index: 2;
+// Error state
+.errorContainer {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  
+  i {
+    font-size: 3rem;
+    color: #dc3545;
+    margin-bottom: 1.5rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  p {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 500px;
+    margin: 0 auto 1.5rem;
+  }
 }
 
-.categories {
-  position: absolute;
-  bottom: 10px;
-  left: 20px;
-  color: #ffffff !important;
-  font-size: 15px;
-  z-index: 2;
+// Responsive styles
+@media (max-width: 991px) {
+  .pageTitle {
+    font-size: 2rem;
+  }
+  
+  .pageSubtitle {
+    font-size: 1rem;
+  }
+  
+  .teamLogo {
+    height: 180px;
+    
+    img {
+      max-height: 120px;
+    }
+  }
+  
+  .teamName {
+    font-size: 1.2rem;
+    padding: 1.2rem;
+  }
 }
 
-@media (max-width: 768px) {
-  .header {
-    font-size: 30px;
-    color: #000000;
-    font-weight: 900;
+@media (max-width: 767px) {
+  .pageTitle {
+    font-size: 1.8rem;
   }
-  .imageContainer {
-    overflow: hidden;
-    position: relative;
-    margin-bottom: 20px;
-    height: 100%;
-    width: 100%;
+  
+  .pageSubtitle {
+    font-size: 0.9rem;
   }
-
-  .imageText {
-    position: absolute;
-    top: 30px;
-    left: 20px;
-    color: #ffffff;
-    font-size: 40px;
-    font-weight: bold;
+  
+  .teamCard {
+    max-width: 320px;
+    margin: 0 auto;
   }
-
-  .imageTextBelow {
-    position: absolute;
-    bottom: 30px;
-    left: 20px;
-    color: #ffffff;
-    font-size: 20px;
-  }
-  .category {
-    position: absolute;
-    bottom: 10px;
-    left: 20px;
-    color: #ffffff !important;
-    font-size: 20px;
+  
+  .teamLogo {
+    height: 160px;
+    
+    img {
+      max-height: 100px;
+    }
   }
 }

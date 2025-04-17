@@ -1,6 +1,112 @@
-@media (max-width: 768px) {
-    .page {
-        padding-left: 20px;
-        padding-right: 20px;
+.page {
+    overflow-x: hidden;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 40px;
+    
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('/images/background.png');
+      background-repeat: repeat;
+      background-size: 500px;
+      opacity: 0.03;
+      pointer-events: none;
+      z-index: -1;
     }
-}
+  }
+  
+  // Loading animation styles
+  .loaderContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+  }
+  
+  .loadingLogo {
+    width: 150px;
+    height: auto;
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(0.95);
+      opacity: 0.7;
+    }
+    50% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.95);
+      opacity: 0.7;
+    }
+  }
+  
+  .loadingBar {
+    width: 300px;
+    height: 4px;
+    background-color: #e0e0e0;
+    border-radius: 2px;
+    margin-top: 20px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .loadingProgress {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    background-color: #0b7a3f;
+    border-radius: 2px;
+    animation: loading 1.5s infinite ease-in-out;
+  }
+  
+  @keyframes loading {
+    0% {
+      left: -50%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+  
+  // Section transitions
+  .section {
+    transition: all 0.5s ease;
+    margin-bottom: 30px;
+    
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+  
+  // Responsive styles
+  @media (max-width: 768px) {
+    .page {
+      padding: 0 15px 30px;
+    }
+    
+    .loadingLogo {
+      width: 100px;
+    }
+    
+    .loadingBar {
+      width: 250px;
+    }
+  }
+  
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .page {
+      padding: 0 25px 30px;
+    }
+  }

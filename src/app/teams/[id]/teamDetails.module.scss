@@ -1,0 +1,546 @@
+// Team details page styles
+
+// Team header
+.teamHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+  
+  .backButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #0b7a3f;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+    
+    &:hover {
+      color: darken(#0b7a3f, 10%);
+      transform: translateX(-5px);
+    }
+    
+    i {
+      font-size: 1.1rem;
+    }
+  }
+  
+  .teamInfo {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .teamLogo {
+    width: 120px;
+    height: 120px;
+    background-color: #f8f9fa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+  }
+  
+  .teamName {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 0.5rem;
+  }
+  
+  .teamMeta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #666;
+  }
+  
+  .teamShortName {
+    background-color: #0b7a3f;
+    color: white;
+    padding: 0.3rem 0.7rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  
+  .divider {
+    width: 4px;
+    height: 4px;
+    background-color: #ccc;
+    border-radius: 50%;
+  }
+  
+  .squadSize {
+    font-size: 0.9rem;
+  }
+  
+  // Position section
+  .positionSection {
+    margin-bottom: 3rem;
+  }
+  
+  .positionTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid #f0f0f0;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 80px;
+      height: 2px;
+      background-color: #0b7a3f;
+    }
+  }
+  
+  // Player card
+  .playerCard {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      
+      .playerImage img {
+        transform: scale(1.05);
+      }
+    }
+  }
+  
+  .jerseyNumber {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #0b7a3f;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 6px rgba(11, 122, 63, 0.3);
+    z-index: 2;
+  }
+  
+  .playerImage {
+    height: 220px;
+    overflow: hidden;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+  }
+  
+  .playerInfo {
+    padding: 1.2rem;
+    text-align: center;
+  }
+  
+  .playerName {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 0.5rem;
+    
+    strong {
+      font-weight: 700;
+    }
+  }
+  
+  .playerMeta {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: #666;
+  }
+  
+  .nationality {
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -0.5rem;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 4px;
+      background-color: #ccc;
+      border-radius: 50%;
+    }
+  }
+  
+  // Player modal
+  .modalBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    backdrop-filter: blur(5px);
+  }
+  
+  .modalContent {
+    background-color: white;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  }
+  
+  .closeButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #f8f9fa;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background-color: #e9ecef;
+    }
+    
+    i {
+      font-size: 1.1rem;
+      color: #666;
+    }
+  }
+  
+  .modalBody {
+    padding: 2rem;
+  }
+  
+  .modalHeader {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .modalPlayerImage {
+    width: 150px;
+    height: 150px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  
+  .modalPlayerInfo {
+    flex: 1;
+    position: relative;
+  }
+  
+  .modalJerseyNumber {
+    position: absolute;
+    top: -10px;
+    right: 0;
+    background-color: #0b7a3f;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 6px rgba(11, 122, 63, 0.3);
+  }
+  
+  .modalPlayerName {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #222;
+    margin-bottom: 0.5rem;
+    
+    strong {
+      font-weight: 700;
+    }
+  }
+  
+  .modalPlayerPosition {
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    
+    i {
+      color: #0b7a3f;
+    }
+  }
+  
+  .playerStats {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+  
+  .statItem {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .statLabel {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+  }
+  
+  .statValue {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .playerBio {
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #555;
+    }
+  }
+  
+  // No players message
+  .noPlayersMessage {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    
+    i {
+      font-size: 3rem;
+      color: #6c757d;
+      margin-bottom: 1.5rem;
+    }
+    
+    p {
+      font-size: 1.1rem;
+      color: #555;
+    }
+  }
+  
+  // Loading shimmer effects
+  .teamHeaderShimmer {
+    height: 150px;
+    margin-bottom: 3rem;
+    background: linear-gradient(
+      to right,
+      #f0f0f0 8%,
+      #f8f8f8 18%,
+      #f0f0f0 33%
+    );
+    background-size: 800px 100%;
+    animation: shimmer 2s infinite linear;
+    border-radius: 12px;
+  }
+  
+  .positionSectionShimmer {
+    margin-bottom: 3rem;
+  }
+  
+  .positionTitleShimmer {
+    height: 30px;
+    width: 200px;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(
+      to right,
+      #f0f0f0 8%,
+      #f8f8f8 18%,
+      #f0f0f0 33%
+    );
+    background-size: 800px 100%;
+    animation: shimmer 2s infinite linear;
+    border-radius: 4px;
+  }
+  
+  .playerCardShimmer {
+    height: 300px;
+    background: linear-gradient(
+      to right,
+      #f0f0f0 8%,
+      #f8f8f8 18%,
+      #f0f0f0 33%
+    );
+    background-size: 800px 100%;
+    animation: shimmer 2s infinite linear;
+    border-radius: 12px;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: -400px 0;
+    }
+    100% {
+      background-position: 400px 0;
+    }
+  }
+  
+  // Error container
+  .errorContainer {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    
+    i {
+      font-size: 3rem;
+      color: #dc3545;
+      margin-bottom: 1.5rem;
+    }
+    
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    
+    p {
+      font-size: 1.1rem;
+      color: #555;
+      max-width: 500px;
+      margin: 0 auto 1.5rem;
+    }
+  }
+  
+  // Responsive styles
+  @media (max-width: 991px) {
+    .teamInfo {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1rem;
+    }
+    
+    .teamLogo {
+      width: 100px;
+      height: 100px;
+    }
+    
+    .teamName {
+      font-size: 2rem;
+    }
+    
+    .modalHeader {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+    }
+    
+    .modalPlayerInfo {
+      text-align: center;
+    }
+    
+    .modalJerseyNumber {
+      position: relative;
+      top: 0;
+      right: 0;
+      margin: 0 auto 1rem;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .teamName {
+      font-size: 1.8rem;
+    }
+    
+    .playerCard {
+      max-width: 320px;
+      margin: 0 auto;
+    }
+    
+    .modalContent {
+      width: 95%;
+    }
+    
+    .modalBody {
+      padding: 1.5rem;
+    }
+    
+    .playerStats {
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
+    }
+    
+    .statValue {
+      font-size: 1rem;
+    }
+  }

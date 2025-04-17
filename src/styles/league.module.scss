@@ -1,44 +1,213 @@
 .leagueTable {
-    width: 100%;
-    overflow-x: auto;
-  }
-  .leagueLogo {
-    width: 40px;
-    height: auto;
-}
-  .table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 0 auto;
-  
-    th, td {
-      padding: 10px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
-    }
+  width: 100%;
+  overflow-x: auto;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 15px;
+  transition: all 0.3s ease;
 
-    thead th {
-      position: sticky;
-      top: 0;
-      background-color: white;
-      border-bottom: solid 0.5px #060606;
-      z-index: 1;
-    }
+  &:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.leagueHeader {
+  display: flex;
+  align-items: center;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 15px;
+}
+
+.leagueLogo {
+  width: 50px;
+  height: auto;
+  margin-right: 15px;
+}
+
+.leagueTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+.leagueSeason {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  
+  th, td {
+    padding: 12px 8px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  th {
+    background-color: #f9f9f9;
+    color: #555;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  
+  td {
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  tr:last-child td {
+    border-bottom: none;
+  }
+}
+
+.teamInfo {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  
+  .teamName {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
+  }
+}
+
+.logo {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+.highlightRow {
+  background-color: rgba(11, 122, 63, 0.1);
+  font-weight: 600;
+  
+  td {
+    border-bottom: 1px solid rgba(11, 122, 63, 0.2);
+  }
+  
+  &:hover {
+    background-color: rgba(11, 122, 63, 0.15) !important;
+  }
+}
+
+.points {
+  font-weight: 600;
+  color: #333;
+}
+
+// Loading states
+.shimmerContainer {
+  width: 100%;
+}
+
+.shimmerHeader {
+  height: 60px;
+  background: linear-gradient(
+    to right,
+    #f0f0f0 8%,
+    #f8f8f8 18%,
+    #f0f0f0 33%
+  );
+  background-size: 800px 100%;
+  animation: shimmer 2s infinite linear;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+.shimmerRow {
+  height: 40px;
+  background: linear-gradient(
+    to right,
+    #f0f0f0 8%,
+    #f8f8f8 18%,
+    #f0f0f0 33%
+  );
+  background-size: 800px 100%;
+  animation: shimmer 2s infinite linear;
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+
+.errorContainer, .noDataContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  color: #666;
+  
+  i {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  p {
+    margin: 0;
+  }
+}
+
+.errorContainer {
+  color: #d9534f;
+}
+
+// Mobile responsiveness
+@media (max-width: 768px) {
+  .hideMobile {
+    display: none;
+  }
+  
+  .leagueTable {
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .table th, .table td {
+    padding: 8px 4px;
+    font-size: 0.8rem;
+  }
+  
+  .leagueTitle {
+    font-size: 1rem;
+  }
+  
+  .leagueSeason {
+    font-size: 0.8rem;
   }
   
   .teamInfo {
-    display: flex;
-    align-items: center;
+    .teamName {
+      max-width: 80px;
+    }
   }
   
   .logo {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
   }
-  
-  .highlightRow {
-    background-color: #4CAF50;
-    color: white;
-  }
-  
+}

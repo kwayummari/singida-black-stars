@@ -1,77 +1,101 @@
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
-const baseUrl = process.env.NEXT_PUBLIC_API_SERVER || 'http://noapi';
+// Base URL from environment variable or default to local development
+const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'https://api.singidablackstars.com';
 
-const hasInternetConnection = async () => {
-  try {
-    const response = await axios.head(baseUrl);
-    return response.status === 200;
-  } catch (e) {
-    throw new Error('Check your internet connection');
+// Create axios instance with default configs
+const apiClient = axios.create({
+  baseURL: baseUrl,
+  timeout: 10000,
+  headers: {
+    'Content-Type': 'application/json',
   }
-};
+});
 
-const handleError = (error) => {
-  if (error.response) {
-    throw new Error('Failed to fetch data');
-  } else if (error.request) {
-    throw new Error('No response from the server');
-  } else {
-    throw new Error('Request failed');
+// Request interceptor for API calls
+apiClient.interceptors.request.use(
+  config => {
+    // You can add auth tokens here if needed in the future
+    return config;
+  },
+  error => {
+    return Promise.reject(error);
   }
-};
+);
 
-export const get = async (endPoint) => {
+// Response interceptor for API calls
+apiClient.interceptors.response.use(
+  response => {
+    return response;
+  },
+  error => {
+    const message = 
+      error.response?.data?.message || 
+      "Network error. Please check your connection.";
+    
+    console.error("API Error:", error);
+    toast.error(message);
+    
+    return Promise.reject(error);
+  }
+);
+
+/**
+ * Make a GET request to the API
+ * @param {string} endpoint - API endpoint
+ * @param {Object} params - URL parameters
+ */
+export const get = async (endpoint, params = {}) => {
   try {
-    if (!(await hasInternetConnection())) {
-      throw new Error("No internet connection");
-    }
-    const response = await axios.get(`${baseUrl}${endPoint}`);
+    const response = await apiClient.get(endpoint, { params });
     return response.data;
   } catch (error) {
-    handleError(error);
+    console.error(`GET ${endpoint} failed:`, error);
     throw error;
   }
 };
 
-export const post = async (endPoint, data) => {
+/**
+ * Make a POST request to the API
+ * @param {string} endpoint - API endpoint
+ * @param {Object} data - Request payload
+ */
+export const post = async (endpoint, data = {}) => {
   try {
-    if (!(await hasInternetConnection())) {
-      throw new Error("No internet connection");
-    }
-
-    const response = await axios.post(`${baseUrl}${endPoint}`, data);
+    const response = await apiClient.post(endpoint, data);
     return response.data;
   } catch (error) {
-    handleError(error);
+    console.error(`POST ${endpoint} failed:`, error);
     throw error;
   }
 };
 
-export const put = async (endPoint, data) => {
+/**
+ * Make a PUT request to the API
+ * @param {string} endpoint - API endpoint
+ * @param {Object} data - Request payload
+ */
+export const put = async (endpoint, data = {}) => {
   try {
-    if (!(await hasInternetConnection())) {
-      throw new Error("No internet connection");
-    }
-
-    const response = await axios.put(`${baseUrl}${endPoint}`, data);
+    const response = await apiClient.put(endpoint, data);
     return response.data;
   } catch (error) {
-    handleError(error);
+    console.error(`PUT ${endpoint} failed:`, error);
     throw error;
   }
 };
 
-export const deleteRequest = async (endPoint) => {
+/**
+ * Make a DELETE request to the API
+ * @param {string} endpoint - API endpoint
+ */
+export const deleteRequest = async (endpoint) => {
   try {
-    if (!(await hasInternetConnection())) {
-      throw new Error("No internet connection");
-    }
-
-    const response = await axios.delete(`${baseUrl}${endPoint}`);
+    const response = await apiClient.delete(endpoint);
     return response.data;
   } catch (error) {
-    handleError(error);
+    console.error(`DELETE ${endpoint} failed:`, error);
     throw error;
   }
 };

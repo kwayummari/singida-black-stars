@@ -1,20 +1,40 @@
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
 .row {
   padding-left: 50px;
   padding-right: 50px;
+  transition: transform 0.3s ease;
+}
+
+// Enhanced popup styles
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
 }
 
 .popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  padding: 20px;
-  border-radius: 8px;
-  width: 80%;
-  max-width: 600px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+  padding: 30px;
+  border-radius: 15px;
+  width: 85%;
+  max-width: 700px;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 .popupContent {
@@ -24,125 +44,286 @@
 }
 
 .popupTitle {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #0b7a3f;
+  text-align: center;
+  font-weight: 600;
 }
 
 .popupImage {
   width: 100%;
-  max-width: 400px;
-  height: auto;
-  margin-bottom: 15px;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .popupDescription {
-  font-size: 1rem;
-  text-align: center;
-  margin-bottom: 20px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 30px;
+  
+  p {
+    margin-bottom: 15px;
+  }
 }
 
 .closePopup {
   background-color: #0b7a3f;
   color: white;
-  padding: 10px 20px;
+  padding: 12px 30px;
   border: none;
-  border-radius: 5px;
+  border-radius: 30px;
   cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(11, 122, 63, 0.3);
+  
+  &:hover {
+    background-color: darken(#0b7a3f, 10%);
+  }
 }
 
-
-
+// Enhanced image container
 .carouselImage {
   object-fit: cover;
-  border-radius: 30px;
+  border-radius: 16px;
   height: 100%;
   width: 100%;
+  transition: transform 0.5s ease;
 }
 
 .imageContainer {
   position: relative;
   margin: 30px;
   height: 700px;
-  border-radius: 30px;
+  border-radius: 16px;
   overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  
+  &:hover .carouselImage {
+    transform: scale(1.05);
+  }
+}
 
-  &::after {
-    content: "";
+// Enhanced gradient overlay
+.gradientOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5) 50%, transparent);
+  z-index: 1;
+}
+
+.imageText {
+  position: absolute;
+  bottom: 70px;
+  left: 40px;
+  color: white;
+  font-size: 50px;
+  z-index: 2;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.imageTextBelow {
+  position: absolute;
+  bottom: 30px;
+  left: 40px;
+  color: white;
+  font-size: 16px;
+  z-index: 2;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+// Carousel dots navigation
+.carouselDots {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  z-index: 3;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 0 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+.activeDot {
+  background-color: #0b7a3f;
+  width: 14px;
+  height: 14px;
+}
+
+// Shimmer loading effect
+.shimmerContainer {
+  position: relative;
+  margin: 30px;
+  height: 700px;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #f0f0f0;
+  
+  .shimmerImage {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      #f0f0f0 8%,
+      #f8f8f8 18%,
+      #f0f0f0 33%
+    );
+    background-size: 800px 100%;
+    animation: shimmer 2s infinite linear;
+  }
+  
+  .shimmerOverlay {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     height: 30%;
-    padding: 30px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.1), transparent);
+  }
+  
+  .shimmerText {
+    position: absolute;
+    bottom: 70px;
+    left: 40px;
+    width: 70%;
+    height: 50px;
+    border-radius: 5px;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.2) 8%,
+      rgba(255, 255, 255, 0.3) 18%,
+      rgba(255, 255, 255, 0.2) 33%
+    );
+    background-size: 800px 100%;
+    animation: shimmer 2s infinite linear;
+  }
+  
+  .shimmerSubText {
+    position: absolute;
+    bottom: 30px;
+    left: 40px;
+    width: 30%;
+    height: 20px;
+    border-radius: 5px;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.2) 8%,
+      rgba(255, 255, 255, 0.3) 18%,
+      rgba(255, 255, 255, 0.2) 33%
+    );
+    background-size: 800px 100%;
+    animation: shimmer 2s infinite linear;
   }
 }
 
-.imageText {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  color: white;
-  font-size: 50px;
-  z-index: 1;
-  font-weight: bold;
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
 }
 
-.imageTextBelow {
-  position: absolute;
-  bottom: 10px;
-  left: 20px;
-  color: white;
-  font-size: 15px;
-  z-index: 1;
-  font-weight: bold;
-}
-
+// Responsive styles
 @media only screen and (max-width: 1024px) {
   .row {
     padding: 0;
   }
+  
   .carouselImage {
-    object-fit: cover;
-    border-radius: 15px;
-    height: 100%;
-    width: 100%;
+    border-radius: 12px;
   }
 
   .imageContainer {
     position: relative;
     margin: 10px;
     height: 400px;
-    border-radius: 15px;
-    overflow: hidden;
-
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 30%;
-      padding: 10px;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    border-radius: 12px;
+  }
+  
+  .imageText {
+    bottom: 50px;
+    left: 20px;
+    font-size: 24px;
+  }
+  
+  .imageTextBelow {
+    bottom: 20px;
+    left: 20px;
+    font-size: 14px;
+  }
+  
+  .popup {
+    width: 90%;
+    padding: 20px;
+  }
+  
+  .popupTitle {
+    font-size: 1.5rem;
+  }
+  
+  .popupDescription {
+    font-size: 1rem;
+  }
+  
+  .shimmerContainer {
+    height: 400px;
+    margin: 10px;
+    border-radius: 12px;
+    
+    .shimmerText {
+      bottom: 50px;
+      left: 20px;
+      height: 30px;
+    }
+    
+    .shimmerSubText {
+      bottom: 20px;
+      left: 20px;
+      height: 15px;
     }
   }
-  .imageText {
-    position: absolute;
-    bottom: 30px;
-    left: 20px;
-    color: white;
-    font-size: 20px;
-    z-index: 1;
-    font-weight: bold;
+}
+
+@media only screen and (max-width: 480px) {
+  .imageContainer {
+    height: 300px;
   }
-  .imageTextBelow {
-    position: absolute;
-    bottom: 10px;
-    left: 20px;
-    color: white;
-    font-size: 15px;
-    z-index: 1;
-    font-weight: bold;
+  
+  .imageText {
+    font-size: 20px;
+    bottom: 40px;
+  }
+  
+  .closePopup {
+    padding: 10px 20px;
+  }
+  
+  .shimmerContainer {
+    height: 300px;
   }
 }

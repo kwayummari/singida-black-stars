@@ -1,56 +1,147 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 import styles from '../../../styles/league.module.scss';
-
-const teamsData = [
-  { logo: '/images/yanga.png', name: 'Yanga', p: 5, gd: 8, pts: 12 },
-  { logo: '/images/simba.png', name: 'Simba', p: 5, gd: 6, pts: 10 },
-  { logo: '/images/azam.webp', name: 'Azam', p: 5, gd: 5, pts: 9 },
-  { logo: '/images/coastal.png', name: 'Coastal Union', p: 5, gd: 4, pts: 8 },
-  { logo: '/images/logo.png', name: 'Singida Black Stars', p: 5, gd: 7, pts: 11 },
-  { logo: '/images/fountain.jpg', name: 'Fountain Gates', p: 5, gd: 3, pts: 7 },
-  { logo: '/images/pamba.png', name: 'Pamba Jiji', p: 5, gd: 2, pts: 6 }
-];
+import { get } from '@/services/api';
 
 const FullLeague = () => {
+  const [leagueData, setLeagueData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
   const singidaRowRef = useRef(null);
 
   useEffect(() => {
-    if (singidaRowRef.current) {
+    const fetchLeagueStandings = async () => {
+      try {
+        setIsLoading(true);
+        // Get the active league standings
+        const data = await get('/leagues/getStandings.php');
+        setLeagueData(data);
+        setIsLoading(false);
+      } catch (error) {
+        console.error("Failed to fetch league standings:", error);
+        setError("Failed to load league standings. Please try again later.");
+        setIsLoading(false);
+      }
+    };
+
+    fetchLeagueStandings();
+  }, []);
+
+  useEffect(() => {
+    // Scroll to Singida Black Stars row when data is loaded
+    if (leagueData && singidaRowRef.current) {
       singidaRowRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
-  }, []);
+  }, [leagueData]);
+
+  // If loading, show shimmer effect
+  if (isLoading) {
+    return (
+      <div className={styles.leagueTable}>
+        <div className={styles.shimmerContainer}>
+          <div className={styles.shimmerHeader}></div>
+          {[1, 2, 3, 4, 5, 6, 7].map(index => (
+            <div key={index} className={styles.shimmerRow}></div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  // If error, show error message
+  if (error) {
+    return (
+      <div className={styles.leagueTable}>
+        <div className={styles.errorContainer}>
+          <i className="bi bi-exclamation-triangle-fill"></i>
+          <p>{error}</p>
+        </div>
+      </div>
+    );
+  }
+
+  // If no data, show message
+  if (!leagueData || !leagueData.standings || leagueData.standings.length === 0) {
+    return (
+      <div className={styles.leagueTable}>
+        <div className={styles.noDataContainer}>
+          <i className="bi bi-table"></i>
+          <p>No league standings available.</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Determine if a team is Singida Black Stars
+  const isSingidaTeam = (teamName) => {
+    return teamName.toLowerCase().includes('singida') || teamName.toLowerCase().includes('black stars');
+  };
 
   return (
     <div className={styles.leagueTable}>
-      <table className={styles.table}>
+      <div className={styles.leagueHeader}>
+        <motion.img 
+          src={leagueData.league.logo} 
+          alt={leagueData.league.name} 
+          className={styles.leagueLogo}
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+        >
+          <h4 className={styles.leagueTitle}>{leagueData.league.name}</h4>
+          <p className={styles.leagueSeason}>{leagueData.league.season}</p>
+        </motion.div>
+      </div>
+      
+      <motion.table 
+        className={styles.table}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3, duration: 0.5 }}
+      >
         <thead>
           <tr>
-            <th><img src="/images/nbc.png" alt="NBC Premier League" className={styles.leagueLogo} /></th>
-            <th>Teams</th>
+            <th>#</th>
+            <th>Team</th>
             <th>P</th>
-            <th>Gd</th>
+            <th className={styles.hideMobile}>W</th>
+            <th className={styles.hideMobile}>D</th>
+            <th className={styles.hideMobile}>L</th>
+            <th>GD</th>
             <th>Pts</th>
           </tr>
         </thead>
         <tbody>
-          {teamsData.map((team, index) => (
-            <tr
-              key={index}
-              ref={team.name === 'Singida Black Stars' ? singidaRowRef : null}
-              className={team.name === 'Singida Black Stars' ? styles.highlightRow : ''}
+          {leagueData.standings.map((team) => (
+            <motion.tr
+              key={team.team_id}
+              ref={isSingidaTeam(team.team_name) ? singidaRowRef : null}
+              className={isSingidaTeam(team.team_name) ? styles.highlightRow : ''}
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.1 * team.position, duration: 0.3 }}
+              whileHover={{ backgroundColor: '#f5f5f5' }}
             >
-              <td>{index + 1}</td>
+              <td>{team.position}</td>
               <td className={styles.teamInfo}>
-                <img src={team.logo} alt={team.name} className={styles.logo} />
-                {team.name}
+                <img src={team.team_logo} alt={team.team_name} className={styles.logo} />
+                <span className={styles.teamName}>{team.team_name}</span>
               </td>
-              <td>{team.p}</td>
-              <td>{team.gd}</td>
-              <td>{team.pts}</td>
-            </tr>
+              <td>{team.played}</td>
+              <td className={styles.hideMobile}>{team.won}</td>
+              <td className={styles.hideMobile}>{team.drawn}</td>
+              <td className={styles.hideMobile}>{team.lost}</td>
+              <td>{team.goal_difference}</td>
+              <td className={styles.points}>{team.points}</td>
+            </motion.tr>
           ))}
         </tbody>
-      </table>
+      </motion.table>
     </div>
   );
 };

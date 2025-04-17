@@ -86,28 +86,28 @@ const Neck = ({ openPopup }) => {
                     ))
                 ) : newsData.length === 0 ? (
                     <p>No news available</p>
-                    ) : (
-                        newsData.map((news) => (
-                    <div className="col-12 col-md-3">
-                        <div
-                            className={`${styles.imageContainer} card`}
-                            onClick={() => handleImageClick(news.title, news.imageSrc, news.description)}
-                            style={{ cursor: 'pointer' }}
-                        >
-                            <div className={styles.imageOverlay}></div>
-                            <img
-                                src={news.imageSrc}
-                                alt="News Image"
-                                className={styles.carouselImage}
-                            />
-                            <div className={styles.imageText}>
-                                <p>{news.caption}</p>
+                ) : (
+                    newsData.map((news) => (
+                        <div className="col-12 col-md-3">
+                            <div
+                                className={`${styles.imageContainer} card`}
+                                onClick={() => handleImageClick(news.title, news.imageSrc, news.description)}
+                                style={{ cursor: 'pointer' }}
+                            >
+                                <div className={styles.imageOverlay}></div>
+                                <img
+                                    src={`http://192.168.1.100/sbs/${news.imageSrc}`}
+                                    alt="News Image"
+                                    className={styles.carouselImage}
+                                />
+                                <div className={styles.imageText}>
+                                    <p>{news.caption}</p>
+                                </div>
+                                <div className={styles.imageTextBelow}>
+                                    <p style={{ color: '#fff' }}> Reports | {timeAgo(news.reportDate)}</p>
+                                </div>
                             </div>
-                            <div className={styles.imageTextBelow}>
-                            <p style={{ color: '#fff' }}> Reports | {timeAgo(news.reportDate)}</p>
-                            </div>
-                        </div>
-                    </div>))
+                        </div>))
                 )}
                 {/* Other components */}
                 <div className="col-12 col-md-3">
