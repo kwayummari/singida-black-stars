@@ -173,13 +173,13 @@ const LatestNews = ({ openPopup, categoryId }) => {
     return (
         <div className="container-fluid p-0">
             {/* Loading shimmer */}
-            {loading && (
+            {/* {loading && (
                 <div className="row">
                     {[1, 2, 3, 4].map((_, index) => (
                         <ShimmerCard key={index} />
                     ))}
                 </div>
-            )}
+            )} */}
 
             {/* Error message */}
             {!loading && error && (
