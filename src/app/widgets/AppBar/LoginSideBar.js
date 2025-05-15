@@ -100,7 +100,9 @@ const LoginSideBar = ({ toggleLoginSidebar }) => {
             setIsLoading(false);
             return;
         }
-        
+
+        console.log(regFirstName, regLastName, regEmail, regPassword, regConfirmPassword);
+
         try {
             const response = await post('/users/register.php', {
                 email: regEmail,
