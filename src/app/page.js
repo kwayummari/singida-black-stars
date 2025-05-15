@@ -45,8 +45,7 @@ export default function EnhancedHome() {
         
         // Fetch latest result
         const resultsData = await get('/results/getAllResults.php?limit=1');
-        console.log(resultsData);
-        setLatestResults(resultsData?.data?.[0] || null);
+        setLatestResults(resultsData?.[0] || null);
         
         // Fetch league standings
         const standingsData = await get('/leagues/getStandings.php');
@@ -295,7 +294,7 @@ export default function EnhancedHome() {
                     <div className={styles.resultTeams}>
                       <div className={styles.teamResult}>
                         <img 
-                          src={latestResults.homeTeamLogo} 
+                          src={`https://singidablackstars.co.tz/admin/${latestResults.homeTeamLogo}`} 
                           alt={latestResults.homeTeamName} 
                           className={styles.teamLogo}
                         />
@@ -304,7 +303,7 @@ export default function EnhancedHome() {
                       </div>
                       <div className={styles.teamResult}>
                         <img 
-                          src={latestResults.awayTeamLogo} 
+                          src={`https://singidablackstars.co.tz/admin/${latestResults.awayTeamLogo}`} 
                           alt={latestResults.awayTeamName} 
                           className={styles.teamLogo}
                         />
