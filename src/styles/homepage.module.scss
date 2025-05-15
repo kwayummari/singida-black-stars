@@ -1,0 +1,1081 @@
+// Main Variables
+$primary-color: #0b7a3f; // Primary team color (green)
+$secondary-color: #000000; // Secondary team color (black)
+$accent-color: #ffd700; // Gold/Yellow accent
+$light-bg: #f8f9fa;
+$dark-bg: #212529;
+$text-light: #ffffff;
+$text-dark: #212529;
+$text-muted: #6c757d;
+$border-color: #e5e5e5;
+
+// Breakpoints
+$mobile: 576px;
+$tablet: 768px;
+$desktop: 992px;
+$widescreen: 1200px;
+
+// General Styles
+.homePage {
+  overflow-x: hidden;
+  background-color: $light-bg;
+}
+
+.container {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+// Loading Screen
+.loaderContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $primary-color;
+  z-index: 9999;
+  
+  .loaderContent {
+    text-align: center;
+  }
+  
+  .loadingLogo {
+    width: 120px;
+    height: auto;
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+  
+  .loadingText {
+    margin-top: 20px;
+    color: $text-light;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
+  
+  .loadingBar {
+    width: 200px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    margin: 25px auto 0;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .loadingProgress {
+    position: absolute;
+    height: 100%;
+    width: 30%;
+    background-color: $text-light;
+    border-radius: 2px;
+    animation: loading 1.5s infinite ease-in-out;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+
+@keyframes loading {
+  0% {
+    left: -30%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+// Hero Banner Section
+.heroSection {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  min-height: 600px;
+  max-height: 800px;
+  overflow: hidden;
+  
+  .bannerContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .bannerSlide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .bannerImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .gradient {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.1) 100%);
+    }
+  }
+  
+  .bannerContent {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding-bottom: 60px;
+    
+    .bannerCategory {
+      display: inline-block;
+      background-color: $primary-color;
+      color: $text-light;
+      padding: 8px 15px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      border-radius: 4px;
+    }
+    
+    .bannerTitle {
+      color: $text-light;
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      max-width: 800px;
+      line-height: 1.2;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    
+    .bannerCaption {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.25rem;
+      margin-bottom: 30px;
+      max-width: 600px;
+    }
+    
+    .bannerButton {
+      display: inline-flex;
+      align-items: center;
+      background-color: $accent-color;
+      color: $text-dark;
+      font-weight: 600;
+      padding: 12px 25px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      
+      i {
+        margin-left: 8px;
+        font-size: 1.25rem;
+      }
+      
+      &:hover {
+        background-color: darken($accent-color, 10%);
+        transform: translateY(-3px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+  
+  .bannerDots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.5);
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+      }
+    }
+    
+    .activeDot {
+      background-color: $text-light;
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+// Match Center Section
+.matchCenterSection {
+  margin-top: -60px;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 10;
+  
+  .matchCenterGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .nextMatchCard, .lastResultCard, .leagueTableCard {
+    background-color: $text-light;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  // Common header styles
+  .matchHeader, .resultHeader, .tableHeader {
+    background-color: $primary-color;
+    color: $text-light;
+    padding: 20px;
+    
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 0;
+    }
+  }
+  
+  .matchCompetition, .resultCompetition, .season {
+    display: block;
+    font-size: 0.875rem;
+    opacity: 0.8;
+    margin-top: 5px;
+  }
+  
+  // Common content styles
+  .matchContent, .resultContent, .tableContent {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  // Match Info
+  .matchInfo {
+    margin-bottom: 20px;
+  }
+  
+  .dateTimeVenue {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    
+    .matchDate, .matchTime, .matchVenue {
+      display: flex;
+      align-items: center;
+      color: $text-muted;
+      font-size: 0.875rem;
+      
+      i {
+        margin-right: 8px;
+        color: $primary-color;
+      }
+    }
+  }
+  
+  .matchTeams, .resultTeams {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .teamInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .teamResult {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .teamLogo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 8px;
+  }
+  
+  .teamName {
+    font-weight: 600;
+    font-size: 0.875rem;
+    max-width: 120px;
+    text-align: center;
+  }
+  
+  .score {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: $primary-color;
+    margin-top: 5px;
+  }
+  
+  .vsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    
+    .vs {
+      background-color: $secondary-color;
+      color: $text-light;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+  }
+  
+  .halfTimeScore {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 0.875rem;
+    color: $text-muted;
+  }
+  
+  .resultDate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $text-muted;
+    margin-bottom: 15px;
+    font-size: 0.875rem;
+    
+    i {
+      margin-right: 8px;
+      color: $primary-color;
+    }
+  }
+  
+  .resultInfo {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  // League Table
+  .tableHeader {
+    .leagueInfo {
+      display: flex;
+      align-items: center;
+      
+      .leagueLogo {
+        width: 40px;
+        height: 40px;
+        margin-right: 15px;
+        object-fit: contain;
+      }
+    }
+  }
+  
+  .standingsTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    
+    th {
+      text-align: left;
+      padding: 10px 5px;
+      border-bottom: 1px solid $border-color;
+      font-size: 0.75rem;
+      color: $text-muted;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    
+    td {
+      padding: 10px 5px;
+      border-bottom: 1px solid $border-color;
+      font-size: 0.875rem;
+    }
+    
+    .posColumn {
+      width: 10%;
+      text-align: center;
+    }
+    
+    .teamColumn {
+      width: 50%;
+    }
+    
+    .statColumn {
+      width: 13.33%;
+      text-align: center;
+    }
+    
+    .teamInfo {
+      display: flex;
+      align-items: center;
+      
+      .miniTeamLogo {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        object-fit: contain;
+      }
+    }
+    
+    .highlightedTeam {
+      background-color: rgba($primary-color, 0.1);
+      font-weight: 700;
+    }
+  }
+  
+  // Common button styles
+  .matchButton, .resultButton, .tableButton {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: $primary-color;
+    color: $text-light;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-top: auto;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background-color: darken($primary-color, 10%);
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  // Empty states
+  .noMatchInfo, .noResultInfo, .noTableInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 40px 20px;
+    text-align: center;
+    color: $text-muted;
+    
+    i {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: lighten($text-muted, 20%);
+    }
+    
+    p {
+      font-size: 0.875rem;
+      margin: 0;
+    }
+  }
+}
+
+// News Section
+.newsSection {
+  padding: 60px 0;
+  
+  .sectionHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    
+    .sectionTitle {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: $text-dark;
+      margin: 0;
+      position: relative;
+      padding-left: 15px;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 5px;
+        background-color: $primary-color;
+        border-radius: 3px;
+      }
+    }
+    
+    .categoryTabs {
+      display: flex;
+      gap: 10px;
+      
+      .categoryTab {
+        background: none;
+        border: none;
+        padding: 8px 15px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: $text-muted;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border-radius: 30px;
+        
+        &:hover {
+          color: $text-dark;
+          background-color: rgba(0, 0, 0, 0.05);
+        }
+      }
+      
+      .activeTab {
+        color: $text-light;
+        background-color: $primary-color;
+        
+        &:hover {
+          color: $text-light;
+          background-color: darken($primary-color, 5%);
+        }
+      }
+    }
+    
+    .viewAllLink {
+      color: $primary-color;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.875rem;
+      display: flex;
+      align-items: center;
+      
+      i {
+        margin-left: 5px;
+        transition: transform 0.3s ease;
+      }
+      
+      &:hover {
+        text-decoration: underline;
+        
+        i {
+          transform: translateX(3px);
+        }
+      }
+    }
+  }
+  
+  .newsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 20px;
+    
+    .featuredNewsCard {
+      grid-column: span 3;
+      height: 400px;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      
+      &:hover .newsImage {
+        transform: scale(1.05);
+      }
+      
+      .newsImageContainer {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        
+        .newsImage {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.5s ease;
+        }
+        
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 70%;
+          background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        }
+      }
+      
+      .newsCategory {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: $primary-color;
+        color: $text-light;
+        padding: 6px 12px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        border-radius: 3px;
+        z-index: 2;
+      }
+      
+      .newsContent {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 30px;
+        z-index: 2;
+      }
+      
+      .newsTitle {
+        color: $text-light;
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+      
+      .newsCaption {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1rem;
+        margin-bottom: 10px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      
+      .newsDate {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        
+        i {
+          margin-right: 5px;
+        }
+      }
+    }
+    
+    .newsCard {
+      background-color: $text-light;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        
+        .newsImage {
+          transform: scale(1.05);
+        }
+      }
+      
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      
+      .newsImageContainer {
+        position: relative;
+        width: 100%;
+        height: 180px;
+        overflow: hidden;
+        
+        .newsImage {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.5s ease;
+        }
+      }
+      
+      .newsCategory {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: $primary-color;
+        color: $text-light;
+        padding: 4px 8px;
+        font-size: 0.7rem;
+        font-weight: 600;
+        border-radius: 3px;
+      }
+      
+      .newsContent {
+        padding: 15px;
+      }
+      
+      .newsTitle {
+        font-size: 1rem;
+        font-weight: 700;
+        color: $text-dark;
+        margin-bottom: 10px;
+        line-height: 1.4;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        height: 2.8rem;
+      }
+      
+      .newsDate {
+        font-size: 0.75rem;
+        color: $text-muted;
+        display: flex;
+        align-items: center;
+        
+        i {
+          margin-right: 5px;
+        }
+      }
+    }
+    
+    .noNewsInfo {
+      grid-column: span 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+      background-color: $text-light;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      
+      i {
+        font-size: 3rem;
+        color: $text-muted;
+        margin-bottom: 15px;
+      }
+      
+      p {
+        color: $text-muted;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+// Sponsors Section
+.sponsorsSection {
+  padding: 60px 0;
+  background-color: $text-light;
+  
+  .mainSponsor {
+    text-align: center;
+    margin-bottom: 40px;
+    
+    .sponsorTitle {
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: $text-muted;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+    
+    .mainSponsorLogo {
+      max-width: 300px;
+      max-height: 100px;
+      object-fit: contain;
+    }
+  }
+  
+  .otherSponsors {
+    .sponsorSubtitle {
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: $text-muted;
+      margin-bottom: 20px;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+    
+    .sponsorGrid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      
+      .sponsorItem {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        img {
+          max-width: 120px;
+          max-height: 50px;
+          object-fit: contain;
+          filter: grayscale(100%);
+          opacity: 0.7;
+          transition: all 0.3s ease;
+        }
+        
+        &:hover img {
+          filter: grayscale(0%);
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+// Fan Engagement Section
+.fanSection {
+  padding: 60px 0;
+  background-color: $primary-color;
+  
+  .fanContent {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .fanTextContent {
+    flex: 1;
+    color: $text-light;
+    
+    h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+    
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+  }
+  
+  .fanImageContent {
+    flex: 1;
+    
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+  }
+  
+  .subscribeForm {
+    display: flex;
+    margin-bottom: 30px;
+    
+    input {
+      flex: 1;
+      padding: 12px 15px;
+      border: none;
+      border-radius: 5px 0 0 5px;
+      font-size: 1rem;
+      
+      &:focus {
+        outline: none;
+      }
+    }
+    
+    .subscribeButton {
+      background-color: $accent-color;
+      color: $text-dark;
+      font-weight: 600;
+      padding: 0 20px;
+      border: none;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background-color: darken($accent-color, 10%);
+      }
+    }
+  }
+  
+  .socialIcons {
+    display: flex;
+    gap: 15px;
+    
+    .socialIcon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: $text-light;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background-color: $text-light;
+        color: $primary-color;
+        transform: translateY(-3px);
+      }
+    }
+  }
+}
+
+// Responsive styles
+@media (max-width: $mobile) {
+  .heroSection {
+    height: 60vh;
+    min-height: 500px;
+    
+    .bannerContent {
+      .bannerTitle {
+        font-size: 2rem;
+      }
+      
+      .bannerCaption {
+        font-size: 1rem;
+      }
+    }
+  }
+  
+  .matchCenterSection {
+    margin-top: -30px;
+    
+    .matchCenterGrid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .newsSection {
+    .sectionHeader {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+      
+      .categoryTabs {
+        overflow-x: auto;
+        width: 100%;
+        padding-bottom: 10px;
+        
+        .categoryTab {
+          white-space: nowrap;
+        }
+      }
+    }
+    
+    .newsGrid {
+      grid-template-columns: 1fr;
+      
+      .featuredNewsCard {
+        height: 300px;
+        
+        .newsTitle {
+          font-size: 1.25rem;
+        }
+        
+        .newsCaption {
+          font-size: 0.875rem;
+        }
+      }
+    }
+  }
+  
+  .fanSection {
+    .fanContent {
+      flex-direction: column;
+    }
+    
+    .subscribeForm {
+      flex-direction: column;
+      
+      input {
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+      
+      .subscribeButton {
+        border-radius: 5px;
+        padding: 12px;
+      }
+    }
+  }
+}
+
+@media (min-width: $mobile) and (max-width: $tablet) {
+  .matchCenterSection {
+    .matchCenterGrid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .newsSection {
+    .newsGrid {
+      grid-template-columns: repeat(2, 1fr);
+      
+      .featuredNewsCard {
+        grid-column: span 2;
+      }
+    }
+  }
+  
+  .fanSection {
+    .fanContent {
+      flex-direction: column;
+    }
+  }
+}
+
+@media (min-width: $tablet) and (max-width: $desktop) {
+  .matchCenterSection {
+    .matchCenterGrid {
+      grid-template-columns: repeat(2, 1fr);
+      
+      .leagueTableCard {
+        grid-column: span 2;
+      }
+    }
+  }
+  
+  .newsSection {
+    .newsGrid {
+      grid-template-columns: repeat(2, 1fr);
+      
+      .featuredNewsCard {
+        grid-column: span 2;
+      }
+    }
+  }
+}
