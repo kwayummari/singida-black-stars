@@ -379,7 +379,7 @@ export default function EnhancedHome() {
                         })}
                       </tbody>
                     </table>
-                    <Link href="/league" className={styles.tableButton}>
+                    <Link href="/matches" className={styles.tableButton}>
                       FULL TABLE
                     </Link>
                   </div>
@@ -516,7 +516,7 @@ export default function EnhancedHome() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <img src="/images/fans.jpg" alt="Fans celebrating" />
+              <img src="/images/fans.png" alt="Fans celebrating" />
             </motion.div>
           </div>
         </div>
