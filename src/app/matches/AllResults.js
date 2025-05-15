@@ -174,7 +174,7 @@ const AllResults = () => {
                                 <div className={`col-md-3 ${styles.part1}`}>
                                     <div className={styles.paragraphs}>
                                         <img 
-                                            src={result.competitionImage} 
+                                            src={`https://singidablackstars.co.tz/admin/${result.competitionImage}`} 
                                             alt={result.competition} 
                                             className={styles.leagueLogo} 
                                         />
@@ -193,7 +193,7 @@ const AllResults = () => {
                                         <div className={styles.team}>
                                             <p>{result.homeTeamName}</p>
                                             <img 
-                                                src={result.homeTeamLogo} 
+                                                src={`https://singidablackstars.co.tz/admin/${result.homeTeamLogo}`} 
                                                 alt={result.homeTeamName} 
                                                 className={styles.teamLogo} 
                                             />
@@ -209,7 +209,7 @@ const AllResults = () => {
                                         </div>
                                         <div className={styles.team}>
                                             <img 
-                                                src={result.awayTeamLogo} 
+                                                src={`https://singidablackstars.co.tz/admin/${result.awayTeamLogo}`} 
                                                 alt={result.awayTeamName} 
                                                 className={styles.teamLogo} 
                                             />

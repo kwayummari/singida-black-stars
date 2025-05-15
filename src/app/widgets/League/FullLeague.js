@@ -80,9 +80,9 @@ const FullLeague = () => {
   return (
     <div className={styles.leagueTable}>
       <div className={styles.leagueHeader}>
-        <motion.img 
-          src={leagueData.league.logo} 
-          alt={leagueData.league.name} 
+        <motion.img
+          src={`https://singidablackstars.co.tz/admin/${leagueData.league.logo}`}
+          alt={leagueData.league.name}
           className={styles.leagueLogo}
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -129,7 +129,7 @@ const FullLeague = () => {
             >
               <td>{team.position}</td>
               <td className={styles.teamInfo}>
-                <img src={team.team_logo} alt={team.team_name} className={styles.logo} />
+                <img src={`https://singidablackstars.co.tz/admin/${team.team_logo}`} alt={team.team_name} className={styles.logo} />
                 <span className={styles.teamName}>{team.team_name}</span>
               </td>
               <td>{team.played}</td>
