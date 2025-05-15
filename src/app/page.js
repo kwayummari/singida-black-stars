@@ -334,8 +334,8 @@ export default function EnhancedHome() {
                   <div className={styles.tableHeader}>
                     <div className={styles.leagueInfo}>
                       <img 
-                        src={leagueTable.league.logo} 
-                        alt={leagueTable.league.name} 
+                        src={`https://singidablackstars.co.tz/admin/${leagueTable.league.logo}`}
+                        alt={leagueTable.league.name}
                         className={styles.leagueLogo}
                       />
                       <div>
@@ -364,7 +364,7 @@ export default function EnhancedHome() {
                               <td className={styles.teamColumn}>
                                 <div className={styles.teamInfo}>
                                   <img 
-                                    src={team.team_logo} 
+                                    src={`https://singidablackstars.co.tz/admin/${team.team_logo}`} 
                                     alt={team.team_name} 
                                     className={styles.miniTeamLogo}
                                   />
