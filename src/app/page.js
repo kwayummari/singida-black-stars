@@ -45,6 +45,7 @@ export default function EnhancedHome() {
         
         // Fetch latest result
         const resultsData = await get('/results/getAllResults.php?limit=1');
+        console.log(resultsData);
         setLatestResults(resultsData?.data?.[0] || null);
         
         // Fetch league standings
