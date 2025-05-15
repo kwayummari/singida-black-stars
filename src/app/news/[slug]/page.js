@@ -5,7 +5,7 @@ export async function generateStaticParams() {
   // For static export, we need to provide at least one slug
   try {
     // Try to fetch slugs from API if available
-    const response = await fetch('http://192.168.1.100/sbs/api/news/getAllSlugs.php');
+    const response = await fetch('https://singidablackstars.co.tz/admin/api/news/getAllSlugs.php');
 
     console.log(response);
     

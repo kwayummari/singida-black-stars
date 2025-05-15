@@ -175,7 +175,7 @@ export default function TeamsPage() {
             >
               <Link href={`/teams/${team.id}`}>
                 <div className={styles.teamLogo}>
-                  <img src={`http://192.168.1.100/sbs/${team.logo}`} alt={`${team.name} logo`} />
+                  <img src={`https://singidablackstars.co.tz/admin/${team.logo}`} alt={`${team.name} logo`} />
                 </div>
                 <div className={styles.teamInfo}>
                   <h3>{team.name}</h3>

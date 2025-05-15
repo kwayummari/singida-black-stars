@@ -94,7 +94,7 @@ const CarouselWidget = ({ openPopup }) => {
                 >
                     <div className={styles.imageContainer}>
                         <img
-                            src={`http://192.168.1.100/sbs/${currentNews.imageSrc}`}
+                            src={`https://singidablackstars.co.tz/admin/${currentNews.imageSrc}`}
                             alt="Featured news"
                             className={styles.carouselImage}
                         />
@@ -127,7 +127,7 @@ const CarouselWidget = ({ openPopup }) => {
                     >
                         <div className={styles.imageContainer}>
                             <img
-                                src={`http://192.168.1.100/sbs/${currentNews.imageSrc}`}
+                                src={`https://singidablackstars.co.tz/admin/${currentNews.imageSrc}`}
                                 alt="Featured news"
                                 className={styles.carouselImage}
                             />
@@ -192,7 +192,7 @@ const CarouselWidget = ({ openPopup }) => {
                                     <strong>{currentNews.title}</strong>
                                 </motion.h2>
                                 <motion.img
-                                    src={`http://192.168.1.100/sbs/${currentNews.imageSrc}`}
+                                    src={`https://singidablackstars.co.tz/admin/${currentNews.imageSrc}`}
                                     alt="News Image"
                                     className={styles.popupImage}
                                     initial={{ y: 20, opacity: 0 }}

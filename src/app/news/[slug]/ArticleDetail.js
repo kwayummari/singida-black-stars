@@ -154,7 +154,7 @@ export default function ArticleDetail({ slug }) {
           transition={{ delay: 0.4, duration: 0.5 }}
         >
           <img 
-            src={`http://192.168.1.100/sbs/${article.imageSrc}`}
+            src={`https://singidablackstars.co.tz/admin/${article.imageSrc}`}
             alt={article.title} 
             className={styles.mainImage}
           />

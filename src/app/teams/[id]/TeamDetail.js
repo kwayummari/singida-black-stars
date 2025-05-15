@@ -189,7 +189,7 @@ export default function TeamDetailClient({ id }) {
       >
         <div className={styles.teamLogoContainer}>
           <img 
-            src={`http://192.168.1.100/sbs/${teamData.team.logo}`}
+            src={`https://singidablackstars.co.tz/admin/${teamData.team.logo}`}
             height={100}
             alt={`${teamData.team.name} logo`} 
             className={styles.teamLogo}
@@ -272,7 +272,7 @@ export default function TeamDetailClient({ id }) {
               </div>
               <div className={styles.playerImageContainer}>
                 <img 
-                  src={`http://192.168.1.100/sbs/${player.image}`}
+                  src={`https://singidablackstars.co.tz/admin/${player.image}`}
                   alt={`${player.first_name} ${player.last_name}`} 
                   className={styles.playerImage}
                 />
@@ -323,7 +323,7 @@ export default function TeamDetailClient({ id }) {
               <div className={styles.modalHeader}>
                 <div className={styles.modalPlayerImage}>
                   <img 
-                    src={`http://192.168.1.100/sbs/${selectedPlayer.image}`}
+                    src={`https://singidablackstars.co.tz/admin/${selectedPlayer.image}`}
                     alt={`${selectedPlayer.first_name} ${selectedPlayer.last_name}`} 
                   />
                   <div className={styles.modalPlayerNumber}>

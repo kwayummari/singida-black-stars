@@ -97,7 +97,7 @@ const LatestNews = ({ openPopup, categoryId }) => {
                             >
                                 <div className={styles.imageOverlay}></div>
                                 <img
-                                    src={`http://192.168.1.100/sbs/${news.imageSrc}`}
+                                    src={`https://singidablackstars.co.tz/admin/${news.imageSrc}`}
                                     alt="Picture of the News"
                                     className={styles.carouselImage}
                                 />
