@@ -430,7 +430,7 @@ export default function EnhancedHome() {
                   <Link href={`/news/${article.slug}`}>
                     <div className={styles.newsImageContainer}>
                       <img 
-                        src={article.imageSrc} 
+                        src={`https://singidablackstars.co.tz/admin/${article.imageSrc}`} 
                         alt={article.title} 
                         className={styles.newsImage}
                       />
