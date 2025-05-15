@@ -40,7 +40,7 @@ export default function EnhancedHome() {
         setBannerNews(bannerData || []);
         
         // Fetch next match
-        const matchesData = await get('/matches/upcomingMatches.php?limit=1');
+        const matchesData = await get('/matches/getAllMatches.php?limit=1');
         setNextMatch(matchesData?.[0] || null);
         
         // Fetch latest result
@@ -246,7 +246,7 @@ export default function EnhancedHome() {
                     <div className={styles.matchTeams}>
                       <div className={styles.teamInfo}>
                         <img 
-                          src={nextMatch.homeTeamLogo} 
+                          src={`https://singidablackstars.co.tz/admin/${nextMatch.homeTeamLogo}`} 
                           alt={nextMatch.homeTeam} 
                           className={styles.teamLogo}
                         />
@@ -257,7 +257,7 @@ export default function EnhancedHome() {
                       </div>
                       <div className={styles.teamInfo}>
                         <img 
-                          src={nextMatch.awayTeamLogo} 
+                          src={`https://singidablackstars.co.tz/admin/${nextMatch.awayTeamLogo}`} 
                           alt={nextMatch.awayTeam} 
                           className={styles.teamLogo}
                         />
