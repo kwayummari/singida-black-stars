@@ -174,7 +174,7 @@ const AllMatches = () => {
                                 <div className={`col-md-3 ${styles.part1}`}>
                                     <div className={styles.paragraphs}>
                                         <img 
-                                            src={match.competitionImage} 
+                                            src={`https://singidablackstars.co.tz/admin/${match.competitionImage}`} 
                                             alt={match.competition} 
                                             className={styles.leagueLogo} 
                                         />
@@ -190,7 +190,7 @@ const AllMatches = () => {
                                 <div className={`col-md-9 ${styles.part2}`}>
                                     <div className={styles.opponent}>
                                         <img 
-                                            src={match.opponentLogo} 
+                                            src={`https://singidablackstars.co.tz/admin/${match.opponentLogo}`} 
                                             alt={match.opponent} 
                                             className={styles.opponentLogo} 
                                         />
